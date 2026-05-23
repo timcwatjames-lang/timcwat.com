@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive CSS Tutorial - Learn CSS with live code examples and interactive demos">
+    <meta property="og:title" content="CSS Playground - Learn CSS by Doing">
+    <meta property="og:description" content="Interactive CSS Tutorial - Learn CSS with live code examples and interactive demos">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/css.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSS Playground - Learn CSS by Doing">
+    <meta name="twitter:description" content="Interactive CSS Tutorial - Learn CSS with live code examples and interactive demos">
+    <meta name="google-adsense-account" content="ca-pub-5862355594319303">
+    <title>CSS Playground - Learn CSS by Doing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">CSS Playground</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#basics">Basics</a></li>
+                <li><a href="#selectors">Selectors</a></li>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#box-model">Box Model</a></li>
+                <li><a href="#display">Display</a></li>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#responsive">Responsive</a></li>
+                <li><a href="#animations">Animations</a></li>
+                <li><a href="#pseudo">Pseudo</a></li>
+                <li><a href="#advanced">Advanced</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#playground">Playground</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="accessibility.html">A11y</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Learn CSS <span class="highlight">by Doing</span></h1>
+                <p>Write real CSS and see the result instantly. Every concept comes with live, editable examples.</p>
+                <p class="hero-sub">Toggle controls, slide values, and watch your styles come to life.</p>
+                <a href="#basics" class="btn btn-primary">Start Learning</a>
+            </div>
+            <div class="hero-visual">
+                <pre class="hero-code"><span class="nt">.card</span> <span class="cp">{</span>
+    <span class="na">background</span><span class="cp">:</span> <span class="s">linear-gradient</span><span class="cp">(</span><span class="s">135deg</span>, <span class="s">#667eea</span>, <span class="s">#764ba2</span><span class="cp">);</span>
+    <span class="na">padding</span><span class="cp">:</span> <span class="s">2rem</span>;
+    <span class="na">border-radius</span><span class="cp">:</span> <span class="s">16px</span>;
+    <span class="na">box-shadow</span><span class="cp">:</span> <span class="s">0 10px 30px</span> <span class="s">rgba(102,126,234,0.4)</span>;
+    <span class="na">transition</span><span class="cp">:</span> <span class="s">transform 0.3s</span>;
+<span class="cp">}</span></pre>
+            </div>
+        </section>
+
+        <!-- ===== 1. CSS Basics ===== -->
+        <section class="section" id="basics">
+            <div class="container">
+                <h2 class="section-title">1. What is CSS?</h2>
+                <p class="section-desc">CSS (Cascading Style Sheets) controls the visual presentation of HTML elements — colors, layout, fonts, spacing, and more. CSS rules have a <strong>selector</strong> and a <strong>declaration block</strong> of property-value pairs.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; CSS Syntax</div>
+                        <pre><code><span class="c">&lt;!-- HTML --&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">id</span><span class="nt">=</span><span class="s">"greeting"</span><span class="nt">&gt;</span>Hello, World!<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">/* CSS */</span>
+<span class="cp">#greeting</span> <span class="cp">{</span>
+    <span class="na">color</span><span class="cp">:</span> <span class="s">#667eea</span>;
+    <span class="na">font-size</span><span class="cp">:</span> <span class="s">24px</span>;
+    <span class="na">font-weight</span><span class="cp">:</span> <span class="s">700</span>;
+    <span class="na">padding</span><span class="cp">:</span> <span class="s">10px 20px</span>;
+    <span class="na">background</span><span class="cp">:</span> <span class="s">#f0f4ff</span>;
+    <span class="na">border-radius</span><span class="cp">:</span> <span class="s">8px</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p id="greeting" style="color:#667eea;font-size:24px;font-weight:700;padding:10px 20px;background:#f0f4ff;border-radius:8px;">Hello, World!</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Three Ways to Add CSS</h3>
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Inline, Internal, External</div>
+                        <pre><code><span class="c">&lt;!-- 1. Inline (on the element) --&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">style</span><span class="nt">=</span><span class="s">"color: red;"</span><span class="nt">&gt;</span>Red text<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- 2. Internal (&lt;style&gt; in &lt;head&gt;) --&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+    <span class="cp">p</span> <span class="cp">{</span> <span class="na">color</span><span class="cp">:</span> <span class="s">blue</span>; <span class="cp">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- 3. External (.css file) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel</span><span class="nt">=</span><span class="s">"stylesheet"</span>
+      <span class="na">href</span><span class="nt">=</span><span class="s">"style.css"</span><span class="nt">&gt;</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Result</div>
+                        <p style="color:red;margin:4px 0;">Red (inline style)</p>
+                        <p style="color:blue;margin:4px 0;">Blue (internal style)</p>
+                        <p style="color:green;margin:4px 0;">Green (would be from external)</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Key idea:</strong> Use <strong>external CSS</strong> for real projects. It keeps presentation separate from content and allows caching. The "C" in CSS stands for <strong>Cascading</strong> — styles can inherit, override, and layer from multiple sources.
+                </div>
+            </div>
+
+            <div class="challenge" data-question="How do you link an external CSS file to an HTML page?" data-options='["&lt;style src=&quot;styles.css&quot;&gt;","&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;","&lt;css src=&quot;styles.css&quot;&gt;","&lt;stylesheet&gt;styles.css&lt;/stylesheet&gt;"]' data-answer="1" data-explain='The correct way is &lt;link rel="stylesheet" href="styles.css"&gt; in the &lt;head&gt; section. This is called external CSS.'>
+            </div>
+        </section>
+
+        <!-- ===== 2. Selectors ===== -->
+        <section class="section section-alt" id="selectors">
+            <div class="container">
+                <h2 class="section-title">2. Selectors</h2>
+                <p class="section-desc">Selectors target HTML elements to apply styles. From simple tag selectors to complex combinators, CSS gives you fine-grained control over what gets styled.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Basic Selectors</div>
+                        <pre><code><span class="c">/* Element / Tag */</span>
+<span class="cp">h2</span> <span class="cp">{</span> <span class="na">color</span><span class="cp">:</span> <span class="s">#333</span>; <span class="cp">}</span>
+
+<span class="c">/* Class */</span>
+<span class="cp">.highlight</span> <span class="cp">{</span> <span class="na">background</span><span class="cp">:</span> <span class="s">#ffeb3b</span>; <span class="cp">}</span>
+
+<span class="c">/* ID */</span>
+<span class="cp">#special</span> <span class="cp">{</span> <span class="na">border</span><span class="cp">:</span> <span class="s">2px solid gold</span>; <span class="cp">}</span>
+
+<span class="c">/* Universal */</span>
+<span class="cp">*</span> <span class="cp">{</span> <span class="na">box-sizing</span><span class="cp">:</span> <span class="s">border-box</span>; <span class="cp">}</span>
+
+<span class="c">/* Grouping */</span>
+<span class="cp">h1, h2, h3</span> <span class="cp">{</span>
+    <span class="na">font-family</span><span class="cp">:</span> <span class="s">sans-serif</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Demo</div>
+                        <h2 style="color:#333;">Element Selector (h2)</h2>
+                        <p><span class="highlight" style="background:#ffeb3b;padding:2px 6px;">.highlight class</span></p>
+                        <p id="special" style="border:2px solid gold;padding:6px 12px;">#special ID</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Combinators</h3>
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Combinators</div>
+                        <pre><code><span class="c">/* Descendant (space) */</span>
+<span class="cp">article p</span> <span class="cp">{</span> <span class="na">color</span><span class="cp">:</span> <span class="s">#555</span>; <span class="cp">}</span>
+
+<span class="c">/* Child (>) */</span>
+<span class="cp">.list > li</span> <span class="cp">{</span>
+    <span class="na">font-weight</span><span class="cp">:</span> <span class="s">600</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Adjacent sibling (+) */</span>
+<span class="cp">h3 + p</span> <span class="cp">{</span>
+    <span class="na">margin-top</span><span class="cp">:</span> <span class="s">0</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Attribute */</span>
+<span class="cp">a[href^="https"]</span> <span class="cp">{</span>
+    <span class="na">color</span><span class="cp">:</span> <span class="s">green</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Demo</div>
+                        <article style="margin:0;">
+                            <p style="color:#555;">Descendant: This p inside article is #555</p>
+                        </article>
+                        <ul class="list" style="margin:8px 0;padding-left:20px;">
+                            <li style="font-weight:600;">Child li (bold)</li>
+                            <li style="font-weight:600;">Child li (bold)</li>
+                        </ul>
+                        <p style="margin-top:0;">Adjacent to h3</p>
+                        <p><a href="https://example.com" style="color:green;">https link (green)</a></p>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128640; Interactive: Try a Selector</h3>
+                    <p>This box shows how different selectors target elements:</p>
+                    <div id="selector-demo" style="padding:20px;background:#f8f9ff;border-radius:10px;">
+                        <p class="sel-p" style="padding:8px;margin:4px;border-radius:4px;">Paragraph (p)</p>
+                        <p class="sel-p highlight-me" style="padding:8px;margin:4px;border-radius:4px;">Paragraph with .highlight-me</p>
+                        <p class="sel-p" id="sel-unique" style="padding:8px;margin:4px;border-radius:4px;">Paragraph with #sel-unique</p>
+                        <div class="sel-container" style="padding:8px;margin:4px;border-radius:4px;background:#eef;">
+                            <p class="sel-p" style="padding:8px;margin:4px;border-radius:4px;">Nested p inside div</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+                        <button class="btn btn-small btn-outline" id="selAllP">Highlight all &lt;p&gt;</button>
+                        <button class="btn btn-small btn-outline" id="selHighlight">Highlight .highlight-me</button>
+                        <button class="btn btn-small btn-outline" id="selUnique">Highlight #sel-unique</button>
+                        <button class="btn btn-small btn-outline" id="selReset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 3. Colors & Backgrounds ===== -->
+        <section class="section" id="colors">
+            <div class="container">
+                <h2 class="section-title">3. Colors &amp; Backgrounds</h2>
+                <p class="section-desc">CSS supports multiple color formats and powerful background properties including gradients and multiple layers.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Color Formats</div>
+                        <pre><code><span class="c">/* Named colors */</span>
+<span class="na">color</span><span class="cp">:</span> <span class="s">tomato</span>;
+
+<span class="c">/* Hex (#RRGGBB) */</span>
+<span class="na">background</span><span class="cp">:</span> <span class="s">#667eea</span>;
+
+<span class="c">/* RGB / RGBA */</span>
+<span class="na">color</span><span class="cp">:</span> <span class="s">rgb(255, 99, 71)</span>;
+<span class="na">background</span><span class="cp">:</span>
+    <span class="s">rgba(102, 126, 234, 0.2)</span>;
+
+<span class="c">/* HSL / HSLA */</span>
+<span class="na">color</span><span class="cp">:</span> <span class="s">hsl(9, 100%, 64%)</span>;
+
+<span class="c">/* Gradients */</span>
+<span class="na">background</span><span class="cp">:</span>
+    <span class="s">linear-gradient(135deg,</span>
+    <span class="s">#667eea, #764ba2)</span>;</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Swatches</div>
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                            <div style="text-align:center;"><div style="width:50px;height:50px;background:tomato;border-radius:8px;"></div><small>tomato</small></div>
+                            <div style="text-align:center;"><div style="width:50px;height:50px;background:#667eea;border-radius:8px;"></div><small>#667eea</small></div>
+                            <div style="text-align:center;"><div style="width:50px;height:50px;background:rgb(255,99,71);border-radius:8px;"></div><small>rgb</small></div>
+                            <div style="text-align:center;"><div style="width:50px;height:50px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:8px;"></div><small>gradient</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#127912; Interactive: Color Picker</h3>
+                    <p>Pick a color and see it applied:</p>
+                    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+                        <input type="color" id="colorPicker" value="#667eea" style="width:60px;height:50px;border:none;cursor:pointer;">
+                        <span id="colorHex">#667eea</span>
+                    </div>
+                    <div id="colorPreview" style="margin-top:16px;padding:30px;background:#667eea;border-radius:12px;transition:background 0.3s;text-align:center;color:#fff;font-weight:600;">Preview Area</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 4. Typography ===== -->
+        <section class="section section-alt" id="typography">
+            <div class="container">
+                <h2 class="section-title">4. Typography</h2>
+                <p class="section-desc">Control how text looks with font properties, alignment, spacing, and decoration.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Font Properties</div>
+                        <pre><code><span class="cp">.text-style</span> <span class="cp">{</span>
+    <span class="na">font-family</span><span class="cp">:</span> <span class="s">'Poppins'</span>, <span class="s">sans-serif</span>;
+    <span class="na">font-size</span><span class="cp">:</span> <span class="s">1.25rem</span>;
+    <span class="na">font-weight</span><span class="cp">:</span> <span class="s">600</span>;
+    <span class="na">font-style</span><span class="cp">:</span> <span class="s">italic</span>;
+    <span class="na">line-height</span><span class="cp">:</span> <span class="s">1.6</span>;
+    <span class="na">text-align</span><span class="cp">:</span> <span class="s">center</span>;
+    <span class="na">text-decoration</span><span class="cp">:</span> <span class="s">underline</span>;
+    <span class="na">text-transform</span><span class="cp">:</span> <span class="s">uppercase</span>;
+    <span class="na">letter-spacing</span><span class="cp">:</span> <span class="s">2px</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Styled Text</div>
+                        <p style="font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:600;font-style:italic;line-height:1.6;text-align:center;text-decoration:underline;text-transform:uppercase;letter-spacing:2px;margin:0;">Styled Text Example</p>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128203; Interactive: Text Styler</h3>
+                    <p>Adjust the controls to style the text:</p>
+                    <div class="live-preview">
+                        <label>Font Size: <span id="fsValue">24</span>px</label>
+                        <input type="range" id="fontSizeSlider" class="css-slider" min="12" max="48" value="24">
+                        <label>Font Weight:</label>
+                        <select id="fontWeightSelect">
+                            <option value="300">Light (300)</option>
+                            <option value="400" selected>Normal (400)</option>
+                            <option value="600">Semi-Bold (600)</option>
+                            <option value="700">Bold (700)</option>
+                        </select>
+                        <label>Text Align:</label>
+                        <select id="textAlignSelect">
+                            <option value="left">Left</option>
+                            <option value="center" selected>Center</option>
+                            <option value="right">Right</option>
+                        </select>
+                        <label>Letter Spacing: <span id="lsValue">1</span>px</label>
+                        <input type="range" id="letterSpacingSlider" class="css-slider" min="0" max="10" value="1">
+                        <p id="typoDemo" style="font-size:24px;font-weight:400;text-align:center;letter-spacing:1px;padding:16px;background:#f0f4ff;border-radius:8px;margin-top:12px;">The quick brown fox jumps over the lazy dog.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 5. Box Model ===== -->
+        <section class="section" id="box-model">
+            <div class="container">
+                <h2 class="section-title">5. Box Model</h2>
+                <p class="section-desc">Every element is a rectangular box. The box model describes how <strong>content</strong>, <strong>padding</strong>, <strong>border</strong>, and <strong>margin</strong> layers stack up.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Box Model</div>
+                        <pre><code><span class="cp">.box-demo</span> <span class="cp">{</span>
+    <span class="na">width</span><span class="cp">:</span> <span class="s">200px</span>;
+    <span class="na">height</span><span class="cp">:</span> <span class="s">100px</span>;
+    <span class="na">padding</span><span class="cp">:</span> <span class="s">20px</span>;   <span class="c">/* inside */</span>
+    <span class="na">border</span><span class="cp">:</span> <span class="s">4px solid #333</span>;
+    <span class="na">margin</span><span class="cp">:</span> <span class="s">20px</span>;   <span class="c">/* outside */</span>
+    <span class="na">box-sizing</span><span class="cp">:</span> <span class="s">border-box</span>;
+<span class="cp">}</span>
+
+<span class="c">/* content-box (default) */</span>
+<span class="c">/* width = content only */</span>
+<span class="c">/* border-box */</span>
+<span class="c">/* width = content + pad + bdr */</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Visual</div>
+                        <div style="display:flex;flex-direction:column;align-items:center;">
+                            <div style="width:200px;height:100px;padding:20px;border:4px solid #333;margin:20px;box-sizing:border-box;background:#667eea;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:4px;font-size:0.8rem;">content area</div>
+                            <small style="color:#888;">border-box: 200px includes padding + border</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128297; Interactive: Box Model Builder</h3>
+                    <div class="live-preview">
+                        <label>Padding: <span id="padValue">20</span>px</label>
+                        <input type="range" id="padSlider" class="css-slider" min="0" max="60" value="20">
+                        <label>Border Width: <span id="bdrValue">4</span>px</label>
+                        <input type="range" id="bdrSlider" class="css-slider" min="0" max="20" value="4">
+                        <label>Margin: <span id="marValue">20</span>px</label>
+                        <input type="range" id="marSlider" class="css-slider" min="0" max="60" value="20">
+                        <label>Box Sizing:</label>
+                        <select id="boxSizingSelect">
+                            <option value="border-box">border-box</option>
+                            <option value="content-box">content-box</option>
+                        </select>
+                        <span style="display:block;margin-top:8px;font-size:0.85rem;color:#888;">Total computed width: <span id="totalWidth">200</span>px</span>
+                        <div id="boxModelDemo" style="width:200px;height:80px;padding:20px;border:4px solid #667eea;margin:20px;box-sizing:border-box;background:rgba(102,126,234,0.15);display:flex;align-items:center;justify-content:center;border-radius:4px;font-size:0.75rem;color:#555;">content</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Best practice:</strong> Always set <code>box-sizing: border-box</code> on all elements. It makes sizing much more intuitive. Most reset CSS files do this globally with <code>* { box-sizing: border-box; }</code>.
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 6. Display & Positioning ===== -->
+        <section class="section section-alt" id="display">
+            <div class="container">
+                <h2 class="section-title">6. Display &amp; Positioning</h2>
+                <p class="section-desc">The <code>display</code> property controls how elements flow in the document. <code>position</code> controls where they sit on the page.</p>
+
+                <h3 style="color:#333;">Display Values</h3>
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Display</div>
+                        <pre><code><span class="c">/* Block: takes full width */</span>
+<span class="cp">.block</span> <span class="cp">{</span> <span class="na">display</span><span class="cp">:</span> <span class="s">block</span>; <span class="cp">}</span>
+
+<span class="c">/* Inline: sits in text flow */</span>
+<span class="cp">.inline</span> <span class="cp">{</span> <span class="na">display</span><span class="cp">:</span> <span class="s">inline</span>; <span class="cp">}</span>
+
+<span class="c">/* Inline-block: inline but */</span>
+<span class="c">/* respects w/h, margin */</span>
+<span class="cp">.ib</span> <span class="cp">{</span>
+    <span class="na">display</span><span class="cp">:</span> <span class="s">inline-block</span>;
+    <span class="na">width</span><span class="cp">:</span> <span class="s">120px</span>;
+<span class="cp">}</span>
+
+<span class="c">/* None: removes from flow */</span>
+<span class="cp">.hidden</span> <span class="cp">{</span> <span class="na">display</span><span class="cp">:</span> <span class="s">none</span>; <span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Demo</div>
+                        <div style="background:#e8ecff;padding:8px;margin:4px;border-radius:4px;">Block div (full width)</div>
+                        <span style="background:#ffeaa7;padding:4px 8px;margin:4px;">Inline span</span>
+                        <span style="background:#ffeaa7;padding:4px 8px;margin:4px;">Another inline span</span>
+                        <div style="display:inline-block;width:120px;background:#c8f7c5;padding:8px;margin:4px;border-radius:4px;">Inline-block 120px</div>
+                        <div style="display:inline-block;width:120px;background:#c8f7c5;padding:8px;margin:4px;border-radius:4px;">Inline-block 120px</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Position Values</h3>
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Position</div>
+                        <pre><code><span class="c">/* Static: default flow */</span>
+<span class="cp">.static</span> <span class="cp">{</span> <span class="na">position</span><span class="cp">:</span> <span class="s">static</span>; <span class="cp">}</span>
+
+<span class="c">/* Relative: offset from normal */</span>
+<span class="cp">.relative</span> <span class="cp">{</span>
+    <span class="na">position</span><span class="cp">:</span> <span class="s">relative</span>;
+    <span class="na">top</span><span class="cp">:</span> <span class="s">10px</span>; <span class="na">left</span><span class="cp">:</span> <span class="s">10px</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Absolute: relative to parent */</span>
+<span class="cp">.absolute</span> <span class="cp">{</span>
+    <span class="na">position</span><span class="cp">:</span> <span class="s">absolute</span>;
+    <span class="na">top</span><span class="cp">:</span> <span class="s">0</span>; <span class="na">right</span><span class="cp">:</span> <span class="s">0</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Fixed: relative to viewport */</span>
+<span class="cp">.fixed</span> <span class="cp">{</span>
+    <span class="na">position</span><span class="cp">:</span> <span class="s">fixed</span>;
+    <span class="na">bottom</span><span class="cp">:</span> <span class="s">20px</span>;
+    <span class="na">right</span><span class="cp">:</span> <span class="s">20px</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Sticky: toggles relative/fixed */</span>
+<span class="cp">.sticky</span> <span class="cp">{</span>
+    <span class="na">position</span><span class="cp">:</span> <span class="s">sticky</span>;
+    <span class="na">top</span><span class="cp">:</span> <span class="s">0</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Position Demo</div>
+                        <div style="position:relative;height:120px;background:#f0f4ff;border-radius:8px;padding:8px;overflow:hidden;">
+                            <div style="position:absolute;top:8px;right:8px;background:#ff6b6b;color:#fff;padding:4px 12px;border-radius:4px;font-size:0.75rem;">absolute</div>
+                            <div style="position:relative;top:12px;left:12px;background:#667eea;color:#fff;padding:4px 12px;border-radius:4px;display:inline-block;font-size:0.75rem;">relative</div>
+                            <div style="margin-top:40px;background:#ddd;padding:4px 8px;border-radius:4px;display:inline-block;font-size:0.75rem;">static (default)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128161; Interactive: Toggle Display</h3>
+                    <p>Click to show/hide the box:</p>
+                    <button class="btn btn-primary" id="toggleDisplayBtn">Hide Box</button>
+                    <div id="toggleBox" style="margin-top:12px;padding:30px;background:#667eea;color:#fff;border-radius:8px;text-align:center;font-weight:600;transition:all 0.3s;">I'm visible!</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 7. Flexbox ===== -->
+        <section class="section" id="flexbox">
+            <div class="container">
+                <h2 class="section-title">7. Flexbox</h2>
+                <p class="section-desc">Flexbox is a one-dimensional layout system designed for distributing space and aligning items in rows or columns.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Flexbox Container</div>
+                        <pre><code><span class="cp">.flex-container</span> <span class="cp">{</span>
+    <span class="na">display</span><span class="cp">:</span> <span class="s">flex</span>;
+    <span class="na">flex-direction</span><span class="cp">:</span> <span class="s">row</span>;
+    <span class="na">justify-content</span><span class="cp">:</span>
+        <span class="s">center</span>;
+    <span class="na">align-items</span><span class="cp">:</span> <span class="s">center</span>;
+    <span class="na">gap</span><span class="cp">:</span> <span class="s">l2px</span>;
+    <span class="na">flex-wrap</span><span class="cp">:</span> <span class="s">wrap</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Item properties */</span>
+<span class="cp">.flex-item</span> <span class="cp">{</span>
+    <span class="na">flex</span><span class="cp">:</span> <span class="s">1</span>;  <span class="c">/* grow + shrink */</span>
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Flex Layout</div>
+                        <div style="display:flex;gap:8px;padding:12px;background:#f0f4ff;border-radius:8px;">
+                            <div style="flex:1;padding:16px;background:#667eea;color:#fff;border-radius:6px;text-align:center;">1</div>
+                            <div style="flex:2;padding:16px;background:#764ba2;color:#fff;border-radius:6px;text-align:center;">2 (flex:2)</div>
+                            <div style="flex:1;padding:16px;background:#667eea;color:#fff;border-radius:6px;text-align:center;">3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128258; Interactive: Flexbox Playground</h3>
+                    <p>Adjust flex properties and see how items respond:</p>
+                    <div class="live-preview">
+                        <label>flex-direction:</label>
+                        <select id="flexDir">
+                            <option value="row">row</option>
+                            <option value="column">column</option>
+                            <option value="row-reverse">row-reverse</option>
+                            <option value="column-reverse">column-reverse</option>
+                        </select>
+                        <label>justify-content:</label>
+                        <select id="flexJustify">
+                            <option value="flex-start">flex-start</option>
+                            <option value="center" selected>center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                        <label>align-items:</label>
+                        <select id="flexAlign">
+                            <option value="stretch">stretch</option>
+                            <option value="center" selected>center</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                        </select>
+                        <label>gap: <span id="gapValue">8</span>px</label>
+                        <input type="range" id="gapSlider" class="css-slider" min="0" max="40" value="8">
+                        <div id="flexDemo" class="flex-demo" style="display:flex;gap:8px;flex-direction:row;justify-content:center;align-items:center;">
+                            <div>A</div>
+                            <div style="padding:20px 16px;">B</div>
+                            <div>C</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Flexbox trick:</strong> Use <code>margin-left: auto</code> on a flex item to push it to the right. Use <code>margin: auto</code> to perfectly center an item in both axes (works with display:flex on the parent).
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which CSS property makes a container a flexbox?" data-options='["display: block;","display: flex;","position: flex;","flex-container: true;"]' data-answer="1" data-explain="display: flex turns an element into a flex container, enabling flexbox layout for its children.">
+            </div>
+        </section>
+
+        <!-- ===== 8. CSS Grid ===== -->
+        <section class="section section-alt" id="grid">
+            <div class="container">
+                <h2 class="section-title">8. CSS Grid</h2>
+                <p class="section-desc">Grid is a two-dimensional layout system that handles rows and columns simultaneously. Perfect for page-level layouts and complex alignments.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Grid Basics</div>
+                        <pre><code><span class="cp">.grid-container</span> <span class="cp">{</span>
+    <span class="na">display</span><span class="cp">:</span> <span class="s">grid</span>;
+    <span class="na">grid-template-columns</span><span class="cp">:</span>
+        <span class="s">repeat(3, 1fr)</span>;
+    <span class="na">gap</span><span class="cp">:</span> <span class="s">12px</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Span multiple columns */</span>
+<span class="cp">.grid-item</span> <span class="cp">{</span>
+    <span class="na">grid-column</span><span class="cp">:</span> <span class="s">span 2</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Grid Layout</div>
+                        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;background:#f0f4ff;border-radius:8px;">
+                            <div style="padding:16px;background:#667eea;color:#fff;border-radius:6px;text-align:center;">1</div>
+                            <div style="padding:16px;background:#764ba2;color:#fff;border-radius:6px;text-align:center;">2</div>
+                            <div style="padding:16px;background:#667eea;color:#fff;border-radius:6px;text-align:center;">3</div>
+                            <div style="padding:16px;background:#764ba2;color:#fff;border-radius:6px;text-align:center;">4</div>
+                            <div style="padding:16px;background:#667eea;color:#fff;border-radius:6px;text-align:center;">5</div>
+                            <div style="padding:16px;background:#764ba2;color:#fff;border-radius:6px;text-align:center;">6</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128258; Interactive: Grid Playground</h3>
+                    <p>Adjust columns and gap to see how the grid adapts:</p>
+                    <div class="live-preview">
+                        <label>Columns: <span id="gridColValue">3</span></label>
+                        <input type="range" id="gridColSlider" class="css-slider" min="1" max="6" value="3">
+                        <label>Gap: <span id="gridGapValue">8</span>px</label>
+                        <input type="range" id="gridGapSlider" class="css-slider" min="0" max="30" value="8">
+                        <div id="gridDemo" class="grid-demo" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+                            <div>1</div><div>2</div><div>3</div>
+                            <div>4</div><div>5</div><div>6</div>
+                            <div>7</div><div>8</div><div>9</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 9. Responsive Design ===== -->
+        <section class="section" id="responsive">
+            <div class="container">
+                <h2 class="section-title">9. Responsive Design</h2>
+                <p class="section-desc">Responsive design makes your site look good on all screen sizes. Key tools: <strong>media queries</strong>, <strong>relative units</strong>, and <strong>flexible layouts</strong>.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Media Queries</div>
+                        <pre><code><span class="c">/* Mobile-first approach */</span>
+
+<span class="c">/* Base: mobile styles */</span>
+<span class="cp">.card</span> <span class="cp">{</span>
+    <span class="na">padding</span><span class="cp">:</span> <span class="s">1rem</span>;
+    <span class="na">font-size</span><span class="cp">:</span> <span class="s">0.9rem</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Tablet (768px+) */</span>
+<span class="cp">@media (min-width: 768px)</span> <span class="cp">{</span>
+    <span class="cp">.card</span> <span class="cp">{</span>
+        <span class="na">padding</span><span class="cp">:</span> <span class="s">2rem</span>;
+        <span class="na">font-size</span><span class="cp">:</span> <span class="s">1rem</span>;
+    <span class="cp">}</span>
+<span class="cp">}</span>
+
+<span class="c">/* Desktop (1024px+) */</span>
+<span class="cp">@media (min-width: 1024px)</span> <span class="cp">{</span>
+    <span class="cp">.card</span> <span class="cp">{</span>
+        <span class="na">padding</span><span class="cp">:</span> <span class="s">3rem</span>;
+    <span class="cp">}</span>
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Relative Units</div>
+                        <div style="padding:16px;background:#f0f4ff;border-radius:8px;">
+                            <p style="margin:0 0 8px;font-size:0.85rem;color:#888;">Resize your browser to see this section adapt</p>
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;">
+                                <div style="padding:1rem;background:#667eea;color:#fff;border-radius:6px;text-align:center;">1rem</div>
+                                <div style="padding:1rem;background:#764ba2;color:#fff;border-radius:6px;text-align:center;">1rem</div>
+                                <div style="padding:1rem;background:#667eea;color:#fff;border-radius:6px;text-align:center;">1rem</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Common Relative Units</h3>
+                <div class="demo-pair">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; Units</div>
+                        <pre><code><span class="na">width</span><span class="cp">:</span> <span class="s">50%</span>;         <span class="c">/* % of parent */</span>
+<span class="na">font-size</span><span class="cp">:</span> <span class="s">1.5rem</span>;    <span class="c">/* relative to root (16px default) */</span>
+<span class="na">padding</span><span class="cp">:</span> <span class="s">2em</span>;         <span class="c">/* relative to this element's font-size */</span>
+<span class="na">width</span><span class="cp">:</span> <span class="s">100vw</span>;        <span class="c">/* viewport width */</span>
+<span class="na">height</span><span class="cp">:</span> <span class="s">100vh</span>;       <span class="c">/* viewport height */</span>
+<span class="na">font-size</span><span class="cp">:</span> <span class="s">clamp(1rem, 2.5vw, 2rem)</span>; <span class="c">/* fluid */</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128200; Interactive: Viewport Units Demo</h3>
+                    <p>This box uses <code>clamp()</code> for fluid sizing:</p>
+                    <div id="clampDemo" style="padding:clamp(12px, 4vw, 40px);background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;color:#fff;text-align:center;font-size:clamp(0.9rem, 2vw, 1.5rem);">
+                        This text is fluid — it scales smoothly between 0.9rem and 1.5rem as the viewport changes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which CSS at-rule is used to apply styles based on viewport width?" data-options='["@viewport","@media","@responsive","@screen"]' data-answer="1" data-explain="@media with a max-width or min-width query lets you apply styles only when the viewport meets certain conditions, enabling responsive design.">
+            </div>
+        </section>
+
+        <!-- ===== 10. Transitions & Animations ===== -->
+        <section class="section section-alt" id="animations">
+            <div class="container">
+                <h2 class="section-title">10. Transitions &amp; Animations</h2>
+                <p class="section-desc">Transitions smoothly change property values over time. Animations use <code>@keyframes</code> for more complex, multi-step sequences.</p>
+
+                <h3 style="color:#333;">Transitions</h3>
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Transitions</div>
+                        <pre><code><span class="cp">.btn-hover</span> <span class="cp">{</span>
+    <span class="na">background</span><span class="cp">:</span> <span class="s">#667eea</span>;
+    <span class="na">color</span><span class="cp">:</span> <span class="s">#fff</span>;
+    <span class="na">padding</span><span class="cp">:</span> <span class="s">12px 24px</span>;
+    <span class="na">border-radius</span><span class="cp">:</span> <span class="s">8px</span>;
+    <span class="na">transform</span><span class="cp">:</span> <span class="s">scale(1)</span>;
+    <span class="na">transition</span><span class="cp">:</span>
+        <span class="s">all 0.3s ease</span>;
+<span class="cp">}</span>
+
+<span class="cp">.btn-hover:hover</span> <span class="cp">{</span>
+    <span class="na">background</span><span class="cp">:</span> <span class="s">#764ba2</span>;
+    <span class="na">transform</span><span class="cp">:</span> <span class="s">scale(1.05)</span>;
+    <span class="na">box-shadow</span><span class="cp">:</span>
+        <span class="s">0 8px 25px</span>
+        <span class="s">rgba(118,75,162,0.4)</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Hover Me</div>
+                        <div style="display:inline-block;background:#667eea;color:#fff;padding:12px 24px;border-radius:8px;transform:scale(1);transition:all 0.3s ease;cursor:pointer;font-weight:600;" onmouseover="this.style.background='#764ba2';this.style.transform='scale(1.05)';this.style.boxShadow='0 8px 25px rgba(118,75,162,0.4)';" onmouseout="this.style.background='#667eea';this.style.transform='scale(1)';this.style.boxShadow='none';">Hover Over Me</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Keyframe Animations</h3>
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; @keyframes</div>
+                        <pre><code><span class="cp">@keyframes bounce</span> <span class="cp">{</span>
+    <span class="s">0%</span>   <span class="cp">{</span>
+        <span class="na">transform</span><span class="cp">:</span> <span class="s">translateY(0)</span>;
+    <span class="cp">}</span>
+    <span class="s">50%</span>  <span class="cp">{</span>
+        <span class="na">transform</span><span class="cp">:</span>
+            <span class="s">translateY(-20px)</span>;
+    <span class="cp">}</span>
+    <span class="s">100%</span> <span class="cp">{</span>
+        <span class="na">transform</span><span class="cp">:</span> <span class="s">translateY(0)</span>;
+    <span class="cp">}</span>
+<span class="cp">}</span>
+
+<span class="cp">.bounce-box</span> <span class="cp">{</span>
+    <span class="na">animation</span><span class="cp">:</span>
+        <span class="s">bounce 1s infinite</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Animation</div>
+
+                        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                            <div style="width:50px;height:50px;background:#667eea;border-radius:8px;animation:bounce 1s infinite;"></div>
+                            <div style="width:50px;height:50px;background:#764ba2;border-radius:50%;animation:pulse 1.2s infinite;"></div>
+                            <div style="width:50px;height:50px;border:4px solid #ff6b6b;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;"></div>
+                            <div style="padding:12px 20px;background:#28a745;color:#fff;border-radius:8px;font-weight:600;animation:fadeSlide 0.6s;">Fade In</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#127922; Interactive: Animation Controls</h3>
+                    <div class="live-preview">
+                        <label>Animation:</label>
+                        <select id="animSelect">
+                            <option value="bounce">Bounce</option>
+                            <option value="pulse">Pulse</option>
+                            <option value="spin">Spin</option>
+                            <option value="fadeSlide">Fade Slide</option>
+                        </select>
+                        <label>Speed: <span id="animSpeedValue">1</span>s</label>
+                        <input type="range" id="animSpeedSlider" class="css-slider" min="0.3" max="3" step="0.1" value="1">
+                        <div id="animDemo" style="width:80px;height:80px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;margin:16px auto;animation:bounce 1s infinite;"></div>
+                        <button class="btn btn-small btn-outline" id="animToggleBtn">Pause</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 11. Pseudo-classes & Pseudo-elements ===== -->
+        <section class="section" id="pseudo">
+            <div class="container">
+                <h2 class="section-title">11. Pseudo-classes &amp; Pseudo-elements</h2>
+                <p class="section-desc">Pseudo-classes (one colon) target elements in a specific state. Pseudo-elements (two colons) target specific parts of an element.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Pseudo-classes</div>
+                        <pre><code><span class="c">/* State-based */</span>
+<span class="cp">a:hover</span> <span class="cp">{</span>
+    <span class="na">color</span><span class="cp">:</span> <span class="s">#764ba2</span>;
+<span class="cp">}</span>
+<span class="cp">input:focus</span> <span class="cp">{</span>
+    <span class="na">border-color</span><span class="cp">:</span> <span class="s">#667eea</span>;
+    <span class="na">outline</span><span class="cp">:</span> <span class="s">none</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Position-based */</span>
+<span class="cp">li:first-child</span> <span class="cp">{</span>
+    <span class="na">font-weight</span><span class="cp">:</span> <span class="s">700</span>;
+<span class="cp">}</span>
+<span class="cp">li:last-child</span> <span class="cp">{</span>
+    <span class="na">border</span><span class="cp">:</span> <span class="s">none</span>;
+<span class="cp">}</span>
+<span class="cp">li:nth-child(odd)</span> <span class="cp">{</span>
+    <span class="na">background</span><span class="cp">:</span> <span class="s">#f0f4ff</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Negation */</span>
+<span class="cp">p:not(.special)</span> <span class="cp">{</span>
+    <span class="na">color</span><span class="cp">:</span> <span class="s">#666</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Demo</div>
+                        <ul style="margin:0;padding:0;list-style:none;">
+                            <li style="font-weight:700;padding:6px 12px;margin:2px 0;">first-child (bold)</li>
+                            <li style="padding:6px 12px;margin:2px 0;background:#f0f4ff;">nth-child(odd) bg</li>
+                            <li style="padding:6px 12px;margin:2px 0;">normal</li>
+                            <li style="padding:6px 12px;margin:2px 0;background:#f0f4ff;">nth-child(odd) bg</li>
+                            <li style="padding:6px 12px;margin:2px 0;border:none;">last-child (no border)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Pseudo-elements</div>
+                        <pre><code><span class="c">/* Before / After */</span>
+<span class="cp">.quote::before</span> <span class="cp">{</span>
+    <span class="na">content</span><span class="cp">:</span> <span class="s">"\201C"</span>;  <span class="c">/* open quote */</span>
+    <span class="na">font-size</span><span class="cp">:</span> <span class="s">2rem</span>;
+    <span class="na">color</span><span class="cp">:</span> <span class="s">#667eea</span>;
+<span class="cp">}</span>
+
+<span class="cp">.quote::after</span> <span class="cp">{</span>
+    <span class="na">content</span><span class="cp">:</span> <span class="s">"\201D"</span>;  <span class="c">/* close quote */</span>
+<span class="cp">}</span>
+
+<span class="c">/* First letter / line */</span>
+<span class="cp">p::first-letter</span> <span class="cp">{</span>
+    <span class="na">font-size</span><span class="cp">:</span> <span class="s">2em</span>;
+    <span class="na">font-weight</span><span class="cp">:</span> <span class="s">700</span>;
+    <span class="na">color</span><span class="cp">:</span> <span class="s">#667eea</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Selection highlight */</span>
+<span class="cp">::selection</span> <span class="cp">{</span>
+    <span class="na">background</span><span class="cp">:</span> <span class="s">#667eea</span>;
+    <span class="na">color</span><span class="cp">:</span> <span class="s">#fff</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Demo</div>
+                        <p style="margin:0 0 8px;"><span style="font-size:2rem;font-weight:700;color:#667eea;float:left;line-height:1;margin-right:4px;">T</span>his paragraph has a drop cap (first-letter style).</p>
+                        <p style="margin:8px 0;padding:12px;background:#f8f9ff;border-radius:8px;font-style:italic;">&ldquo;CSS pseudo-elements let you style parts of elements without extra HTML.&rdquo;</p>
+                        <p style="margin:8px 0 0;font-size:0.8rem;color:#888;">Try selecting text on this page &mdash; the <code>::selection</code> color changes.</p>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#127912; Interactive: Hover Effect Builder</h3>
+                    <p>Customize the hover effect:</p>
+                    <div class="live-preview">
+                        <label>Background Color:</label>
+                        <input type="color" id="hoverBgColor" value="#667eea">
+                        <label>Border Radius: <span id="hoverRadiusValue">8</span>px</label>
+                        <input type="range" id="hoverRadiusSlider" class="css-slider" min="0" max="30" value="8">
+                        <label>Scale: <span id="hoverScaleValue">1.05</span></label>
+                        <input type="range" id="hoverScaleSlider" class="css-slider" min="1" max="1.3" step="0.01" value="1.05">
+                        <div id="hoverDemo" style="margin-top:12px;padding:20px 40px;background:#667eea;color:#fff;border-radius:8px;text-align:center;font-weight:600;transition:all 0.3s;cursor:pointer;">Hover over me</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 12. Advanced Topics ===== -->
+        <section class="section section-alt" id="advanced">
+            <div class="container">
+                <h2 class="section-title">12. Advanced CSS</h2>
+                <p class="section-desc">Modern CSS includes powerful features like custom properties (variables), <code>calc()</code>, <code>clamp()</code>, filters, transforms, and layered shadows.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Custom Properties</div>
+                        <pre><code><span class="cp">:root</span> <span class="cp">{</span>
+    <span class="cp">--primary</span><span class="cp">:</span> <span class="s">#667eea</span>;
+    <span class="cp">--secondary</span><span class="cp">:</span> <span class="s">#764ba2</span>;
+    <span class="cp">--radius</span><span class="cp">:</span> <span class="s">12px</span>;
+    <span class="cp">--shadow</span><span class="cp">:</span>
+        <span class="s">0 4px 20px</span>
+        <span class="s">rgba(102,126,234,0.3)</span>;
+<span class="cp">}</span>
+
+<span class="cp">.card</span> <span class="cp">{</span>
+    <span class="na">background</span><span class="cp">:</span>
+        <span class="s">var(--primary)</span>;
+    <span class="na">border-radius</span><span class="cp">:</span>
+        <span class="s">var(--radius)</span>;
+    <span class="na">box-shadow</span><span class="cp">:</span>
+        <span class="s">var(--shadow)</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Variables in Action</div>
+                        <div style="--primary:#667eea;--radius:12px;--shadow:0 4px 20px rgba(102,126,234,0.3);background:#667eea;border-radius:12px;box-shadow:0 4px 20px rgba(102,126,234,0.3);padding:20px;color:#fff;text-align:center;">Styled with CSS Variables</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Filters &amp; Transforms</h3>
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Filters &amp; Transforms</div>
+                        <pre><code><span class="c">/* Filters */</span>
+<span class="cp">.blur</span> <span class="cp">{</span>
+    <span class="na">filter</span><span class="cp">:</span> <span class="s">blur(2px)</span>;
+<span class="cp">}</span>
+<span class="cp">.grayscale</span> <span class="cp">{</span>
+    <span class="na">filter</span><span class="cp">:</span>
+        <span class="s">grayscale(100%)</span>;
+<span class="cp">}</span>
+
+<span class="c">/* Transforms */</span>
+<span class="cp">.rotated</span> <span class="cp">{</span>
+    <span class="na">transform</span><span class="cp">:</span>
+        <span class="s">rotate(15deg)</span>
+        <span class="s">scale(1.1)</span>;
+<span class="cp">}</span>
+
+<span class="c">/* calc() */</span>
+<span class="cp">.fluid</span> <span class="cp">{</span>
+    <span class="na">width</span><span class="cp">:</span>
+        <span class="s">calc(100% - 40px)</span>;
+<span class="cp">}</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Visual Effects</div>
+                        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                            <img src="https://placehold.co/100x80/667eea/fff?text=img" alt="placeholder" style="filter:blur(2px);border-radius:6px;">
+                            <img src="https://placehold.co/100x80/764ba2/fff?text=img" alt="placeholder" style="filter:grayscale(100%);border-radius:6px;">
+                            <div style="width:80px;height:80px;background:#ff6b6b;border-radius:6px;transform:rotate(15deg) scale(1.1);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#127912; Interactive: Filter Playground</h3>
+                    <div class="live-preview">
+                        <label>Blur: <span id="blurValue">0</span>px</label>
+                        <input type="range" id="blurSlider" class="css-slider" min="0" max="10" value="0">
+                        <label>Grayscale: <span id="grayValue">0</span>%</label>
+                        <input type="range" id="graySlider" class="css-slider" min="0" max="100" value="0">
+                        <label>Brightness: <span id="brightValue">100</span>%</label>
+                        <input type="range" id="brightSlider" class="css-slider" min="0" max="200" value="100">
+                        <div id="filterDemo" style="margin-top:12px;padding:30px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;color:#fff;text-align:center;font-weight:600;filter:blur(0px) grayscale(0%) brightness(100%);">Filtered Element</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Pro tip:</strong> CSS custom properties (<code>--var-name</code>) can be changed with JavaScript via <code>element.style.setProperty('--name', value)</code>. This makes them incredibly powerful for theming and dynamic styles.
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 13. CSS Playground ===== -->
+        <section class="section" id="quiz">
+            <div class="container">
+                <div class="quiz" data-page="css"></div>
+            </div>
+        </section>
+
+        <section class="section" id="playground">
+            <div class="container">
+                <h2 class="section-title">13. Try It Yourself &#x1F3AD;</h2>
+                <p class="section-desc">Write HTML and CSS below and see the result instantly. Experiment with everything you've learned!</p>
+
+                <div class="playground-container">
+                    <div class="playground-editor">
+                        <div class="playground-header">
+                            <span class="playground-label">&#9001; HTML Editor</span>
+                            <div class="playground-actions">
+                                <button class="btn btn-small btn-outline" id="cssRunBtn">&#9654; Render</button>
+                                <button class="btn btn-small btn-outline" id="cssClearBtn">&#128465; Clear</button>
+                                <button class="btn btn-small btn-outline" id="cssResetBtn">&#8634; Reset</button>
+                            </div>
+                        </div>
+                        <textarea id="htmlEditor" class="playground-textarea" spellcheck="false" style="height:180px;"><div class="my-card">
+  <h2>Hello CSS!</h2>
+  <p>This is styled with CSS.</p>
+</div></textarea>
+                        <div class="playground-header" style="border-top:1px solid #e8e8e8;">
+                            <span class="playground-label">&#9001; CSS Editor</span>
+                        </div>
+                        <textarea id="cssEditor" class="playground-textarea" spellcheck="false" style="height:180px;border-radius:0 0 12px 12px;">.my-card {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+  font-family: 'Poppins', sans-serif;
+}
+.my-card h2 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+.my-card p { margin: 0; opacity: 0.9; }</textarea>
+                        <div class="playground-editor-info">
+                            <span id="cssLineCount">HTML: 4 lines | CSS: 14 lines</span>
+                            <span>Press Ctrl+Enter to render</span>
+                        </div>
+                    </div>
+                    <div class="playground-output">
+                        <div class="playground-header">
+                            <span class="playground-label">&#9654; Preview</span>
+                            <button class="btn btn-small btn-outline" id="cssPreviewClear">&#128465; Clear</button>
+                        </div>
+                        <div class="playground-preview" id="cssPreview">
+                            <div class="my-card" style="background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:2rem;border-radius:16px;text-align:center;box-shadow:0 10px 30px rgba(102,126,234,0.4);font-family:'Poppins',sans-serif;">
+                                <h2 style="margin:0 0 0.5rem;font-size:1.5rem;">Hello CSS!</h2>
+                                <p style="margin:0;opacity:0.9;">This is styled with CSS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="starter-templates" style="margin-top:30px;">
+                    <h3>&#128218; Starter Templates</h3>
+                    <div class="template-grid">
+                        <button class="template-btn" data-csstemplate="card">
+                            <span class="template-icon">&#127912;</span>
+                            <span>Card</span>
+                        </button>
+                        <button class="template-btn" data-csstemplate="flex">
+                            <span class="template-icon">&#128258;</span>
+                            <span>Flex Layout</span>
+                        </button>
+                        <button class="template-btn" data-csstemplate="grid">
+                            <span class="template-icon">&#128452;</span>
+                            <span>Grid</span>
+                        </button>
+                        <button class="template-btn" data-csstemplate="button">
+                            <span class="template-icon">&#128640;</span>
+                            <span>Button</span>
+                        </button>
+                        <button class="template-btn" data-csstemplate="navbar">
+                            <span class="template-icon">&#128214;</span>
+                            <span>Navbar</span>
+                        </button>
+                        <button class="template-btn" data-csstemplate="anim">
+                            <span class="template-icon">&#127922;</span>
+                            <span>Animation</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>CSS Playground</h3>
+                    <p>Learn CSS with interactive demos.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Topics</h3>
+                    <ul>
+                        <li><a href="#basics">Basics</a></li>
+                        <li><a href="#selectors">Selectors</a></li>
+                        <li><a href="#colors">Colors</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#box-model">Box Model</a></li>
+                        <li><a href="#display">Display</a></li>
+                        <li><a href="#flexbox">Flexbox</a></li>
+                        <li><a href="#grid">Grid</a></li>
+                        <li><a href="#responsive">Responsive</a></li>
+                        <li><a href="#animations">Animations</a></li>
+                        <li><a href="#pseudo">Pseudo</a></li>
+                        <li><a href="#advanced">Advanced</a></li>
+                        <li><a href="#quiz">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">MDN CSS Docs</a></li>
+                        <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer">CSS-Tricks</a></li>
+                        <li><a href="index.html">HTML Tutorial</a></li>
+                        <li><a href="javascript.html">JS Tutorial</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="timmy.html">About Project</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="tools.html">CSS Tools</a></li>
+                        <li><a href="accessibility.html">A11y Tutorial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CSS Playground. Learn CSS by doing.</p>
+                <p style="margin-top:8px;font-size:0.8rem;opacity:0.5;"><a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a> &middot; <a href="privacy.html#opt-out" style="color:inherit;text-decoration:underline;">Do Not Sell My Info</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // ===== Selector Demo =====
+        var selEls = document.querySelectorAll('#selector-demo .sel-p');
+        var selResetBtn = document.getElementById('selReset');
+        function resetSelectorDemo() {
+            selEls.forEach(function (el) {
+                el.style.background = 'transparent';
+                el.style.outline = 'none';
+                el.style.fontWeight = '400';
+            });
+        }
+        if (document.getElementById('selAllP')) {
+            document.getElementById('selAllP').addEventListener('click', function () {
+                resetSelectorDemo();
+                selEls.forEach(function (el) { el.style.background = '#fff3cd'; });
+            });
+            document.getElementById('selHighlight').addEventListener('click', function () {
+                resetSelectorDemo();
+                document.querySelectorAll('.highlight-me').forEach(function (el) { el.style.background = '#cce5ff'; });
+            });
+            document.getElementById('selUnique').addEventListener('click', function () {
+                resetSelectorDemo();
+                var el = document.getElementById('sel-unique');
+                if (el) { el.style.background = '#d4edda'; el.style.outline = '2px solid #28a745'; }
+            });
+            if (selResetBtn) selResetBtn.addEventListener('click', resetSelectorDemo);
+        }
+
+        // ===== Color Picker =====
+        var colorPicker = document.getElementById('colorPicker');
+        var colorHex = document.getElementById('colorHex');
+        var colorPreview = document.getElementById('colorPreview');
+        if (colorPicker && colorHex && colorPreview) {
+            colorPicker.addEventListener('input', function () {
+                colorHex.textContent = this.value;
+                colorPreview.style.background = this.value;
+            });
+        }
+
+        // ===== Typography Styler =====
+        var fontSizeSlider = document.getElementById('fontSizeSlider');
+        var fontWeightSelect = document.getElementById('fontWeightSelect');
+        var textAlignSelect = document.getElementById('textAlignSelect');
+        var letterSpacingSlider = document.getElementById('letterSpacingSlider');
+        var typoDemo = document.getElementById('typoDemo');
+        var fsValue = document.getElementById('fsValue');
+        var lsValue = document.getElementById('lsValue');
+        function updateTypo() {
+            if (!typoDemo) return;
+            if (fontSizeSlider) { typoDemo.style.fontSize = fontSizeSlider.value + 'px'; if (fsValue) fsValue.textContent = fontSizeSlider.value; }
+            if (fontWeightSelect) typoDemo.style.fontWeight = fontWeightSelect.value;
+            if (textAlignSelect) typoDemo.style.textAlign = textAlignSelect.value;
+            if (letterSpacingSlider) { typoDemo.style.letterSpacing = letterSpacingSlider.value + 'px'; if (lsValue) lsValue.textContent = letterSpacingSlider.value; }
+        }
+        if (fontSizeSlider) fontSizeSlider.addEventListener('input', updateTypo);
+        if (fontWeightSelect) fontWeightSelect.addEventListener('change', updateTypo);
+        if (textAlignSelect) textAlignSelect.addEventListener('change', updateTypo);
+        if (letterSpacingSlider) letterSpacingSlider.addEventListener('input', updateTypo);
+
+        // ===== Box Model Builder =====
+        var padSlider = document.getElementById('padSlider');
+        var bdrSlider = document.getElementById('bdrSlider');
+        var marSlider = document.getElementById('marSlider');
+        var boxSizingSelect = document.getElementById('boxSizingSelect');
+        var boxModelDemo = document.getElementById('boxModelDemo');
+        var padValue = document.getElementById('padValue');
+        var bdrValue = document.getElementById('bdrValue');
+        var marValue = document.getElementById('marValue');
+        var totalWidth = document.getElementById('totalWidth');
+        function updateBoxModel() {
+            if (!boxModelDemo) return;
+            var p = parseInt(padSlider ? padSlider.value : 20);
+            var b = parseInt(bdrSlider ? bdrSlider.value : 4);
+            var m = parseInt(marSlider ? marSlider.value : 20);
+            var sizing = boxSizingSelect ? boxSizingSelect.value : 'border-box';
+            boxModelDemo.style.padding = p + 'px';
+            boxModelDemo.style.borderWidth = b + 'px';
+            boxModelDemo.style.margin = m + 'px';
+            boxModelDemo.style.boxSizing = sizing;
+            if (padValue) padValue.textContent = p;
+            if (bdrValue) bdrValue.textContent = b;
+            if (marValue) marValue.textContent = m;
+            if (totalWidth) {
+                var tw = sizing === 'border-box' ? 200 : (200 + p * 2 + b * 2);
+                totalWidth.textContent = tw;
+            }
+        }
+        if (padSlider) padSlider.addEventListener('input', updateBoxModel);
+        if (bdrSlider) bdrSlider.addEventListener('input', updateBoxModel);
+        if (marSlider) marSlider.addEventListener('input', updateBoxModel);
+        if (boxSizingSelect) boxSizingSelect.addEventListener('change', updateBoxModel);
+
+        // ===== Toggle Display =====
+        var toggleDisplayBtn = document.getElementById('toggleDisplayBtn');
+        var toggleBox = document.getElementById('toggleBox');
+        if (toggleDisplayBtn && toggleBox) {
+            toggleDisplayBtn.addEventListener('click', function () {
+                var hidden = toggleBox.style.display === 'none';
+                toggleBox.style.display = hidden ? 'block' : 'none';
+                toggleDisplayBtn.textContent = hidden ? 'Hide Box' : 'Show Box';
+            });
+        }
+
+        // ===== Flexbox Playground =====
+        var flexDir = document.getElementById('flexDir');
+        var flexJustify = document.getElementById('flexJustify');
+        var flexAlign = document.getElementById('flexAlign');
+        var gapSlider = document.getElementById('gapSlider');
+        var flexDemo = document.getElementById('flexDemo');
+        var gapValue = document.getElementById('gapValue');
+        function updateFlex() {
+            if (!flexDemo) return;
+            if (flexDir) flexDemo.style.flexDirection = flexDir.value;
+            if (flexJustify) flexDemo.style.justifyContent = flexJustify.value;
+            if (flexAlign) flexDemo.style.alignItems = flexAlign.value;
+            if (gapSlider) { flexDemo.style.gap = gapSlider.value + 'px'; if (gapValue) gapValue.textContent = gapSlider.value; }
+        }
+        if (flexDir) flexDir.addEventListener('change', updateFlex);
+        if (flexJustify) flexJustify.addEventListener('change', updateFlex);
+        if (flexAlign) flexAlign.addEventListener('change', updateFlex);
+        if (gapSlider) gapSlider.addEventListener('input', updateFlex);
+
+        // ===== Grid Playground =====
+        var gridColSlider = document.getElementById('gridColSlider');
+        var gridGapSlider = document.getElementById('gridGapSlider');
+        var gridDemo = document.getElementById('gridDemo');
+        var gridColValue = document.getElementById('gridColValue');
+        var gridGapValue = document.getElementById('gridGapValue');
+        function updateGrid() {
+            if (!gridDemo) return;
+            var cols = gridColSlider ? parseInt(gridColSlider.value) : 3;
+            var gap = gridGapSlider ? parseInt(gridGapSlider.value) : 8;
+            gridDemo.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+            gridDemo.style.gap = gap + 'px';
+            if (gridColValue) gridColValue.textContent = cols;
+            if (gridGapValue) gridGapValue.textContent = gap;
+        }
+        if (gridColSlider) gridColSlider.addEventListener('input', updateGrid);
+        if (gridGapSlider) gridGapSlider.addEventListener('input', updateGrid);
+
+        // ===== Animation Controls =====
+        var animSelect = document.getElementById('animSelect');
+        var animSpeedSlider = document.getElementById('animSpeedSlider');
+        var animDemo = document.getElementById('animDemo');
+        var animSpeedValue = document.getElementById('animSpeedValue');
+        var animToggleBtn = document.getElementById('animToggleBtn');
+        var animPaused = false;
+        function updateAnim() {
+            if (!animDemo) return;
+            var name = animSelect ? animSelect.value : 'bounce';
+            var speed = animSpeedSlider ? parseFloat(animSpeedSlider.value) : 1;
+            animDemo.style.animation = name + ' ' + speed + 's infinite';
+            if (animSpeedValue) animSpeedValue.textContent = speed;
+            if (animPaused) animDemo.style.animationPlayState = 'paused';
+        }
+        if (animSelect) animSelect.addEventListener('change', updateAnim);
+        if (animSpeedSlider) animSpeedSlider.addEventListener('input', updateAnim);
+        if (animToggleBtn && animDemo) {
+            animToggleBtn.addEventListener('click', function () {
+                animPaused = !animPaused;
+                animDemo.style.animationPlayState = animPaused ? 'paused' : 'running';
+                animToggleBtn.textContent = animPaused ? 'Play' : 'Pause';
+            });
+        }
+
+        // ===== Hover Effect Builder =====
+        var hoverBgColor = document.getElementById('hoverBgColor');
+        var hoverRadiusSlider = document.getElementById('hoverRadiusSlider');
+        var hoverScaleSlider = document.getElementById('hoverScaleSlider');
+        var hoverDemo = document.getElementById('hoverDemo');
+        var hoverRadiusValue = document.getElementById('hoverRadiusValue');
+        var hoverScaleValue = document.getElementById('hoverScaleValue');
+        if (hoverDemo) {
+            var origBg = '#667eea';
+            function updateHoverDemo() {
+                var bg = hoverBgColor ? hoverBgColor.value : '#667eea';
+                var radius = hoverRadiusSlider ? parseInt(hoverRadiusSlider.value) : 8;
+                var scale = hoverScaleSlider ? parseFloat(hoverScaleSlider.value) : 1.05;
+                hoverDemo.style.background = bg;
+                hoverDemo.style.borderRadius = radius + 'px';
+                if (hoverRadiusValue) hoverRadiusValue.textContent = radius;
+                if (hoverScaleValue) hoverScaleValue.textContent = scale;
+                hoverDemo.onmouseover = function () { this.style.transform = 'scale(' + scale + ')'; };
+                hoverDemo.onmouseout = function () { this.style.transform = 'scale(1)'; };
+            }
+            if (hoverBgColor) hoverBgColor.addEventListener('input', updateHoverDemo);
+            if (hoverRadiusSlider) hoverRadiusSlider.addEventListener('input', updateHoverDemo);
+            if (hoverScaleSlider) hoverScaleSlider.addEventListener('input', updateHoverDemo);
+            updateHoverDemo();
+        }
+
+        // ===== Filter Playground =====
+        var blurSlider = document.getElementById('blurSlider');
+        var graySlider = document.getElementById('graySlider');
+        var brightSlider = document.getElementById('brightSlider');
+        var filterDemo = document.getElementById('filterDemo');
+        var blurValue = document.getElementById('blurValue');
+        var grayValue = document.getElementById('grayValue');
+        var brightValue = document.getElementById('brightValue');
+        function updateFilter() {
+            if (!filterDemo) return;
+            var b = blurSlider ? parseInt(blurSlider.value) : 0;
+            var g = graySlider ? parseInt(graySlider.value) : 0;
+            var br = brightSlider ? parseInt(brightSlider.value) : 100;
+            filterDemo.style.filter = 'blur(' + b + 'px) grayscale(' + g + '%) brightness(' + br + '%)';
+            if (blurValue) blurValue.textContent = b;
+            if (grayValue) grayValue.textContent = g;
+            if (brightValue) brightValue.textContent = br;
+        }
+        if (blurSlider) blurSlider.addEventListener('input', updateFilter);
+        if (graySlider) graySlider.addEventListener('input', updateFilter);
+        if (brightSlider) brightSlider.addEventListener('input', updateFilter);
+
+        // ===== CSS Playground =====
+        var htmlEditor = document.getElementById('htmlEditor');
+        var cssEditor = document.getElementById('cssEditor');
+        var cssPreview = document.getElementById('cssPreview');
+        var cssRunBtn = document.getElementById('cssRunBtn');
+        var cssClearBtn = document.getElementById('cssClearBtn');
+        var cssResetBtn = document.getElementById('cssResetBtn');
+        var cssPreviewClear = document.getElementById('cssPreviewClear');
+        var cssLineCount = document.getElementById('cssLineCount');
+
+        var defaultHtml = '<div class="my-card">\n  <h2>Hello CSS!</h2>\n  <p>This is styled with CSS.</p>\n</div>';
+        var defaultCss = '.my-card {\n  background: linear-gradient(135deg, #667eea, #764ba2);\n  color: #fff;\n  padding: 2rem;\n  border-radius: 16px;\n  text-align: center;\n  box-shadow: 0 10px 30px rgba(102,126,234,0.4);\n  font-family: \'Poppins\', sans-serif;\n}\n.my-card h2 { margin: 0 0 0.5rem; font-size: 1.5rem; }\n.my-card p { margin: 0; opacity: 0.9; }';
+
+        function renderCSS() {
+            if (!htmlEditor || !cssEditor || !cssPreview) return;
+            var html = htmlEditor.value;
+            var css = cssEditor.value;
+            cssPreview.innerHTML = html;
+            var styleEl = cssPreview.querySelector('style') || document.createElement('style');
+            styleEl.textContent = css;
+            if (!styleEl.parentNode) cssPreview.appendChild(styleEl);
+            updateCSSLineCount();
+        }
+
+        function updateCSSLineCount() {
+            if (!htmlEditor || !cssEditor || !cssLineCount) return;
+            var hl = htmlEditor.value.split('\n').length;
+            var cl = cssEditor.value.split('\n').length;
+            cssLineCount.textContent = 'HTML: ' + hl + ' lines | CSS: ' + cl + ' lines';
+        }
+
+        if (htmlEditor && cssEditor && cssRunBtn && cssPreview) {
+            cssRunBtn.addEventListener('click', renderCSS);
+            htmlEditor.addEventListener('keydown', function (e) {
+                if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); renderCSS(); }
+                if (e.key === 'Tab') { e.preventDefault(); var s = this.selectionStart, en = this.selectionEnd; this.value = this.value.substring(0, s) + '    ' + this.value.substring(en); this.selectionStart = this.selectionEnd = s + 4; }
+            });
+            cssEditor.addEventListener('keydown', function (e) {
+                if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); renderCSS(); }
+                if (e.key === 'Tab') { e.preventDefault(); var s = this.selectionStart, en = this.selectionEnd; this.value = this.value.substring(0, s) + '    ' + this.value.substring(en); this.selectionStart = this.selectionEnd = s + 4; }
+            });
+            htmlEditor.addEventListener('input', updateCSSLineCount);
+            cssEditor.addEventListener('input', updateCSSLineCount);
+        }
+
+        if (cssClearBtn && htmlEditor && cssEditor && cssPreview) {
+            cssClearBtn.addEventListener('click', function () { htmlEditor.value = ''; cssEditor.value = ''; cssPreview.innerHTML = '<span style="color:#888;">// Preview cleared</span>'; updateCSSLineCount(); });
+        }
+
+        if (cssResetBtn && htmlEditor && cssEditor && cssPreview) {
+            cssResetBtn.addEventListener('click', function () { htmlEditor.value = defaultHtml; cssEditor.value = defaultCss; renderCSS(); });
+        }
+
+        if (cssPreviewClear && cssPreview) {
+            cssPreviewClear.addEventListener('click', function () { cssPreview.innerHTML = '<span style="color:#888;">// Preview cleared</span>'; });
+        }
+
+        // ===== CSS Starter Templates =====
+        var cssTemplates = {
+            'card': { html: '<div class="profile-card">\n  <img src="https://placehold.co/80x80/667eea/fff?text=U" alt="Avatar" style="border-radius:50%;width:80px;height:80px;">\n  <h2>Jane Doe</h2>\n  <p class="title">Web Developer</p>\n  <p>Passionate about building beautiful, responsive websites.</p>\n  <button>Follow</button>\n</div>', css: '.profile-card {\n  max-width: 320px;\n  margin: 0 auto;\n  padding: 2rem;\n  background: #fff;\n  border-radius: 20px;\n  box-shadow: 0 10px 40px rgba(0,0,0,0.1);\n  text-align: center;\n  font-family: \'Poppins\', sans-serif;\n}\n.profile-card h2 {\n  margin: 1rem 0 0.25rem;\n  color: #333;\n}\n.profile-card .title {\n  color: #888;\n  font-size: 0.9rem;\n  margin: 0 0 1rem;\n}\n.profile-card p {\n  color: #555;\n  font-size: 0.9rem;\n  line-height: 1.5;\n}\n.profile-card button {\n  background: #667eea;\n  color: #fff;\n  border: none;\n  padding: 10px 30px;\n  border-radius: 30px;\n  font-size: 1rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n.profile-card button:hover {\n  background: #764ba2;\n}' },
+            'flex': { html: '<header class="flex-header">\n  <div class="logo">MySite</div>\n  <nav>\n    <a href="#">Home</a>\n    <a href="#">About</a>\n    <a href="#">Services</a>\n    <a href="#">Contact</a>\n  </nav>\n</header>\n<main class="flex-main">\n  <section class="content">\n    <h1>Welcome</h1>\n    <p>This layout uses Flexbox for the header and main content area.</p>\n  </section>\n  <aside class="sidebar">\n    <h3>Sidebar</h3>\n    <p>Links, ads, or extra info go here.</p>\n  </aside>\n</main>', css: '* { margin: 0; padding: 0; box-sizing: border-box; }\nbody { font-family: \'Poppins\', sans-serif; color: #333; }\n.flex-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2rem;\n  background: #667eea;\n  color: #fff;\n}\n.flex-header .logo { font-size: 1.5rem; font-weight: 700; }\n.flex-header nav { display: flex; gap: 1.5rem; }\n.flex-header nav a { color: #fff; text-decoration: none; }\n.flex-main {\n  display: flex;\n  gap: 2rem;\n  padding: 2rem;\n  min-height: 60vh;\n}\n.content { flex: 2; }\n.sidebar { flex: 1; background: #f0f4ff; padding: 1.5rem; border-radius: 12px; }' },
+            'grid': { html: '<div class="grid-page">\n  <header class="gp-header">Header</header>\n  <nav class="gp-nav">Nav</nav>\n  <main class="gp-main">\n    <h2>Main Content</h2>\n    <p>Grid is great for page layouts. This uses grid-template-areas.</p>\n  </main>\n  <aside class="gp-side">Sidebar</aside>\n  <footer class="gp-footer">Footer</footer>\n</div>', css: '.grid-page {\n  display: grid;\n  grid-template-areas:\n    "header header"\n    "nav    main"\n    "nav    side"\n    "footer footer";\n  grid-template-columns: 200px 1fr;\n  gap: 1rem;\n  font-family: \'Poppins\', sans-serif;\n  color: #fff;\n  text-align: center;\n}\n.gp-header {\n  grid-area: header;\n  background: #667eea;\n  padding: 1.5rem;\n  border-radius: 8px;\n  font-weight: 700;\n}\n.gp-nav {\n  grid-area: nav;\n  background: #764ba2;\n  padding: 1.5rem;\n  border-radius: 8px;\n}\n.gp-main {\n  grid-area: main;\n  background: #f0f4ff;\n  color: #333;\n  padding: 1.5rem;\n  border-radius: 8px;\n  text-align: left;\n}\n.gp-side {\n  grid-area: side;\n  background: #ffc107;\n  color: #333;\n  padding: 1.5rem;\n  border-radius: 8px;\n}\n.gp-footer {\n  grid-area: footer;\n  background: #333;\n  padding: 1rem;\n  border-radius: 8px;\n}' },
+            'button': { html: '<div class="btn-demo">\n  <button class="btn-custom">Primary Action</button>\n  <button class="btn-custom btn-outline">Secondary</button>\n  <button class="btn-custom btn-ghost">Ghost</button>\n</div>', css: '.btn-demo {\n  display: flex;\n  gap: 1rem;\n  flex-wrap: wrap;\n  padding: 2rem;\n  background: #f0f4ff;\n  border-radius: 12px;\n  font-family: \'Poppins\', sans-serif;\n}\n.btn-custom {\n  padding: 12px 28px;\n  border: 2px solid #667eea;\n  border-radius: 8px;\n  font-size: 1rem;\n  font-weight: 600;\n  cursor: pointer;\n  transition: all 0.3s;\n  background: #667eea;\n  color: #fff;\n}\n.btn-custom:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 6px 20px rgba(102,126,234,0.4);\n}\n.btn-outline {\n  background: transparent;\n  color: #667eea;\n}\n.btn-outline:hover {\n  background: #667eea;\n  color: #fff;\n}\n.btn-ghost {\n  background: transparent;\n  border-color: transparent;\n  color: #667eea;\n}\n.btn-ghost:hover {\n  background: rgba(102,126,234,0.1);\n}' },
+            'navbar': { html: '<nav class="navbar-demo">\n  <div class="brand">Brand</div>\n  <ul class="nav-links">\n    <li><a href="#">Home</a></li>\n    <li><a href="#">Features</a></li>\n    <li><a href="#">Pricing</a></li>\n    <li><a href="#">About</a></li>\n  </ul>\n  <button class="nav-cta">Get Started</button>\n</nav>\n<div class="nav-hero">\n  <h1>Responsive Navbar</h1>\n  <p>Resize the preview to see it adapt.</p>\n</div>', css: '* { margin: 0; padding: 0; box-sizing: border-box; }\nbody { font-family: \'Poppins\', sans-serif; }\n.navbar-demo {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2rem;\n  background: #fff;\n  box-shadow: 0 2px 10px rgba(0,0,0,0.1);\n}\n.brand { font-size: 1.5rem; font-weight: 700; color: #667eea; }\n.nav-links {\n  display: flex;\n  list-style: none;\n  gap: 2rem;\n}\n.nav-links a {\n  text-decoration: none;\n  color: #555;\n  font-weight: 500;\n  transition: color 0.3s;\n}\n.nav-links a:hover { color: #667eea; }\n.nav-cta {\n  padding: 8px 20px;\n  background: #667eea;\n  color: #fff;\n  border: none;\n  border-radius: 6px;\n  font-weight: 600;\n  cursor: pointer;\n}\n.nav-hero {\n  padding: 3rem 2rem;\n  text-align: center;\n  background: #f0f4ff;\n}\n@media (max-width: 600px) {\n  .nav-links { display: none; }\n}' },
+            'anim': { html: '<div class="anim-demo">\n  <div class="loader"></div>\n  <h2>Loading...</h2>\n  <div class="progress-bar">\n    <div class="progress-fill"></div>\n  </div>\n</div>', css: '@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}\n@keyframes fill {\n  0% { width: 0%; }\n  100% { width: 100%; }\n}\n.anim-demo {\n  padding: 2rem;\n  text-align: center;\n  font-family: \'Poppins\', sans-serif;\n}\n.loader {\n  width: 50px;\n  height: 50px;\n  border: 5px solid #e0e5ff;\n  border-top-color: #667eea;\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n  margin: 0 auto 1rem;\n}\n.progress-bar {\n  width: 100%;\n  height: 12px;\n  background: #e0e5ff;\n  border-radius: 6px;\n  overflow: hidden;\n  margin-top: 1rem;\n}\n.progress-fill {\n  height: 100%;\n  background: linear-gradient(90deg, #667eea, #764ba2);\n  border-radius: 6px;\n  animation: fill 2s ease-in-out infinite;\n}' }
+        };
+
+        document.querySelectorAll('[data-csstemplate]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var key = this.getAttribute('data-csstemplate');
+                var tmpl = cssTemplates[key];
+                if (tmpl && htmlEditor && cssEditor && cssPreview) {
+                    htmlEditor.value = tmpl.html;
+                    cssEditor.value = tmpl.css;
+                    renderCSS();
+                    htmlEditor.focus();
+                    document.querySelectorAll('[data-csstemplate]').forEach(function (b) {
+                        b.style.borderColor = '#e8e8e8'; b.style.color = '#555';
+                    });
+                    this.style.borderColor = '#667eea'; this.style.color = '#667eea';
+                }
+            });
+        });
+
+        // ===== Smooth scroll =====
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                var h = this.getAttribute('href');
+                if (h === '#') return;
+                var t = document.querySelector(h);
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+        // ===== Run default preview =====
+        if (htmlEditor && cssEditor && cssPreview && cssRunBtn) {
+            setTimeout(renderCSS, 100);
+        }
+    });
+    </script>
+</body>
+</html>

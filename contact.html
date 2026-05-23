@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact us - Send feedback about the HTML, CSS, and JS tutorial playgrounds">
+    <meta property="og:title" content="Contact - Web Dev Playground">
+    <meta property="og:description" content="Contact us - Send feedback about the HTML, CSS, and JS tutorial playgrounds">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/contact.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact - Web Dev Playground">
+    <meta name="twitter:description" content="Contact us - Send feedback about the HTML, CSS, and JS tutorial playgrounds">
+    <meta name="google-adsense-account" content="ca-pub-5862355594319303">
+    <title>Contact - Web Dev Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Contact</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#form">Send Feedback</a></li>
+                <li><a href="#info">Info</a></li>
+                <li><a href="index.html">&#8592; Home</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="accessibility.html">A11y</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero" style="min-height:40vh;">
+            <div class="hero-content">
+                <h1>Get in <span class="highlight">Touch</span></h1>
+                <p>Have feedback, a bug report, or a suggestion? I'd love to hear from you.</p>
+                <p class="hero-sub">Your input helps make these tutorials better for everyone.</p>
+            </div>
+            <div class="hero-visual">
+                <pre class="hero-code"><span class="nt">&lt;form</span> <span class="na">action</span><span class="nt">=</span><span class="s">"mailto:..."</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type</span><span class="nt">=</span><span class="s">"text"</span> <span class="na">name</span><span class="nt">=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type</span><span class="nt">=</span><span class="s">"email"</span> <span class="na">name</span><span class="nt">=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">name</span><span class="nt">=</span><span class="s">"message"</span><span class="nt">&gt;</span>
+        Your feedback...
+    <span class="nt">&lt;/textarea&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type</span><span class="nt">=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Send<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span></pre>
+            </div>
+        </section>
+
+        <section class="section" id="form">
+            <div class="container" style="max-width:700px;">
+                <h2 class="section-title">Send Feedback</h2>
+                <p class="section-desc">Fill out the form below and I'll get back to you as soon as possible.</p>
+
+                <form class="demo-form" id="contactForm" action="https://formspree.io/f/mkoebvky" method="post">
+                    <div class="form-row">
+                        <div>
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="contactEmail">Your Email</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="contactSubject">Subject</label>
+                        <select id="contactSubject" name="subject">
+                            <option value="feedback">Feedback</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="question">Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" rows="6" placeholder="Tell me what's on your mind..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="contactSubmitBtn">Send Message</button>
+                    <div class="form-feedback" id="contactFeedback"></div>
+                </form>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="info">
+            <div class="container" style="max-width:700px;">
+                <h2 class="section-title">Other Ways to Reach Me</h2>
+                <div style="display:grid;gap:20px;margin-top:30px;">
+                    <div style="padding:24px;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);display:flex;align-items:center;gap:16px;">
+                        <div style="width:48px;height:48px;background:#667eea20;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;">&#9993;</div>
+                        <div>
+                            <h3 style="margin:0 0 4px;font-size:1rem;">Email</h3>
+                            <p style="margin:0;color:#888;">timcw@example.com</p>
+                        </div>
+                    </div>
+                    <div style="padding:24px;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);display:flex;align-items:center;gap:16px;">
+                        <div style="width:48px;height:48px;background:#764ba220;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;">&#128421;</div>
+                        <div>
+                            <h3 style="margin:0 0 4px;font-size:1rem;">GitHub</h3>
+                            <p style="margin:0;color:#888;">github.com/timcw</p>
+                        </div>
+                    </div>
+                    <div style="padding:24px;background:#fff;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);display:flex;align-items:center;gap:16px;">
+                        <div style="width:48px;height:48px;background:#28a74520;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;">&#128279;</div>
+                        <div>
+                            <h3 style="margin:0 0 4px;font-size:1rem;">Tutorials</h3>
+                            <p style="margin:0;color:#888;">
+                                <a href="index.html" style="color:#667eea;">HTML</a> &middot;
+                                <a href="css.html" style="color:#667eea;">CSS</a> &middot;
+                                <a href="javascript.html" style="color:#667eea;">JS</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>Send feedback or suggestions.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Tutorials</h3>
+                    <ul>
+                        <li><a href="index.html">HTML Tutorial</a></li>
+                        <li><a href="css.html">CSS Tutorial</a></li>
+                        <li><a href="javascript.html">JS Tutorial</a></li>
+                        <li><a href="accessibility.html">A11y Tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="timmy.html">About Project</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="tools.html">CSS Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Web Dev Playground. Learn by doing.</p>
+                <p style="margin-top:8px;font-size:0.8rem;opacity:0.5;"><a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a> &middot; <a href="privacy.html#opt-out" style="color:inherit;text-decoration:underline;">Do Not Sell My Info</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('contactForm');
+        var feedback = document.getElementById('contactFeedback');
+        var submitBtn = document.getElementById('contactSubmitBtn');
+        if (form && feedback) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var name = document.getElementById('contactName').value.trim();
+                var email = document.getElementById('contactEmail').value.trim();
+                var message = document.getElementById('contactMessage').value.trim();
+                if (!name || !email || !message) {
+                    feedback.textContent = 'Please fill in all required fields.';
+                    feedback.className = 'form-feedback show error';
+                    return;
+                }
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+                var data = new FormData(form);
+                fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+                    .then(function (res) {
+                        if (res.ok) {
+                            feedback.textContent = 'Thanks, ' + name + '! Your message has been sent. I\'ll get back to you soon.';
+                            feedback.className = 'form-feedback show success';
+                            form.reset();
+                        } else {
+                            feedback.textContent = 'Something went wrong. Please try again later.';
+                            feedback.className = 'form-feedback show error';
+                        }
+                    })
+                    .catch(function () {
+                        feedback.textContent = 'Something went wrong. Please check your connection.';
+                        feedback.className = 'form-feedback show error';
+                    })
+                    .finally(function () {
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+                        setTimeout(function () { feedback.className = 'form-feedback'; }, 5000);
+                    });
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                var h = this.getAttribute('href');
+                if (h === '#') return;
+                var t = document.querySelector(h);
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+
+    });
+    </script>
+</body>
+</html>

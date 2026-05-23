@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive HTML Tutorial - Learn HTML with live code examples and interactive demos">
+    <meta property="og:title" content="HTML Playground - Learn by Doing">
+    <meta property="og:description" content="Interactive HTML Tutorial - Learn HTML with live code examples and interactive demos">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/index.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HTML Playground - Learn by Doing">
+    <meta name="twitter:description" content="Interactive HTML Tutorial - Learn HTML with live code examples and interactive demos">
+    <meta name="google-adsense-account" content="ca-pub-5862355594319303">
+    <title>HTML Playground - Learn by Doing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo">HTML Playground</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#basics">Basics</a></li>
+                <li><a href="#text">Text</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#semantic">Semantic</a></li>
+                <li><a href="#interactive">Interactive</a></li>
+                <li><a href="#attributes">Attributes</a></li>
+                <li><a href="#entities">Entities</a></li>
+                <li><a href="#flow">Flow</a></li>
+                <li><a href="#iframes">Iframes</a></li>
+                <li><a href="#meta">Meta</a></li>
+                <li><a href="#html5">HTML5</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#playground">Playground</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Learn HTML <span class="highlight">by Doing</span></h1>
+                <p>Every concept comes with live code examples. See the code, see the output, understand how it works.</p>
+                <p class="hero-sub">No setup needed. Just read, look at the examples, and experiment in the playground.</p>
+                <a href="#basics" class="btn btn-primary">Start Learning</a>
+            </div>
+            <div class="hero-visual">
+                <pre class="hero-code"><span class="nt">&lt;h1&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>This is <span class="nt">&lt;strong&gt;</span>HTML<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span></pre>
+            </div>
+        </section>
+
+        <section class="section" id="basics">
+            <div class="container">
+                <h2 class="section-title">1. What is HTML?</h2>
+                <p class="section-desc">HTML (HyperText Markup Language) is the standard language for creating web pages. It uses <strong>tags</strong> to structure content.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Code</div>
+                        <pre><code><span class="nt">&lt;h1&gt;</span>Hello, World!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>This is my first paragraph.<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <h1>Hello, World!</h1>
+                        <p>This is my first paragraph.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Every HTML Document Has the Same Basic Structure</h3>
+                <p style="margin-bottom:20px;color:#666;">This is called the <strong>HTML boilerplate</strong>. Every web page starts with this skeleton:</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; HTML Boilerplate</div>
+                        <pre><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My Page<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Welcome<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Content goes here.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre>
+                        <button class="copy-btn" data-code="boilerplate-code">Copy</button>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Tip:</strong> Every HTML tag comes in pairs: <code>&lt;tagname&gt;</code> opens and <code>&lt;/tagname&gt;</code> closes. A few tags like <code>&lt;br&gt;</code> and <code>&lt;img&gt;</code> are self-closing.
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">HTML Tags Are Like Building Blocks</h3>
+                <p style="color:#666;">Think of HTML tags as containers that tell the browser what kind of content is inside. The browser then displays it accordingly.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Tags Demo</div>
+                        <pre><code><span class="nt">&lt;strong&gt;</span>Bold text<span class="nt">&lt;/strong&gt;</span>
+<span class="nt">&lt;em&gt;</span>Italic text<span class="nt">&lt;/em&gt;</span>
+<span class="nt">&lt;u&gt;</span>Underlined text<span class="nt">&lt;/u&gt;</span>
+<span class="nt">&lt;mark&gt;</span>Highlighted<span class="nt">&lt;/mark&gt;</span>
+<span class="nt">&lt;small&gt;</span>Smaller text<span class="nt">&lt;/small&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p><strong>Bold text</strong></p>
+                        <p><em>Italic text</em></p>
+                        <p><u>Underlined text</u></p>
+                        <p><mark>Highlighted</mark></p>
+                        <p><small>Smaller text</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which tag is used to create the largest heading in HTML?" data-options='["&lt;heading&gt;","&lt;h1&gt;","&lt;head&gt;","&lt;h6&gt;"]' data-answer="1" data-explain="&lt;h1&gt; is the largest heading tag. HTML has six heading levels from &lt;h1&gt; (most important) to &lt;h6&gt; (least important).">
+            </div>
+        </section>
+
+        <section class="section" id="text">
+            <div class="container">
+                <h2 class="section-title">2. Headings &amp; Paragraphs</h2>
+                <p class="section-desc">Headings create hierarchy. Paragraphs hold blocks of text. Together they form the backbone of your content.</p>
+
+                <h3 style="color:#333;">Headings h1 to h6</h3>
+                <p style="color:#666;margin-bottom:20px;">HTML has six levels of headings. <code>&lt;h1&gt;</code> is the most important, <code>&lt;h6&gt;</code> the least. Use them to create a clear document outline.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Headings</div>
+                        <pre><code><span class="nt">&lt;h1&gt;</span>Heading 1<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>Heading 2<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>Heading 3<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;</span>Heading 4<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;</span>Heading 5<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;</span>Heading 6<span class="nt">&lt;/h6&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <h1 style="font-size:28px;margin:5px 0;">Heading 1</h1>
+                        <h2 style="font-size:24px;margin:5px 0;">Heading 2</h2>
+                        <h3 style="font-size:20px;margin:5px 0;">Heading 3</h3>
+                        <h4 style="font-size:18px;margin:5px 0;">Heading 4</h4>
+                        <h5 style="font-size:16px;margin:5px 0;">Heading 5</h5>
+                        <h6 style="font-size:14px;margin:5px 0;">Heading 6</h6>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#9888;&#65039; Important:</strong> Only use <strong>one</strong> <code>&lt;h1&gt;</code> per page (for the main title). Use <code>&lt;h2&gt;</code> through <code>&lt;h6&gt;</code> in order — don't skip levels. This helps screen readers and SEO.
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Paragraphs &amp; Text Formatting</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Paragraphs</div>
+                        <pre><code><span class="nt">&lt;p&gt;</span>This is a paragraph. It wraps text in a block that starts on a new line with some space above and below.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>This is another paragraph. Browsers automatically add margins between paragraphs.<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p style="margin:5px 0;">This is a paragraph. It wraps text in a block that starts on a new line with some space above and below.</p>
+                        <p style="margin:5px 0;">This is another paragraph. Browsers automatically add margins between paragraphs.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Line Breaks &amp; Horizontal Rules</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; br &amp; hr</div>
+                        <pre><code><span class="nt">&lt;p&gt;</span>Line one<span class="nt">&lt;br&gt;</span>Line two<span class="nt">&lt;br&gt;</span>Line three<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;hr&gt;</span>
+<span class="nt">&lt;p&gt;</span>Content after the horizontal rule.<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p style="margin:5px 0;">Line one<br>Line two<br>Line three</p>
+                        <hr style="margin:10px 0;">
+                        <p style="margin:5px 0;">Content after the horizontal rule.</p>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#9997; Try It: Change the heading below</h3>
+                    <p>Click on the text below and type to edit it directly (uses <code>contenteditable</code>):</p>
+                    <div class="editable-box" contenteditable="true" spellcheck="false">
+                        <h2 contenteditable="true">You can edit this heading!</h2>
+                        <p contenteditable="true">And this paragraph too. Try changing the text to see how it works. HTML is just text with tags.</p>
+                    </div>
+                    <p class="hint">&#128161; The <code>contenteditable</code> attribute makes any element editable in the browser.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="links">
+            <div class="container">
+                <h2 class="section-title">3. Links &amp; Navigation</h2>
+                <p class="section-desc">The <code>&lt;a&gt;</code> (anchor) tag creates hyperlinks to other pages, sections, or resources.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Basic Link</div>
+                        <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://example.com"</span><span class="nt">&gt;</span>Visit Example<span class="nt">&lt;/a&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p><a href="https://example.com" target="_blank" rel="noopener noreferrer">Visit Example</a></p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Link Attributes</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Link Variants</div>
+                        <pre><code><span class="c">&lt;!-- Open in new tab --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://example.com"</span>
+   <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>New Tab<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Link to email --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mailto:hello@example.com"</span><span class="nt">&gt;</span>Email Me<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Link to phone --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"tel:+1234567890"</span><span class="nt">&gt;</span>Call Us<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Link to a section on the page --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#forms"</span><span class="nt">&gt;</span>Go to Forms<span class="nt">&lt;/a&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p><a href="https://example.com" target="_blank" rel="noopener noreferrer">New Tab</a></p>
+                        <p><a href="mailto:hello@example.com">Email Me</a></p>
+                        <p><a href="tel:+1234567890">Call Us</a></p>
+                        <p><a href="#forms">Go to Forms</a></p>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128279; Interactive: Button Links</h3>
+                    <p>Links don't have to be blue text. You can style any element as a link:</p>
+                    <div class="btn-group">
+                        <a href="#home" class="btn btn-primary">Button Link 1</a>
+                        <a href="#home" class="btn btn-secondary">Button Link 2</a>
+                        <a href="#home" class="btn btn-outline">Button Link 3</a>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Tip:</strong> Use <code>target="_blank"</code> to open links in a new tab. Always add <code>rel="noopener"</code> for security when using <code>target="_blank"</code>.
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which attribute specifies the URL a link goes to?" data-options='["src","href","link","url"]' data-answer="1" data-explain="The href attribute (hypertext reference) specifies the destination URL of a link. Use it with the &lt;a&gt; tag.">
+            </div>
+        </section>
+
+        <section class="section section-alt" id="media">
+            <div class="container">
+                <h2 class="section-title">4. Images &amp; Media</h2>
+                <p class="section-desc">Images make your page visual. The <code>&lt;img&gt;</code> tag is self-closing and requires at least the <code>src</code> and <code>alt</code> attributes.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Image</div>
+                        <pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://picsum.photos/300/200"</span>
+     <span class="na">alt=</span><span class="s">"A random placeholder image"</span>
+     <span class="na">width=</span><span class="s">"300"</span>
+     <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <img src="https://picsum.photos/300/200" alt="A random placeholder image" width="300" height="200" style="max-width:100%;height:auto;border-radius:8px;">
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Image with Caption</h3>
+                <p style="color:#666;margin-bottom:20px;">Use the <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> tags to group an image with its caption.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Figure</div>
+                        <pre><code><span class="nt">&lt;figure&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://picsum.photos/300/200?random=1"</span>
+         <span class="na">alt=</span><span class="s">"Sunset view"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;figcaption&gt;</span>
+        A beautiful sunset captured during golden hour.
+    <span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <figure style="margin:0;">
+                            <img src="https://picsum.photos/300/200?random=1" alt="Sunset view" style="max-width:100%;height:auto;border-radius:8px;">
+                            <figcaption style="margin-top:5px;font-size:14px;color:#666;">A beautiful sunset captured during golden hour.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Tip:</strong> Always include the <code>alt</code> attribute. It's used by screen readers for accessibility and shows when the image fails to load. Good alt text describes the image content.
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Video</h3>
+                <p style="color:#666;margin-bottom:20px;">The <code>&lt;video&gt;</code> element embeds video files with controls for the user.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Video</div>
+                        <pre><code><span class="nt">&lt;video</span> <span class="na">controls</span>
+       <span class="na">width=</span><span class="s">"320"</span>
+       <span class="na">poster=</span><span class="s">"https://picsum.photos/320/180"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"movie.mp4"</span>
+            <span class="na">type=</span><span class="s">"video/mp4"</span><span class="nt">&gt;</span>
+    Your browser does not support video.
+<span class="nt">&lt;/video&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <video controls width="320" poster="https://picsum.photos/320/180" style="max-width:100%;border-radius:8px;">
+                            <source src="movie.mp4" type="video/mp4">
+                            Your browser does not support video.
+                        </video>
+                        <p style="font-size:13px;color:#999;margin-top:5px;">No video source loaded (demonstration only).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="lists">
+            <div class="container">
+                <h2 class="section-title">5. Lists</h2>
+                <p class="section-desc">HTML provides three types of lists: unordered (bullets), ordered (numbers), and description lists.</p>
+
+                <h3 style="color:#333;">Unordered List</h3>
+                <p style="color:#666;margin-bottom:20px;">Use <code>&lt;ul&gt;</code> for items where order doesn't matter. Each item is wrapped in <code>&lt;li&gt;</code>.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Unordered List</div>
+                        <pre><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Apples<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Bananas<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Cherries<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Dates<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <ul style="margin:0 0 0 20px;">
+                            <li>Apples</li>
+                            <li>Bananas</li>
+                            <li>Cherries</li>
+                            <li>Dates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Ordered List</h3>
+                <p style="color:#666;margin-bottom:20px;">Use <code>&lt;ol&gt;</code> when the sequence matters. Numbers are added automatically.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Ordered List</div>
+                        <pre><code><span class="nt">&lt;ol&gt;</span>
+    <span class="nt">&lt;li&gt;</span>First, preheat the oven<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Mix the ingredients<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Bake for 30 minutes<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Let it cool before serving<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <ol style="margin:0 0 0 20px;">
+                            <li>First, preheat the oven</li>
+                            <li>Mix the ingredients</li>
+                            <li>Bake for 30 minutes</li>
+                            <li>Let it cool before serving</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Nested Lists</h3>
+                <p style="color:#666;margin-bottom:20px;">Lists can be placed inside other list items to create sub-lists.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Nested List</div>
+                        <pre><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Fruits
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Apple<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Banana<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Vegetables
+        <span class="nt">&lt;ol&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Carrot<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Broccoli<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <ul style="margin:0 0 0 20px;">
+                            <li>Fruits
+                                <ul style="margin:0 0 0 20px;">
+                                    <li>Apple</li>
+                                    <li>Banana</li>
+                                </ul>
+                            </li>
+                            <li>Vegetables
+                                <ol style="margin:0 0 0 20px;">
+                                    <li>Carrot</li>
+                                    <li>Broccoli</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Description List</h3>
+                <p style="color:#666;margin-bottom:20px;">Use <code>&lt;dl&gt;</code> for term-description pairs like glossaries or metadata.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Description List</div>
+                        <pre><code><span class="nt">&lt;dl&gt;</span>
+    <span class="nt">&lt;dt&gt;</span>HTML<span class="nt">&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>HyperText Markup Language<span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;dt&gt;</span>CSS<span class="nt">&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>Cascading Style Sheets<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <dl style="margin:0;">
+                            <dt style="font-weight:600;">HTML</dt>
+                            <dd style="margin:0 0 10px 20px;">HyperText Markup Language</dd>
+                            <dt style="font-weight:600;">CSS</dt>
+                            <dd style="margin:0 0 0 20px;">Cascading Style Sheets</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128221; Interactive: Checklist</h3>
+                    <p>Click any item to toggle it (pure HTML <code>&lt;details&gt;</code> interaction):</p>
+                    <ul class="checklist">
+                        <li><label><input type="checkbox"> Learn HTML tags</label></li>
+                        <li><label><input type="checkbox"> Practice with lists</label></li>
+                        <li><label><input type="checkbox"> Build a small page</label></li>
+                        <li><label><input type="checkbox"> Add CSS styling</label></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="tables">
+            <div class="container">
+                <h2 class="section-title">6. Tables</h2>
+                <p class="section-desc">Tables organize data into rows and columns. Use <code>&lt;table&gt;</code> with <code>&lt;tr&gt;</code> (rows), <code>&lt;th&gt;</code> (headers), and <code>&lt;td&gt;</code> (data cells).</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Simple Table</div>
+                        <pre><code><span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Age<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Country<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Alice<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>USA<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Bob<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>30<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>UK<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <table style="width:100%;border-collapse:collapse;">
+                            <tr>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;background:#f0f4ff;">Name</th>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;background:#f0f4ff;">Age</th>
+                                <th style="border:1px solid #ddd;padding:8px;text-align:left;background:#f0f4ff;">Country</th>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;padding:8px;">Alice</td>
+                                <td style="border:1px solid #ddd;padding:8px;">25</td>
+                                <td style="border:1px solid #ddd;padding:8px;">USA</td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;padding:8px;">Bob</td>
+                                <td style="border:1px solid #ddd;padding:8px;">30</td>
+                                <td style="border:1px solid #ddd;padding:8px;">UK</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Table with Colspan &amp; Rowspan</h3>
+                <p style="color:#666;margin-bottom:20px;">Cells can span multiple columns or rows using <code>colspan</code> and <code>rowspan</code> attributes.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Colspan &amp; Rowspan</div>
+                        <pre><code><span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">"2"</span><span class="nt">&gt;</span>Full Width Header<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">rowspan=</span><span class="s">"2"</span><span class="nt">&gt;</span>Spans 2 rows<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Row 1, Col 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Row 2, Col 2<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <table style="width:100%;border-collapse:collapse;">
+                            <tr>
+                                <th colspan="2" style="border:1px solid #ddd;padding:8px;background:#f0f4ff;">Full Width Header</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="border:1px solid #ddd;padding:8px;">Spans 2 rows</td>
+                                <td style="border:1px solid #ddd;padding:8px;">Row 1, Col 2</td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid #ddd;padding:8px;">Row 2, Col 2</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128202; Interactive: Sortable Table Concept</h3>
+                    <p>Click the header to toggle sort direction (structure ready for JS):</p>
+                    <table class="sortable-table" style="width:100%;border-collapse:collapse;">
+                        <thead>
+                            <tr>
+                                <th class="sort-header" data-sort="name" style="border:1px solid #ddd;padding:10px;background:#f0f4ff;cursor:pointer;">Name <span class="sort-indicator">&#8595;</span></th>
+                                <th class="sort-header" data-sort="score" style="border:1px solid #ddd;padding:10px;background:#f0f4ff;cursor:pointer;">Score <span class="sort-indicator">&#8597;</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Alice</td><td style="border:1px solid #ddd;padding:8px;">92</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Bob</td><td style="border:1px solid #ddd;padding:8px;">78</td></tr>
+                            <tr><td style="border:1px solid #ddd;padding:8px;">Charlie</td><td style="border:1px solid #ddd;padding:8px;">85</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="hint">&#128161; The sort feature will work when JavaScript is added.</p>
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which tag is used to create a table row?" data-options='["&lt;td&gt;","&lt;th&gt;","&lt;tr&gt;","&lt;table&gt;"]' data-answer="2" data-explain="&lt;tr&gt; defines a table row. Inside it, &lt;td&gt; creates data cells and &lt;th&gt; creates header cells.">
+            </div>
+        </section>
+
+        <section class="section" id="forms">
+            <div class="container">
+                <h2 class="section-title">7. Forms &amp; Inputs</h2>
+                <p class="section-desc">Forms collect user input. They're made of <code>&lt;form&gt;</code> containing various <code>&lt;input&gt;</code> elements and a submit button.</p>
+
+                <h3 style="color:#333;">Text Inputs</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Basic Inputs</div>
+                        <pre><code><span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;label&gt;</span>Name:<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span>
+           <span class="na">placeholder=</span><span class="s">"Enter your name"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;label&gt;</span>Email:<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span>
+           <span class="na">placeholder=</span><span class="s">"you@example.com"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;label&gt;</span>Password:<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span>
+           <span class="na">placeholder=</span><span class="s">"Min 8 characters"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <form onsubmit="return false" style="display:flex;flex-direction:column;gap:12px;">
+                            <div>
+                                <label style="display:block;margin-bottom:4px;font-weight:500;">Name:</label>
+                                <input type="text" placeholder="Enter your name" style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-size:14px;">
+                            </div>
+                            <div>
+                                <label style="display:block;margin-bottom:4px;font-weight:500;">Email:</label>
+                                <input type="email" placeholder="you@example.com" style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-size:14px;">
+                            </div>
+                            <div>
+                                <label style="display:block;margin-bottom:4px;font-weight:500;">Password:</label>
+                                <input type="password" placeholder="Min 8 characters" style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-size:14px;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Select, Textarea &amp; Range</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; More Input Types</div>
+                        <pre><code><span class="nt">&lt;label&gt;</span>Country:<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;select&gt;</span>
+    <span class="nt">&lt;option&gt;</span>Nigeria<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>USA<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option&gt;</span>UK<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+
+<span class="nt">&lt;label&gt;</span>Message:<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;textarea</span> <span class="na">rows=</span><span class="s">"3"</span>
+    <span class="na">placeholder=</span><span class="s">"Write your message..."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/textarea&gt;</span>
+
+<span class="nt">&lt;label&gt;</span>Volume: <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"range"</span>
+       <span class="na">min=</span><span class="s">"0"</span> <span class="na">max=</span><span class="s">"100"</span><span class="nt">&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <div style="display:flex;flex-direction:column;gap:12px;">
+                            <div>
+                                <label style="display:block;margin-bottom:4px;font-weight:500;">Country:</label>
+                                <select style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-size:14px;">
+                                    <option>Nigeria</option>
+                                    <option>USA</option>
+                                    <option>UK</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display:block;margin-bottom:4px;font-weight:500;">Message:</label>
+                                <textarea rows="3" placeholder="Write your message..." style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-size:14px;resize:vertical;"></textarea>
+                            </div>
+                            <div>
+                                <label style="display:block;margin-bottom:4px;font-weight:500;">Volume:</label>
+                                <input type="range" min="0" max="100" style="width:100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Checkboxes &amp; Radio Buttons</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Choices</div>
+                        <pre><code><span class="c">&lt;!-- Checkbox (multiple choices) --&gt;</span>
+<span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+    Subscribe to newsletter
+<span class="nt">&lt;/label&gt;</span>
+
+<span class="c">&lt;!-- Radio (single choice) --&gt;</span>
+<span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span>
+           <span class="na">name=</span><span class="s">"gender"</span><span class="nt">&gt;</span> Male
+<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span>
+           <span class="na">name=</span><span class="s">"gender"</span><span class="nt">&gt;</span> Female
+<span class="nt">&lt;/label&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <div style="display:flex;flex-direction:column;gap:8px;">
+                            <label><input type="checkbox"> Subscribe to newsletter</label>
+                            <label><input type="radio" name="demo-gender"> Male</label>
+                            <label><input type="radio" name="demo-gender"> Female</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128221; Interactive: Working Form</h3>
+                    <p>Type something and submit (the form currently shows JavaScript is needed):</p>
+                    <form class="demo-form" id="demoForm" onsubmit="return false">
+                        <div class="form-row">
+                            <input type="text" id="demoName" placeholder="Your name" required>
+                            <input type="email" id="demoEmail" placeholder="Your email" required>
+                        </div>
+                        <textarea id="demoMessage" rows="3" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn-primary demo-submit">Send Message</button>
+                        <div id="formFeedback" class="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which input type creates a password field where characters are hidden?" data-options='["&lt;input type=&quot;hidden&quot;&gt;","&lt;input type=&quot;password&quot;&gt;","&lt;input type=&quot;text&quot;&gt;","&lt;input type=&quot;secret&quot;&gt;"]' data-answer="1" data-explain='&lt;input type="password"&gt; hides the characters as the user types, making it suitable for password fields.'>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="semantic">
+            <div class="container">
+                <h2 class="section-title">8. Semantic HTML</h2>
+                <p class="section-desc">Semantic tags give meaning to your content. They tell browsers and developers what each part of the page represents.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; Semantic Structure</div>
+                        <pre><code><span class="nt">&lt;header&gt;</span>     <span class="c">&lt;!-- Top of the page: logo, nav --&gt;</span>
+<span class="nt">&lt;nav&gt;</span>         <span class="c">&lt;!-- Navigation links --&gt;</span>
+<span class="nt">&lt;main&gt;</span>        <span class="c">&lt;!-- Primary content --&gt;</span>
+    <span class="nt">&lt;section&gt;</span>   <span class="c">&lt;!-- Themed content group --&gt;</span>
+    <span class="nt">&lt;article&gt;</span>   <span class="c">&lt;!-- Self-contained content --&gt;</span>
+    <span class="nt">&lt;aside&gt;</span>     <span class="c">&lt;!-- Sidebar / related content --&gt;</span>
+<span class="nt">&lt;footer&gt;</span>      <span class="c">&lt;!-- Bottom: copyright, links --&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="semantic-diagram">
+                    <div class="semantic-box box-header">header</div>
+                    <div class="semantic-box box-nav">nav</div>
+                    <div class="semantic-row">
+                        <div class="semantic-box box-main">main
+                            <div class="semantic-box box-section">section</div>
+                            <div class="semantic-box box-article">article</div>
+                        </div>
+                        <div class="semantic-box box-aside">aside</div>
+                    </div>
+                    <div class="semantic-box box-footer">footer</div>
+                </div>
+
+                <div class="demo-pair" style="margin-top:30px;">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; Semantic vs Non-Semantic</div>
+                        <pre><code><span class="c">&lt;!-- Non-semantic (div soup) --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"nav"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Semantic (meaningful) --&gt;</span>
+<span class="nt">&lt;header&gt;</span>...<span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;nav&gt;</span>...<span class="nt">&lt;/nav&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Why semantic HTML matters:</strong> It improves accessibility (screen readers use it), SEO (search engines understand your content), and maintainability (developers can read your code). Use <code>&lt;div&gt;</code> only when no semantic tag fits.
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which semantic element represents the main navigation links?" data-options='["&lt;header&gt;","&lt;nav&gt;","&lt;main&gt;","&lt;aside&gt;"]' data-answer="1" data-explain="The &lt;nav&gt; element defines a set of navigation links. It helps screen readers skip to the navigation section.">
+            </div>
+        </section>
+
+        <section class="section" id="interactive">
+            <div class="container">
+                <h2 class="section-title">9. Interactive HTML Elements</h2>
+                <p class="section-desc">HTML has built-in interactive elements that work without JavaScript.</p>
+
+                <h3 style="color:#333;">Details &amp; Summary (Accordion)</h3>
+                <p style="color:#666;margin-bottom:20px;">Click to expand/collapse content. No JavaScript needed.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Details/Summary</div>
+                        <pre><code><span class="nt">&lt;details&gt;</span>
+    <span class="nt">&lt;summary&gt;</span>Click to expand<span class="nt">&lt;/summary&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hidden content
+        revealed here!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/details&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <details>
+                            <summary style="cursor:pointer;font-weight:600;padding:8px;background:#f0f4ff;border-radius:4px;">Click to expand</summary>
+                            <p style="padding:10px;margin:0;">Hidden content revealed here!</p>
+                        </details>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">The Dialog Element</h3>
+                <p style="color:#666;margin-bottom:20px;">A native modal dialog. Use the <code>open</code> attribute to show it.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Dialog</div>
+                        <pre><code><span class="nt">&lt;dialog</span> <span class="na">open</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is a dialog box!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;button&gt;</span>Close<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/dialog&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <dialog id="demoDialog" style="padding:20px;border-radius:8px;border:1px solid #ddd;">
+                            <p style="margin:0 0 10px 0;">This is a native HTML dialog!</p>
+                            <button id="dialogCloseBtn" style="padding:8px 16px;border:none;border-radius:4px;background:#667eea;color:#fff;cursor:pointer;">Close</button>
+                        </dialog>
+                        <button id="dialogOpenBtn" style="padding:8px 16px;border:none;border-radius:4px;background:#667eea;color:#fff;cursor:pointer;">Open Dialog</button>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Progress &amp; Meter</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Progress &amp; Meter</div>
+                        <pre><code><span class="c">&lt;!-- Progress bar --&gt;</span>
+<span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"70"</span>
+          <span class="na">max=</span><span class="s">"100"</span><span class="nt">&gt;</span>70%<span class="nt">&lt;/progress&gt;</span>
+
+<span class="c">&lt;!-- Meter gauge --&gt;</span>
+<span class="nt">&lt;meter</span> <span class="na">value=</span><span class="s">"0.8"</span><span class="nt">&gt;</span>80%<span class="nt">&lt;/meter&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p>Progress: <progress value="70" max="100" style="width:200px;height:20px;"></progress></p>
+                        <p>Meter: <meter value="0.8" style="width:200px;height:20px;"></meter></p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">ContentEditable</h3>
+                <p style="color:#666;margin-bottom:20px;">Any element can be made editable with the <code>contenteditable</code> attribute.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; contenteditable</div>
+                        <pre><code><span class="nt">&lt;div</span> <span class="na">contenteditable=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    You can edit this text!
+<span class="nt">&lt;/div&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <div contenteditable="true" style="padding:12px;border:2px dashed #667eea;border-radius:6px;min-height:40px;" id="editableDemo">You can edit this text! Click and type to change it.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="attributes">
+            <div class="container">
+                <h2 class="section-title">10. HTML Attributes</h2>
+                <p class="section-desc">Attributes provide additional information about HTML elements. They go inside the opening tag and come in name-value pairs.</p>
+
+                <h3 style="color:#333;">The id Attribute</h3>
+                <p style="color:#666;margin-bottom:20px;">The <code>id</code> attribute gives a unique identifier to an element. No two elements on a page should share the same <code>id</code>.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; id Attribute</div>
+                        <pre><code><span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"page-title"</span><span class="nt">&gt;</span>Welcome<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"intro"</span><span class="nt">&gt;</span>This paragraph has a unique ID.<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <h1 id="page-title" style="font-size:1.3rem;margin:0 0 8px 0;">Welcome</h1>
+                        <p id="intro" style="margin:0;">This paragraph has a unique ID.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">The class Attribute</h3>
+                <p style="color:#666;margin-bottom:20px;">The <code>class</code> attribute assigns one or more class names to an element. Multiple elements can share the same class. Classes are primarily used for CSS styling and JavaScript selection.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; class Attribute</div>
+                        <pre><code><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"highlight important"</span><span class="nt">&gt;</span>
+    This paragraph has two classes.
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;</span>
+    This paragraph shares the highlight class.
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"important"</span><span class="nt">&gt;</span>
+    This paragraph shares the important class.
+<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p style="background:#fff3cd;padding:8px 12px;border-radius:4px;font-weight:600;margin:0 0 8px 0;">This paragraph has two classes.</p>
+                        <p style="background:#fff3cd;padding:8px 12px;border-radius:4px;margin:0 0 8px 0;">This paragraph shares the highlight class.</p>
+                        <p style="font-weight:600;padding:8px 12px;margin:0;">This paragraph shares the important class.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">The title Attribute</h3>
+                <p style="color:#666;margin-bottom:20px;">The <code>title</code> attribute provides extra information, usually shown as a tooltip on hover.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; title Attribute</div>
+                        <pre><code><span class="nt">&lt;p</span> <span class="na">title=</span><span class="s">"This is a tooltip!"</span><span class="nt">&gt;</span>
+    Hover your mouse over this text.
+<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output (hover the text)</div>
+                        <p title="This is a tooltip!" style="margin:0;cursor:help;">Hover your mouse over this text.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">The data-* Attributes</h3>
+                <p style="color:#666;margin-bottom:20px;">Custom <code>data-*</code> attributes store extra information that JavaScript can access. They are invisible to users but very powerful for dynamic functionality.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; data-* Attributes</div>
+                        <pre><code><span class="nt">&lt;button</span> <span class="na">data-user-id=</span><span class="s">"42"</span>
+        <span class="na">data-role=</span><span class="s">"admin"</span><span class="nt">&gt;</span>
+    User Profile
+<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">data-product=</span><span class="s">"laptop"</span>
+     <span class="na">data-price=</span><span class="s">"999"</span><span class="nt">&gt;</span>
+    Laptop - $999
+<span class="nt">&lt;/div&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <button style="padding:10px 20px;background:#667eea;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-bottom:10px;display:block;">User Profile</button>
+                        <div style="padding:12px;border:1px solid #ddd;border-radius:6px;background:#f9f9f9;">Laptop - $999</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Common global attributes:</strong> <code>id</code>, <code>class</code>, <code>title</code>, <code>lang</code>, <code>dir</code> (text direction), <code>hidden</code> (hides element), <code>tabindex</code> (keyboard order), <code>spellcheck</code>, <code>style</code>, <code>data-*</code>. Attributes always go in the opening tag.
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128295; Interactive: Explore Hidden Attribute</h3>
+                    <p>The <code>hidden</code> attribute hides elements from view. Click the button to toggle it:</p>
+                    <button class="btn btn-primary" id="toggleHidden" style="margin-bottom:12px;">Toggle Hidden Text</button>
+                    <p id="hiddenDemo">This text can be hidden using the <code>hidden</code> attribute!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="entities">
+            <div class="container">
+                <h2 class="section-title">11. HTML Entities &amp; Special Characters</h2>
+                <p class="section-desc">HTML entities let you display reserved characters (like <code>&lt;</code> and <code>&gt;</code>) that would otherwise be interpreted as HTML code. They always start with <code>&amp;</code> and end with <code>;</code>.</p>
+
+                <h3 style="color:#333;">Why Entities Are Needed</h3>
+                <p style="color:#666;margin-bottom:20px;">If you type <code>&lt;</code> in your HTML, the browser thinks you're starting a tag. To actually show the less-than symbol, you must write <code>&amp;lt;</code>. The same applies to other reserved characters.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Entities in Action</div>
+                        <pre><code><span class="nt">&lt;p&gt;</span>
+    Use <span class="cp">&amp;lt;</span> for &lt; and <span class="cp">&amp;gt;</span> for &gt;
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+    <span class="cp">&amp;amp;</span> displays as &amp;
+    <span class="cp">&amp;quot;</span> displays as &quot;
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+    Non-breaking space: <span class="cp">&amp;nbsp;</span>
+    Copyright: <span class="cp">&amp;copy;</span> 2026
+<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p style="margin:0 0 8px 0;">Use &lt; for &lt; and &gt; for &gt;</p>
+                        <p style="margin:0 0 8px 0;">&amp; displays as &amp; &quot; displays as "</p>
+                        <p style="margin:0;">Non-breaking space: &nbsp; Copyright: &copy; 2026</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Common HTML Entities Reference</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; Entity Reference Table</div>
+                        <pre><code><span class="c">&lt;!-- Reserved Characters --&gt;</span>
+<span class="cp">&amp;lt;</span>    <span class="c">&lt;   less-than</span>
+<span class="cp">&amp;gt;</span>    <span class="c">&gt;   greater-than</span>
+<span class="cp">&amp;amp;</span>    <span class="c">&amp;   ampersand</span>
+<span class="cp">&amp;quot;</span>   <span class="c">&quot;  double quote</span>
+<span class="cp">&amp;apos;</span>   <span class="c">'   apostrophe (single quote)</span>
+
+<span class="c">&lt;!-- Symbols &amp; Punctuation --&gt;</span>
+<span class="cp">&amp;copy;</span>   <span class="c">&copy;  copyright</span>
+<span class="cp">&amp;reg;</span>    <span class="c">&reg;  registered trademark</span>
+<span class="cp">&amp;trade;</span>  <span class="c">&trade; trademark</span>
+<span class="cp">&amp;cent;</span>   <span class="c">&cent; cent</span>
+<span class="cp">&amp;pound;</span>  <span class="c">&pound; pound</span>
+<span class="cp">&amp;euro;</span>   <span class="c">&euro; euro</span>
+
+<span class="c">&lt;!-- Mathematical --&gt;</span>
+<span class="cp">&amp;times;</span>  <span class="c">&times; multiplication</span>
+<span class="cp">&amp;divide;</span> <span class="c">&divide; division</span>
+<span class="cp">&amp;plusmn;</span> <span class="c">&plusmn; plus/minus</span>
+<span class="cp">&amp;sect;</span>   <span class="c">&sect; section</span>
+<span class="cp">&amp;para;</span>   <span class="c">&para; paragraph sign</span>
+
+<span class="c">&lt;!-- Spaces &amp; Dashes --&gt;</span>
+<span class="cp">&amp;nbsp;</span>    non-breaking space
+<span class="cp">&amp;ensp;</span>    en space (half-width)
+<span class="cp">&amp;emsp;</span>    em space (full-width)
+<span class="cp">&amp;mdash;</span>   em dash</code></pre>
+                    </div>
+                </div>
+
+                <div class="demo-pair" style="margin-top:24px;">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Using Numeric Entities</div>
+                        <pre><code><span class="c">&lt;!-- Decimal entities --&gt;</span>
+<span class="cp">&amp;#60;</span>  <span class="c">&lt;</span>
+<span class="cp">&amp;#62;</span>  <span class="c">&gt;</span>
+<span class="cp">&amp;#38;</span>  <span class="c">&amp;</span>
+<span class="cp">&amp;#169;</span> <span class="c">&copy;</span>
+
+<span class="c">&lt;!-- Hex entities --&gt;</span>
+<span class="cp">&amp;#x3C;</span> <span class="c">&lt;</span>
+<span class="cp">&amp;#x3E;</span> <span class="c">&gt;</span>
+<span class="cp">&amp;#x2665;</span> <span class="c">&hearts; (heart)</span>
+<span class="cp">&amp;#x2605;</span> <span class="c">star symbol</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p style="margin:0 0 4px 0;">Decimal: &#60; &#62; &#38; &#169;</p>
+                        <p style="margin:0;">Hex: &#x3C; &#x3E; &#x2665; &#x2605;</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Tip:</strong> Use <code>&amp;nbsp;</code> (non-breaking space) when you want to prevent two words from breaking across lines, like "10&nbsp;kg" or "Mrs.&nbsp;Smith". Use <code>&amp;lt;</code> and <code>&amp;gt;</code> whenever you display HTML code as text (like in this tutorial!).
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128221; Interactive: Entity Decoder</h3>
+                    <p>Type an entity name to see what character it produces:</p>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <input type="text" id="entityInput" placeholder="e.g. amp, copy, lt, gt" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;flex:1;min-width:200px;">
+                        <button class="btn btn-primary" id="entityDecodeBtn">Decode</button>
+                    </div>
+                    <p id="entityResult" style="margin-top:16px;font-size:1.2rem;color:#333;min-height:30px;"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="flow">
+            <div class="container">
+                <h2 class="section-title">12. Block vs Inline Elements</h2>
+                <p class="section-desc">Every HTML element has a default display behavior. Block elements take up the full width available and start on a new line. Inline elements only take up as much width as needed and flow within text.</p>
+
+                <h3 style="color:#333;">Block Elements</h3>
+                <p style="color:#666;margin-bottom:20px;">Block elements always start on a new line and stretch to fill the container width. They can contain other block elements and inline elements.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Block Elements</div>
+                        <pre><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background:lightblue"</span><span class="nt">&gt;</span>
+    Div (block) takes full width
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"background:lightgreen"</span><span class="nt">&gt;</span>
+    Paragraph (block) starts on new line
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;h2</span> <span class="na">style=</span><span class="s">"background:lightcoral"</span><span class="nt">&gt;</span>
+    Heading (block) also on its own line
+<span class="nt">&lt;/h2&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <div style="background:lightblue;padding:10px;margin:0 0 4px 0;">Div (block) takes full width</div>
+                        <p style="background:lightgreen;padding:10px;margin:0 0 4px 0;">Paragraph (block) starts on new line</p>
+                        <h2 style="background:lightcoral;padding:10px;margin:0;font-size:1rem;">Heading (block) also on its own line</h2>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Inline Elements</h3>
+                <p style="color:#666;margin-bottom:20px;">Inline elements sit beside each other on the same line. They only take up as much width as their content requires and cannot contain block elements.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Inline Elements</div>
+                        <pre><code><span class="nt">&lt;p&gt;</span>
+    This is <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">"color:red"</span><span class="nt">&gt;</span>red text<span class="nt">&lt;/span&gt;</span>
+    and <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>a link<span class="nt">&lt;/a&gt;</span>
+    and <span class="nt">&lt;strong&gt;</span>bold text<span class="nt">&lt;/strong&gt;</span>
+    all on the <span class="nt">&lt;em&gt;</span>same line<span class="nt">&lt;/em&gt;</span>.
+<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p style="margin:0;">This is <span style="color:red;">red text</span> and <a href="#">a link</a> and <strong>bold text</strong> all on the <em>same line</em>.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Inline-Block: The Best of Both Worlds</h3>
+                <p style="color:#666;margin-bottom:20px;">The <code>display: inline-block</code> value combines features of both. Elements sit beside each other (like inline) but you can set width, height, margin, and padding (like block).</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Inline-Block</div>
+                        <pre><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display:inline-block;
+     width:120px;background:salmon;
+     padding:10px;text-align:center"</span><span class="nt">&gt;</span>
+    Box 1
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display:inline-block;
+     width:120px;background:skyblue;
+     padding:10px;text-align:center"</span><span class="nt">&gt;</span>
+    Box 2
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display:inline-block;
+     width:120px;background:lightgreen;
+     padding:10px;text-align:center"</span><span class="nt">&gt;</span>
+    Box 3
+<span class="nt">&lt;/div&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <div style="display:inline-block;width:120px;background:salmon;padding:10px;text-align:center;margin:4px;">Box 1</div>
+                        <div style="display:inline-block;width:120px;background:skyblue;padding:10px;text-align:center;margin:4px;">Box 2</div>
+                        <div style="display:inline-block;width:120px;background:lightgreen;padding:10px;text-align:center;margin:4px;">Box 3</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Quick reference:</strong> Common <strong>block</strong> elements: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;-&lt;h6&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;form&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>. Common <strong>inline</strong> elements: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;br&gt;</code>.
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128640; Interactive: Resize the Browser</h3>
+                    <p>Block elements stack vertically. Inline elements flow horizontally and wrap. Resize your browser to see the difference:</p>
+                    <div style="margin-top:12px;">
+                        <div style="background:#667eea;color:#fff;padding:10px;margin:4px;border-radius:4px;">Block 1 (full width)</div>
+                        <div style="background:#764ba2;color:#fff;padding:10px;margin:4px;border-radius:4px;">Block 2 (full width)</div>
+                        <span style="background:#ff6b6b;color:#fff;padding:8px 12px;margin:4px;border-radius:4px;display:inline-block;">Inline 1</span>
+                        <span style="background:#ff6b6b;color:#fff;padding:8px 12px;margin:4px;border-radius:4px;display:inline-block;">Inline 2</span>
+                        <span style="background:#ff6b6b;color:#fff;padding:8px 12px;margin:4px;border-radius:4px;display:inline-block;">Inline 3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="iframes">
+            <div class="container">
+                <h2 class="section-title">13. Iframes &amp; Embedded Content</h2>
+                <p class="section-desc">The <code>&lt;iframe&gt;</code> element embeds another HTML page inside your current page. It's used for maps, videos, external widgets, and more.</p>
+
+                <h3 style="color:#333;">Basic Iframe</h3>
+                <p style="color:#666;margin-bottom:20px;">An iframe creates a window into another page. Use the <code>src</code> attribute to specify the URL to embed.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Iframe</div>
+                        <pre><code><span class="nt">&lt;iframe</span>
+    <span class="na">src=</span><span class="s">"https://example.com"</span>
+    <span class="na">width=</span><span class="s">"100%"</span>
+    <span class="na">height=</span><span class="s">"200"</span>
+    <span class="na">title=</span><span class="s">"Example page"</span><span class="nt">&gt;</span>
+    Your browser doesn't support iframes.
+<span class="nt">&lt;/iframe&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <iframe src="https://example.com" width="100%" height="180" title="Example page" style="border:1px solid #ddd;border-radius:4px;"></iframe>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Iframe Attributes</h3>
+                <p style="color:#666;margin-bottom:20px;">Use <code>allow</code> for permissions, <code>sandbox</code> for security, <code>loading="lazy"</code> for performance, and <code>srcdoc</code> to embed HTML directly.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; srcdoc Attribute</div>
+                        <pre><code><span class="nt">&lt;iframe</span>
+    <span class="na">srcdoc=</span><span class="s">"&lt;p&gt;Hello from &lt;b&gt;srcdoc&lt;/b&gt;!&lt;/p&gt;"</span>
+    <span class="na">width=</span><span class="s">"100%"</span>
+    <span class="na">height=</span><span class="s">"60"</span>
+    <span class="na">title=</span><span class="s">"srcdoc example"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/iframe&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <iframe srcdoc="<p>Hello from <b>srcdoc</b>!</p>" width="100%" height="60" title="srcdoc example" style="border:1px solid #ddd;border-radius:4px;"></iframe>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Security with Sandbox</h3>
+                <p style="color:#666;margin-bottom:20px;">The <code>sandbox</code> attribute restricts what the embedded content can do. Use it when embedding untrusted content.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Sandboxed Iframe</div>
+                        <pre><code><span class="c">&lt;!-- Restricted sandbox --&gt;</span>
+<span class="nt">&lt;iframe</span>
+    <span class="na">src=</span><span class="s">"https://example.com"</span>
+    <span class="na">sandbox</span>
+    <span class="na">title=</span><span class="s">"sandboxed"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/iframe&gt;</span>
+
+<span class="c">&lt;!-- Permissive sandbox --&gt;</span>
+<span class="nt">&lt;iframe</span>
+    <span class="na">src=</span><span class="s">"https://example.com"</span>
+    <span class="na">sandbox=</span><span class="s">"allow-scripts
+             allow-same-origin"</span>
+    <span class="na">title=</span><span class="s">"permissive"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/iframe&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <p style="margin:0 0 8px 0;"><strong>Restricted:</strong> (content blocked by sandbox)</p>
+                        <p style="margin:0;"><strong>With permissions:</strong> (content allowed)</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#9888;&#65039; Security note:</strong> Always use <code>sandbox</code> when embedding content you don't fully trust. Add permission values like <code>allow-scripts</code>, <code>allow-same-origin</code>, <code>allow-forms</code> only when needed. The <code>loading="lazy"</code> attribute defers loading until the iframe is near the viewport, improving page speed.
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#127760; Interactive: Embedded Map (Concept)</h3>
+                    <p>Iframes are commonly used to embed Google Maps. Here's what the code looks like:</p>
+                    <div class="demo-code full-width" style="margin-top:12px;border-radius:8px;">
+                        <pre><code><span class="nt">&lt;iframe</span>
+    <span class="na">src=</span><span class="s">"https://www.google.com/maps/embed?pb=..."</span>
+    <span class="na">width=</span><span class="s">"100%"</span>
+    <span class="na">height=</span><span class="s">"300"</span>
+    <span class="na">style=</span><span class="s">"border:0;"</span>
+    <span class="na">allowfullscreen=</span><span class="s">""</span>
+    <span class="na">loading=</span><span class="s">"lazy"</span>
+    <span class="na">title=</span><span class="s">"Google Maps"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/iframe&gt;</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="meta">
+            <div class="container">
+                <h2 class="section-title">14. Meta Tags &amp; SEO</h2>
+                <p class="section-desc">Meta tags live inside the <code>&lt;head&gt;</code> section and provide information about your page to browsers, search engines, and social media platforms.</p>
+
+                <h3 style="color:#333;">Essential Meta Tags</h3>
+                <p style="color:#666;margin-bottom:20px;">Every HTML page should include these basic meta tags for proper rendering and SEO.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; Basic Meta Tags</div>
+                        <pre><code><span class="c">&lt;!-- Character encoding --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Responsive viewport --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span>
+      <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Page title (shown in browser tab) --&gt;</span>
+<span class="nt">&lt;title&gt;</span>My Awesome Page<span class="nt">&lt;/title&gt;</span>
+
+<span class="c">&lt;!-- Description (shown in search results) --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span>
+      <span class="na">content=</span><span class="s">"Learn HTML with interactive examples."</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Keywords (optional — no longer used by most search engines) --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"keywords"</span>
+      <span class="na">content=</span><span class="s">"HTML, tutorial, web development, coding"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Author --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span>
+      <span class="na">content=</span><span class="s">"Your Name"</span><span class="nt">&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Open Graph Tags (Social Media)</h3>
+                <p style="color:#666;margin-bottom:20px;">OG tags control how your page appears when shared on Facebook, Twitter, LinkedIn, and other platforms.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; Open Graph Tags</div>
+                        <pre><code><span class="c">&lt;!-- Open Graph (Facebook, LinkedIn, etc.) --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span>
+      <span class="na">content=</span><span class="s">"My Awesome Page"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span>
+      <span class="na">content=</span><span class="s">"Learn HTML interactively."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image"</span>
+      <span class="na">content=</span><span class="s">"https://example.com/thumb.jpg"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span>
+      <span class="na">content=</span><span class="s">"https://example.com/page"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span>
+      <span class="na">content=</span><span class="s">"website"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Twitter Card --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:card"</span>
+      <span class="na">content=</span><span class="s">"summary_large_image"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:title"</span>
+      <span class="na">content=</span><span class="s">"My Awesome Page"</span><span class="nt">&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Favicon &amp; Theme Color</h3>
+                <p style="color:#666;margin-bottom:20px;">Set a favicon (browser tab icon) and theme color (mobile browser UI color) to brand your page.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; Favicon &amp; Theme</div>
+                        <pre><code><span class="c">&lt;!-- Favicon (shown in browser tab) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"icon"</span>
+      <span class="na">href=</span><span class="s">"favicon.ico"</span>
+      <span class="na">type=</span><span class="s">"image/x-icon"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Apple touch icon (iOS home screen) --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"apple-touch-icon"</span>
+      <span class="na">href=</span><span class="s">"icon-192.png"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Theme color (mobile browser UI) --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"theme-color"</span>
+      <span class="na">content=</span><span class="s">"#1a1a2e"</span><span class="nt">&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; SEO tips:</strong> Keep your <code>&lt;title&gt;</code> under 60 characters and your <code>&lt;meta description&gt;</code> under 160 characters for optimal search result display. Use exactly one <code>&lt;h1&gt;</code> per page. Use descriptive URLs. Add <code>alt</code> text to all images.
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128269; Interactive: Meta Tag Preview</h3>
+                    <p>Fill in the fields below to see how your page would appear in search results:</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;">
+                        <div>
+                            <label style="display:block;margin-bottom:4px;font-weight:500;font-size:0.9rem;">Page Title:</label>
+                            <input type="text" id="seoTitle" value="My Awesome Page" style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-family:inherit;">
+                        </div>
+                        <div>
+                            <label style="display:block;margin-bottom:4px;font-weight:500;font-size:0.9rem;">Description:</label>
+                            <input type="text" id="seoDesc" value="Learn HTML with interactive examples and live code previews." style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-family:inherit;">
+                        </div>
+                    </div>
+                    <div id="seoPreview" style="margin-top:16px;padding:20px;border:1px solid #ddd;border-radius:8px;background:#fff;font-family:Arial,sans-serif;">
+                        <div style="color:#1a0dab;font-size:1.1rem;font-weight:400;margin-bottom:2px;" id="seoPreviewTitle">My Awesome Page</div>
+                        <div style="color:#006621;font-size:0.85rem;margin-bottom:4px;">https://example.com/page</div>
+                        <div style="color:#545454;font-size:0.85rem;line-height:1.4;" id="seoPreviewDesc">Learn HTML with interactive examples and live code previews.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="html5">
+            <div class="container">
+                <h2 class="section-title">15. HTML5 Features Overview</h2>
+                <p class="section-desc">HTML5 is the latest major version of HTML. It introduced new semantic elements, multimedia support, graphics capabilities, and powerful browser APIs.</p>
+
+                <h3 style="color:#333;">What HTML5 Brought</h3>
+                <p style="color:#666;margin-bottom:20px;">Before HTML5, developers used <code>&lt;div&gt;</code> for everything and relied on plugins like Flash for video and audio. HTML5 made the web platform richer and more standardized.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; HTML5 Semantic Elements</div>
+                        <pre><code><span class="c">&lt;!-- NEW in HTML5 --&gt;</span>
+<span class="nt">&lt;header&gt;</span>    Page header
+<span class="nt">&lt;nav&gt;</span>       Navigation
+<span class="nt">&lt;main&gt;</span>      Primary content
+<span class="nt">&lt;section&gt;</span>   Themed group
+<span class="nt">&lt;article&gt;</span>   Self-contained piece
+<span class="nt">&lt;aside&gt;</span>     Sidebar content
+<span class="nt">&lt;footer&gt;</span>    Page footer
+
+<span class="c">&lt;!-- Forms --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"date"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"range"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"color"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;datalist&gt;</span>  Autocomplete options
+<span class="nt">&lt;output&gt;</span>    Calculation result</code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; HTML5 Input Types</div>
+                        <div style="display:flex;flex-direction:column;gap:10px;">
+                            <div><label style="font-weight:500;display:block;font-size:0.85rem;">Email:</label> <input type="email" placeholder="test@example.com" style="width:100%;padding:8px;border:2px solid #ddd;border-radius:4px;"></div>
+                            <div><label style="font-weight:500;display:block;font-size:0.85rem;">Date:</label> <input type="date" style="width:100%;padding:8px;border:2px solid #ddd;border-radius:4px;"></div>
+                            <div><label style="font-weight:500;display:block;font-size:0.85rem;">Color:</label> <input type="color" value="#667eea" style="width:100%;height:40px;border:2px solid #ddd;border-radius:4px;cursor:pointer;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Multimedia Without Plugins</h3>
+                <p style="color:#666;margin-bottom:20px;">HTML5 introduced <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> elements, replacing the need for Flash or other plugins.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; HTML5 Audio</div>
+                        <pre><code><span class="nt">&lt;audio</span> <span class="na">controls</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"song.mp3"</span>
+            <span class="na">type=</span><span class="s">"audio/mpeg"</span><span class="nt">&gt;</span>
+    Your browser does not
+    support the audio element.
+<span class="nt">&lt;/audio&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Audio Player</div>
+                        <audio controls style="width:100%;">
+                            <source src="song.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p style="font-size:0.8rem;color:#999;margin:8px 0 0;">(No audio file loaded - demonstration only)</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Canvas &amp; SVG</h3>
+                <p style="color:#666;margin-bottom:20px;">HTML5 introduced <code>&lt;canvas&gt;</code> for drawing graphics with JavaScript and improved support for inline <code>&lt;svg&gt;</code> for scalable vector graphics.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Inline SVG</div>
+                        <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"100"</span>
+     <span class="na">height=</span><span class="s">"100"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"50"</span> <span class="na">cy=</span><span class="s">"50"</span>
+            <span class="na">r=</span><span class="s">"40"</span>
+            <span class="na">fill=</span><span class="s">"#667eea"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"25"</span> <span class="na">y=</span><span class="s">"25"</span>
+          <span class="na">width=</span><span class="s">"50"</span>
+          <span class="na">height=</span><span class="s">"50"</span>
+          <span class="na">fill=</span><span class="s">"rgba(255,255,255,0.3)"</span>
+          <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <svg width="100" height="100">
+                            <circle cx="50" cy="50" r="40" fill="#667eea" />
+                            <rect x="25" y="25" width="50" height="50" fill="rgba(255,255,255,0.3)" />
+                        </svg>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Browser APIs (Structures for JS)</h3>
+                <p style="color:#666;margin-bottom:20px;">HTML5 also defined APIs that JavaScript can use. Here are some of the most powerful ones:</p>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
+                    <div style="padding:20px;background:#f0f4ff;border-radius:8px;border-left:4px solid #667eea;">
+                        <h4 style="margin:0 0 8px 0;color:#333;font-size:1rem;">Geolocation API</h4>
+                        <p style="margin:0;color:#666;font-size:0.9rem;">Get the user's current location. Used for maps, nearby places, weather apps, and location-based services.</p>
+                    </div>
+                    <div style="padding:20px;background:#f0f4ff;border-radius:8px;border-left:4px solid #28a745;">
+                        <h4 style="margin:0 0 8px 0;color:#333;font-size:1rem;">Local Storage API</h4>
+                        <p style="margin:0;color:#666;font-size:0.9rem;">Store data in the user's browser persistently. Unlike cookies, data is never sent to the server.</p>
+                    </div>
+                    <div style="padding:20px;background:#f0f4ff;border-radius:8px;border-left:4px solid #ff6b6b;">
+                        <h4 style="margin:0 0 8px 0;color:#333;font-size:1rem;">Drag &amp; Drop API</h4>
+                        <p style="margin:0;color:#666;font-size:0.9rem;">Allow users to drag elements around the page. Used in file uploaders, kanban boards, and sortable lists.</p>
+                    </div>
+                    <div style="padding:20px;background:#f0f4ff;border-radius:8px;border-left:4px solid #ffc107;">
+                        <h4 style="margin:0 0 8px 0;color:#333;font-size:1rem;">History API</h4>
+                        <p style="margin:0;color:#666;font-size:0.9rem;">Manipulate the browser's history stack. Powers single-page applications (SPAs) without full page reloads.</p>
+                    </div>
+                </div>
+
+                <div class="tip-box" style="margin-top:24px;">
+                    <strong>&#128161; HTML5 Browser Support:</strong> All modern browsers fully support HTML5. You can safely use these elements and APIs today. For older browsers (IE11 and below), you may need polyfills or fallbacks for some features like <code>&lt;canvas&gt;</code> and the Geolocation API.
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#127912; Interactive: Draw on Canvas</h3>
+                    <p>HTML5 Canvas lets you draw graphics with JavaScript. Click the buttons to draw shapes:</p>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+                        <button class="btn btn-outline btn-small" id="drawCircle">Draw Circle</button>
+                        <button class="btn btn-outline btn-small" id="drawRect">Draw Rectangle</button>
+                        <button class="btn btn-outline btn-small" id="drawLine">Draw Line</button>
+                        <button class="btn btn-outline btn-small" id="clearCanvas">Clear</button>
+                    </div>
+                    <canvas id="demoCanvas" width="300" height="150" style="border:2px solid #ddd;border-radius:8px;display:block;max-width:100%;"></canvas>
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which HTML5 element is used to draw graphics with JavaScript?" data-options='["&lt;svg&gt;","&lt;canvas&gt;","&lt;graphics&gt;","&lt;draw&gt;"]' data-answer="1" data-explain="The &lt;canvas&gt; element provides a drawing surface that you can manipulate with JavaScript to create graphics, animations, and games.">
+            </div>
+        </section>
+
+        <section class="section section-alt" id="quiz">
+            <div class="container">
+                <div class="quiz" data-page="html"></div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="playground">
+            <div class="container">
+                <h2 class="section-title">16. Try It Yourself &#x1F3AD;</h2>
+                <p class="section-desc">Write HTML code below and see the output instantly. Experiment with what you've learned!</p>
+
+                <div class="playground-container">
+                    <div class="playground-editor">
+                        <div class="playground-header">
+                            <span class="playground-label">&#9001; HTML Editor</span>
+                            <div class="playground-actions">
+                                <button class="btn btn-small btn-outline" id="runBtn">&#9654; Run</button>
+                                <button class="btn btn-small btn-outline" id="clearBtn">&#128465; Clear</button>
+                                <button class="btn btn-small btn-outline" id="resetBtn">&#8634; Reset</button>
+                            </div>
+                        </div>
+                        <textarea id="htmlEditor" class="playground-textarea" spellcheck="false">&lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;p&gt;This is &lt;strong&gt;HTML&lt;/strong&gt; in action!&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Edit this code&lt;/li&gt;
+    &lt;li&gt;Click Run to see output&lt;/li&gt;
+    &lt;li&gt;Have fun!&lt;/li&gt;
+&lt;/ul&gt;</textarea>
+                        <div class="playground-editor-info">
+                            <span id="lineCount">Line 4</span>
+                            <span>Press Ctrl+Enter to run</span>
+                        </div>
+                    </div>
+                    <div class="playground-output">
+                        <div class="playground-header">
+                            <span class="playground-label">&#9654; Output</span>
+                            <button class="btn btn-small btn-outline" id="fullscreenBtn">&#9974; Fullscreen</button>
+                        </div>
+                        <div class="playground-preview" id="previewArea">
+                            <h1>Hello, World!</h1>
+                            <p>This is <strong>HTML</strong> in action!</p>
+                            <ul>
+                                <li>Edit this code</li>
+                                <li>Click Run to see output</li>
+                                <li>Have fun!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="starter-templates">
+                    <h3>&#128218; Starter Templates</h3>
+                    <p>Click a template to load it into the editor:</p>
+                    <div class="template-grid">
+                        <button class="template-btn" data-template="template-headings">
+                            <span class="template-icon">&#128196;</span>
+                            <span>Headings</span>
+                        </button>
+                        <button class="template-btn" data-template="template-list">
+                            <span class="template-icon">&#128221;</span>
+                            <span>List</span>
+                        </button>
+                        <button class="template-btn" data-template="template-table">
+                            <span class="template-icon">&#128202;</span>
+                            <span>Table</span>
+                        </button>
+                        <button class="template-btn" data-template="template-form">
+                            <span class="template-icon">&#128221;</span>
+                            <span>Form</span>
+                        </button>
+                        <button class="template-btn" data-template="template-semantic">
+                            <span class="template-icon">&#127912;</span>
+                            <span>Semantic</span>
+                        </button>
+                        <button class="template-btn" data-template="template-media">
+                            <span class="template-icon">&#127909;</span>
+                            <span>Media</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Pro tip:</strong> Use the playground to test any HTML code you learn. Try combining different tags, nesting elements, and experimenting with attributes. The best way to learn HTML is to write it!
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>HTML Playground</h3>
+                    <p>Learn HTML with live examples.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Topics</h3>
+                    <ul>
+                        <li><a href="#basics">Basics</a></li>
+                        <li><a href="#text">Text</a></li>
+                        <li><a href="#links">Links</a></li>
+                        <li><a href="#media">Media</a></li>
+                        <li><a href="#lists">Lists</a></li>
+                        <li><a href="#tables">Tables</a></li>
+                        <li><a href="#forms">Forms</a></li>
+                        <li><a href="#semantic">Semantic HTML</a></li>
+                        <li><a href="#interactive">Interactive</a></li>
+                        <li><a href="#attributes">Attributes</a></li>
+                        <li><a href="#entities">Entities</a></li>
+                        <li><a href="#flow">Block vs Inline</a></li>
+                        <li><a href="#iframes">Iframes</a></li>
+                        <li><a href="#meta">Meta Tags</a></li>
+                        <li><a href="#html5">HTML5</a></li>
+                        <li><a href="#quiz">Quiz</a></li>
+                        <li><a href="#playground">Playground</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN HTML Docs</a></li>
+                        <li><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">HTML Specification</a></li>
+                        <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">HTML Validator</a></li>
+                        <li><a href="css.html">CSS Tutorial</a></li>
+                        <li><a href="javascript.html">JS Tutorial</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="timmy.html">About Project</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="tools.html">CSS Tools</a></li>
+                        <li><a href="accessibility.html">A11y Tutorial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 HTML Playground. Built with pure HTML.</p>
+                <p style="margin-top:8px;font-size:0.8rem;opacity:0.5;"><a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a> &middot; <a href="privacy.html#opt-out" style="color:inherit;text-decoration:underline;">Do Not Sell My Info</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

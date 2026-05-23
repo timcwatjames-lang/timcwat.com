@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Accessibility Tutorial - Learn ARIA, keyboard navigation, screen readers, color contrast, and inclusive design">
+    <meta property="og:title" content="Web Accessibility Tutorial - Learn A11y">
+    <meta property="og:description" content="Web Accessibility Tutorial - Learn ARIA, keyboard navigation, screen readers, color contrast, and inclusive design">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/accessibility.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web Accessibility Tutorial - Learn A11y">
+    <meta name="twitter:description" content="Web Accessibility Tutorial - Learn ARIA, keyboard navigation, screen readers, color contrast, and inclusive design">
+    <meta name="google-adsense-account" content="ca-pub-5862355594319303">
+    <title>Web Accessibility Tutorial - Learn A11y</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">A11y Tutorial</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#what">What is A11y?</a></li>
+                <li><a href="#semantic">Semantic HTML</a></li>
+                <li><a href="#aria">ARIA</a></li>
+                <li><a href="#keyboard">Keyboard</a></li>
+                <li><a href="#contrast">Contrast</a></li>
+                <li><a href="#screen">Screen Readers</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#focus">Focus</a></li>
+                <li><a href="#testing">Testing</a></li>
+                <li><a href="index.html">&#8592; Home</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero" style="min-height:40vh;">
+            <div class="hero-content">
+                <h1>Web <span class="highlight">Accessibility</span></h1>
+                <p>Learn how to build websites that work for everyone. ARIA, keyboard navigation, screen readers, color contrast, and more.</p>
+                <p class="hero-sub">Inclusive design benefits all users, not just those with disabilities.</p>
+                <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+                    <a href="#what" class="btn btn-primary">Start Learning</a>
+                    <a href="#contrast" class="btn btn-outline">Contrast Checker</a>
+                    <a href="#testing" class="btn btn-outline">Testing Tools</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <pre class="hero-code"><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;header role=</span><span class="s">"banner"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;nav aria-label=</span><span class="s">"Main"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;main&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Inclusive Design<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Diagram of..."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/main&gt;</span></pre>
+            </div>
+        </section>
+
+        <section class="section" id="what">
+            <div class="container">
+                <h2 class="section-title">1. What Is Web Accessibility?</h2>
+                <p class="section-desc">Web accessibility (a11y) means designing and developing websites that people with disabilities can use effectively. This includes visual, auditory, motor, and cognitive disabilities.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; The Web is for Everyone</div>
+                        <pre><code><span class="c">&lt;!-- Without accessibility --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"chart.png"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">onclick=</span><span class="s">"submit()"</span><span class="nt">&gt;</span>Go<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Name"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- With accessibility --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"chart.png"</span> <span class="na">alt=</span><span class="s">"Sales chart showing 20% growth in Q3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"submit()"</span><span class="nt">&gt;</span>Go<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"name"</span><span class="nt">&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Key Principles</div>
+                        <div style="display:grid;gap:12px;padding:8px 0;">
+                            <div style="padding:12px 16px;background:#f0f4ff;border-radius:8px;border-left:4px solid #667eea;"><strong>Perceivable</strong> &mdash; Content must be presentable to senses (alt text, captions)</div>
+                            <div style="padding:12px 16px;background:#f0f4ff;border-radius:8px;border-left:4px solid #28a745;"><strong>Operable</strong> &mdash; Interface must work with keyboard, voice, switch</div>
+                            <div style="padding:12px 16px;background:#f0f4ff;border-radius:8px;border-left:4px solid #ffc107;"><strong>Understandable</strong> &mdash; Content and UI must be clear and predictable</div>
+                            <div style="padding:12px 16px;background:#f0f4ff;border-radius:8px;border-left:4px solid #dc3545;"><strong>Robust</strong> &mdash; Content must work with current and future technologies</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; The a11y number:</strong> "a11y" stands for "accessibility" &mdash; 11 letters between the "a" and the "y". About <strong>15%</strong> of the world's population has some form of disability.
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="semantic">
+            <div class="container">
+                <h2 class="section-title">2. Semantic HTML</h2>
+                <p class="section-desc">Semantic HTML is the foundation of accessibility. Using the right elements gives screen readers and assistive technologies built-in meaning.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code full-width">
+                        <div class="demo-label">&#9001; Landmarks (HTML5 semantic elements)</div>
+                        <pre><code><span class="nt">&lt;header&gt;</span>       <span class="c">&lt;!-- Site header / banner --&gt;</span>
+<span class="nt">&lt;nav&gt;</span>          <span class="c">&lt;!-- Navigation --&gt;</span>
+<span class="nt">&lt;main&gt;</span>         <span class="c">&lt;!-- Primary content --&gt;</span>
+<span class="nt">&lt;article&gt;</span>     <span class="c">&lt;!-- Self-contained content --&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Title<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Content<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;aside&gt;</span>       <span class="c">&lt;!-- Complementary content --&gt;</span>
+<span class="nt">&lt;footer&gt;</span>       <span class="c">&lt;!-- Site footer --&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Rule of thumb:</strong> Use HTML elements for their intended purpose. A <code>&lt;button&gt;</code> is automatically focusable and announces as "button". A <code>&lt;div&gt;</code> with an onclick does neither.
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#127912; Interactive: Landmarks Demo</h3>
+                    <p>This page already uses semantic landmarks. Open your browser's Accessibility Tree (DevTools &rarr; Elements &rarr; Accessibility) to see them.</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                        <span style="padding:8px 16px;background:#667eea;color:#fff;border-radius:6px;font-size:0.85rem;">&lt;header&gt;</span>
+                        <span style="padding:8px 16px;background:#28a745;color:#fff;border-radius:6px;font-size:0.85rem;">&lt;nav&gt;</span>
+                        <span style="padding:8px 16px;background:#ff6b6b;color:#fff;border-radius:6px;font-size:0.85rem;">&lt;main&gt;</span>
+                        <span style="padding:8px 16px;background:#764ba2;color:#fff;border-radius:6px;font-size:0.85rem;">&lt;section&gt;</span>
+                        <span style="padding:8px 16px;background:#ffc107;color:#333;border-radius:6px;font-size:0.85rem;">&lt;footer&gt;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="aria">
+            <div class="container">
+                <h2 class="section-title">3. ARIA (Accessible Rich Internet Applications)</h2>
+                <p class="section-desc">ARIA provides attributes that add accessibility information when HTML semantics aren't enough. Use it to enhance, not override, native semantics.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; ARIA Roles, Properties &amp; States</div>
+                        <pre><code><span class="c">&lt;!-- Role -- tells what an element is --&gt;</span>
+<span class="nt">&lt;div role=</span><span class="s">"button"</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>Click<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Property -- gives extra meaning --&gt;</span>
+<span class="nt">&lt;nav aria-label=</span><span class="s">"Main navigation"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- State -- dynamic condition --&gt;</span>
+<span class="nt">&lt;button aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span>Menu<span class="nt">&lt;/button&gt;</span>
+
+<span class="c">&lt;!-- Live region -- announces changes --&gt;</span>
+<span class="nt">&lt;div aria-live=</span><span class="s">"polite"</span><span class="nt">&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; ARIA Live Demo</div>
+                        <p style="margin-bottom:12px;">Click the button to see a live region in action:</p>
+                        <button class="btn btn-primary btn-small" id="ariaDemoBtn">Show Alert</button>
+                        <div aria-live="polite" id="ariaLiveRegion" style="margin-top:12px;padding:12px 16px;background:#f0f4ff;border-radius:8px;min-height:44px;font-size:0.9rem;"></div>
+                        <p class="hint" style="margin-top:8px;">A screen reader will announce the message automatically because of <code>aria-live="polite"</code>.</p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#9888;&#65039; First rule of ARIA:</strong> Don't use ARIA if you can use a native HTML element. <code>&lt;button&gt;</code> already has role="button", keyboard handling, and focus management built in. Adding ARIA to a <code>&lt;div&gt;</code> requires manual implementation of all of these.
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="keyboard">
+            <div class="container">
+                <h2 class="section-title">4. Keyboard Navigation</h2>
+                <p class="section-desc">Many users navigate entirely with the keyboard. Every interactive element must be reachable and operable via keyboard.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Tabindex &amp; Focus</div>
+                        <pre><code><span class="c">&lt;!-- Natural tab order (recommended) --&gt;</span>
+<span class="nt">&lt;button&gt;</span>First<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button&gt;</span>Second<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;a href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- tabindex values --&gt;</span>
+<span class="na">tabindex=</span><span class="s">"0"</span>   <span class="c">&lt;!-- Focusable in natural order --&gt;</span>
+<span class="na">tabindex=</span><span class="s">"-1"</span>  <span class="c">&lt;!-- Programmatically focusable --&gt;</span>
+<span class="na">tabindex=</span><span class="s">"5"</span>   <span class="c">&lt;!-- AVOID! Use natural order --&gt;</span>
+
+<span class="c">&lt;!-- Skip link for keyboard users --&gt;</span>
+<span class="nt">&lt;a href=</span><span class="s">"#main-content"</span>
+ <span class="na">class=</span><span class="s">"skip-link"</span><span class="nt">&gt;</span>Skip to main content
+<span class="nt">&lt;/a&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Try It: Keyboard Demo</div>
+                        <p style="margin-bottom:12px;">Press <kbd>Tab</kbd> to move focus between these elements:</p>
+                        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                            <button class="btn btn-primary btn-small" style="padding:8px 16px;">First</button>
+                            <button class="btn btn-outline btn-small" style="padding:8px 16px;">Second</button>
+                            <a href="#" style="padding:8px 16px;display:inline-block;">Link</a>
+                            <input type="text" placeholder="Text input" style="padding:8px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.85rem;">
+                        </div>
+                        <p id="focusMsg" style="margin-top:12px;font-size:0.85rem;color:#888;min-height:20px;"></p>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Keyboard testing:</strong> Try navigating this entire page using only <kbd>Tab</kbd>, <kbd>Shift+Tab</kbd>, <kbd>Enter</kbd>, and arrow keys. If you can reach and use everything, the page has good keyboard accessibility.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contrast">
+            <div class="container">
+                <h2 class="section-title">5. Color &amp; Contrast</h2>
+                <p class="section-desc">Color should never be the only way to convey information. Text and interactive elements must have sufficient contrast against their backgrounds.</p>
+
+                <div class="interactive-demo">
+                    <h3>&#127912; Interactive: Contrast Checker</h3>
+                    <p>Pick a foreground and background color to check their WCAG contrast ratio:</p>
+                    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+                        <div style="flex:1;min-width:150px;">
+                            <label style="display:block;font-size:0.85rem;font-weight:500;margin-bottom:6px;color:#555;">Text Color</label>
+                            <input type="color" id="fgColor" value="#333333" style="width:100%;height:44px;border:2px solid #ddd;border-radius:8px;cursor:pointer;">
+                        </div>
+                        <div style="flex:1;min-width:150px;">
+                            <label style="display:block;font-size:0.85rem;font-weight:500;margin-bottom:6px;color:#555;">Background</label>
+                            <input type="color" id="bgColor" value="#ffffff" style="width:100%;height:44px;border:2px solid #ddd;border-radius:8px;cursor:pointer;">
+                        </div>
+                        <div style="flex:1;min-width:150px;display:flex;align-items:end;">
+                            <div style="width:100%;padding:10px 16px;background:#f0f4ff;border-radius:8px;text-align:center;" id="contrastResult">
+                                <div style="font-size:1.3rem;font-weight:700;" id="contrastRatio">21:1</div>
+                                <div style="font-size:0.8rem;" id="contrastPass">AAA Pass</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contrastSample" style="padding:24px;border-radius:10px;text-align:center;font-size:1.1rem;font-weight:500;background:#fff;color:#333;border:2px solid #ddd;">
+                        The quick brown fox jumps over the lazy dog.
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; WCAG minimums:</strong> Normal text needs a <strong>4.5:1</strong> ratio (AA) or <strong>7:1</strong> (AAA). Large text (18px+ bold or 24px+ regular) needs <strong>3:1</strong> (AA) or <strong>4.5:1</strong> (AAA). UI components and icons need <strong>3:1</strong>.
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="screen">
+            <div class="container">
+                <h2 class="section-title">6. Screen Readers</h2>
+                <p class="section-desc">Screen readers convert text to speech or braille. Proper HTML and ARIA ensure screen reader users get the same information as sighted users.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Alt Text &amp; Descriptions</div>
+                        <pre><code><span class="c">&lt;!-- Decorative: empty alt --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"divider.png"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Informative: describe content --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"chart.png"</span>
+    <span class="na">alt=</span><span class="s">"Bar chart showing"</span>
+    <span class="s">"revenue up 25% in 2025"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Complex: reference aria-describedby --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"diagram.svg"</span>
+    <span class="na">aria-describedby=</span><span class="s">"desc1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;p id=</span><span class="s">"desc1"</span><span class="nt">&gt;</span>Full description...<span class="nt">&lt;/p&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Screen Reader Demo</div>
+                        <p style="margin-bottom:12px;">Toggle the hidden text to see what screen reader users hear:</p>
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+                            <img src="https://picsum.photos/120/80?random=3" alt="A random landscape photo from Lorem Picsum" style="border-radius:6px;">
+                            <span style="font-size:0.85rem;color:#666;">Image with alt text</span>
+                        </div>
+                        <button class="btn btn-small btn-outline" id="toggleSrText" style="margin-top:12px;">Show Screen Reader Text</button>
+                        <div id="srTextOutput" style="margin-top:8px;padding:10px 14px;background:#1a1a2e;color:#f8f8f2;border-radius:6px;font-size:0.85rem;font-family:'Fira Code',monospace;display:none;">Screen reader announces: "A random landscape photo from Lorem Picsum"</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Alt text tips:</strong> Describe the content and function of the image, not the image itself. Instead of "blue button", say "Search". Decorative images get <code>alt=""</code> (empty) so screen readers ignore them.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="forms">
+            <div class="container">
+                <h2 class="section-title">7. Accessible Forms</h2>
+                <p class="section-desc">Forms are one of the most common accessibility failures. Every input needs a label, clear instructions, and understandable error messages.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Accessible Form Pattern</div>
+                        <pre><code><span class="nt">&lt;form&gt;</span>
+<span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;legend&gt;</span>Personal Info<span class="nt">&lt;/legend&gt;</span>
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+    Name <span class="nt">&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>*<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"name"</span>
+        <span class="na">aria-required=</span><span class="s">"true"</span>
+        <span class="na">aria-describedby=</span><span class="s">"nameHint"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p id=</span><span class="s">"nameHint"</span><span class="nt">&gt;</span>Enter full name<span class="nt">&lt;/p&gt;</span>
+
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Live Demo: Accessible Form</div>
+                        <form id="a11yForm" style="padding:8px 0;">
+                            <div style="margin-bottom:12px;">
+                                <label for="a11yName" style="display:block;font-weight:500;margin-bottom:4px;font-size:0.9rem;">Full Name <span aria-hidden="true" style="color:#dc3545;">*</span></label>
+                                <input type="text" id="a11yName" aria-required="true" aria-describedby="nameHint" style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.9rem;">
+                                <p id="nameHint" style="font-size:0.8rem;color:#888;margin:4px 0 0;">Enter your full name</p>
+                            </div>
+                            <div style="margin-bottom:16px;">
+                                <label for="a11yEmail" style="display:block;font-weight:500;margin-bottom:4px;font-size:0.9rem;">Email <span aria-hidden="true" style="color:#dc3545;">*</span></label>
+                                <input type="email" id="a11yEmail" aria-required="true" style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.9rem;">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="a11ySubmit">Sign Up</button>
+                            <div id="a11yFeedback" role="alert" style="margin-top:12px;font-size:0.9rem;min-height:24px;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="focus">
+            <div class="container">
+                <h2 class="section-title">8. Focus Management</h2>
+                <p class="section-desc">Visible focus indicators help keyboard users track their location on the page. Never remove the focus outline without providing an alternative.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Focus Styles</div>
+                        <pre><code><span class="c">/* GOOD: visible focus ring */</span>
+<span class="na">button:focus-visible</span> {
+  <span class="na">outline</span>: <span class="s">3px solid #667eea</span>;
+  <span class="na">outline-offset</span>: <span class="s">2px</span>;
+}
+
+<span class="c">/* BAD: hidden focus */</span>
+<span class="na">button:focus</span> {
+  <span class="na">outline</span>: <span class="s">none</span>; <span class="c">/* Don't do this! */</span>
+}
+
+<span class="c">/* Focus trap for modals */</span>
+<span class="na">.modal:focus</span> {
+  <span class="na">outline</span>: <span class="s">none</span>;
+}
+<span class="c">// JS: trap focus within modal</span></code></pre>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Focus Demo</div>
+                        <p style="margin-bottom:12px;">Click to open a focus-managed dialog:</p>
+                        <button class="btn btn-primary" id="focusDialogBtn">Open Dialog</button>
+                        <div id="focusDialog" role="dialog" aria-modal="true" aria-label="Focus demo" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.4);align-items:center;justify-content:center;">
+                            <div style="background:#fff;padding:28px;border-radius:12px;max-width:400px;margin:80px auto;box-shadow:0 20px 60px rgba(0,0,0,0.2);">
+                                <h3 style="margin:0 0 12px;color:#333;">Focus Demo</h3>
+                                <p style="color:#666;margin-bottom:16px;">Tab between the buttons below. Focus is trapped inside this dialog.</p>
+                                <button class="btn btn-primary btn-small" id="focusDialogAction">Confirm</button>
+                                <button class="btn btn-outline btn-small" id="focusDialogClose" style="margin-left:8px;">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; :focus-visible vs :focus:</strong> Use <code>:focus-visible</code> to show the focus ring only when the user navigates via keyboard (not on mouse click). This gives a cleaner look for mouse users while keeping accessibility for keyboard users.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="testing">
+            <div class="container">
+                <h2 class="section-title">9. Testing Tools &amp; Checklist</h2>
+                <p class="section-desc">Accessibility testing should be done throughout development, not at the end. Here are tools and a quick checklist to get started.</p>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:24px 0;">
+                    <div style="padding:20px;background:#f0f4ff;border-radius:12px;border-left:4px solid #667eea;">
+                        <h4 style="margin:0 0 8px;color:#333;font-size:1rem;">Lighthouse</h4>
+                        <p style="margin:0;color:#666;font-size:0.9rem;">Built into Chrome DevTools. Generates an accessibility score and lists specific issues with fix guidance.</p>
+                    </div>
+                    <div style="padding:20px;background:#f0f4ff;border-radius:12px;border-left:4px solid #28a745;">
+                        <h4 style="margin:0 0 8px;color:#333;font-size:1rem;">axe DevTools</h4>
+                        <p style="margin:0;color:#666;font-size:0.9rem;">Browser extension that finds and explains accessibility issues. Free tier available.</p>
+                    </div>
+                    <div style="padding:20px;background:#f0f4ff;border-radius:12px;border-left:4px solid #ff6b6b;">
+                        <h4 style="margin:0 0 8px;color:#333;font-size:1rem;">WAVE</h4>
+                        <p style="margin:0;color:#666;font-size:0.9rem;">Visual overlay that shows accessibility issues directly on the page. Also checks contrast.</p>
+                    </div>
+                    <div style="padding:20px;background:#f0f4ff;border-radius:12px;border-left:4px solid #764ba2;">
+                        <h4 style="margin:0 0 8px;color:#333;font-size:1rem;">Keyboard Testing</h4>
+                        <p style="margin:0;color:#666;font-size:0.9rem;">Unplug your mouse. Navigate using only Tab, Shift+Tab, Enter, Escape, and arrow keys.</p>
+                    </div>
+                </div>
+
+                <div class="challenge" data-question="Which ARIA attribute announces dynamic content changes to screen readers?" data-options='["aria-label","aria-live","aria-hidden","aria-describedby"]' data-answer="1" data-explain="aria-live=&quot;polite&quot; or &quot;assertive&quot; tells screen readers to announce content changes in that element without the user having to focus it.">
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Quick checklist:</strong> All images have alt text &#10003; Headings are in order &#10003; Forms have labels &#10003; Color contrast passes 4.5:1 &#10003; Keyboard navigation works &#10003; Page has a skip link &#10003; ARIA is used correctly &#10003; Tested with a screen reader &#10003;
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>A11y Tutorial</h3>
+                    <p>Learn web accessibility by doing.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Topics</h3>
+                    <ul>
+                        <li><a href="#what">What is A11y?</a></li>
+                        <li><a href="#semantic">Semantic HTML</a></li>
+                        <li><a href="#aria">ARIA</a></li>
+                        <li><a href="#keyboard">Keyboard Nav</a></li>
+                        <li><a href="#contrast">Contrast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>More</h3>
+                    <ul>
+                        <li><a href="index.html">HTML Tutorial</a></li>
+                        <li><a href="css.html">CSS Tutorial</a></li>
+                        <li><a href="javascript.html">JS Tutorial</a></li>
+                        <li><a href="tools.html">CSS Tools</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 A11y Tutorial. Inclusive by design.</p>
+                <p style="margin-top:8px;font-size:0.8rem;opacity:0.5;"><a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a> &middot; <a href="privacy.html#opt-out" style="color:inherit;text-decoration:underline;">Do Not Sell My Info</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                var h = this.getAttribute('href');
+                if (h === '#') return;
+                var t = document.querySelector(h);
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+        // ARIA Live Region Demo
+        var ariaBtn = document.getElementById('ariaDemoBtn');
+        var ariaRegion = document.getElementById('ariaLiveRegion');
+        if (ariaBtn && ariaRegion) {
+            ariaBtn.addEventListener('click', function () {
+                var msgs = ['Alert: New notification received!', 'Warning: Session about to expire.', 'Success: Task completed!', 'Info: Updates are available.'];
+                var msg = msgs[Math.floor(Math.random() * msgs.length)];
+                ariaRegion.textContent = msg;
+            });
+        }
+
+        // Contrast Checker
+        var fgInput = document.getElementById('fgColor');
+        var bgInput = document.getElementById('bgColor');
+        var sample = document.getElementById('contrastSample');
+        var ratioEl = document.getElementById('contrastRatio');
+        var passEl = document.getElementById('contrastPass');
+
+        function luminance(r, g, b) {
+            var a = [r, g, b].map(function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+            return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+        }
+
+        function updateContrast() {
+            var fg = fgInput.value, bg = bgInput.value;
+            sample.style.color = fg; sample.style.background = bg;
+            var fgR = parseInt(fg.slice(1,3), 16), fgG = parseInt(fg.slice(3,5), 16), fgB = parseInt(fg.slice(5,7), 16);
+            var bgR = parseInt(bg.slice(1,3), 16), bgG = parseInt(bg.slice(3,5), 16), bgB = parseInt(bg.slice(5,7), 16);
+            var l1 = luminance(fgR, fgG, fgB), l2 = luminance(bgR, bgG, bgB);
+            var ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+            ratioEl.textContent = ratio.toFixed(1) + ':1';
+            var aa = ratio >= 4.5, aaa = ratio >= 7;
+            passEl.textContent = aaa ? 'AAA Pass' : aa ? 'AA Pass' : 'Fail';
+            passEl.style.color = aaa ? '#28a745' : aa ? '#ffc107' : '#dc3545';
+        }
+        fgInput.addEventListener('input', updateContrast);
+        bgInput.addEventListener('input', updateContrast);
+        updateContrast();
+
+        // Screen Reader Demo
+        var srBtn = document.getElementById('toggleSrText');
+        var srOut = document.getElementById('srTextOutput');
+        if (srBtn && srOut) {
+            srBtn.addEventListener('click', function () {
+                srOut.style.display = srOut.style.display === 'none' ? 'block' : 'none';
+                srBtn.textContent = srOut.style.display === 'none' ? 'Show Screen Reader Text' : 'Hide Screen Reader Text';
+            });
+        }
+
+        // Keyboard Focus Demo
+        var focusMsg = document.getElementById('focusMsg');
+        document.querySelectorAll('#keyboard .demo-output button, #keyboard .demo-output a, #keyboard .demo-output input').forEach(function (el) {
+            el.addEventListener('focus', function () { if (focusMsg) focusMsg.textContent = 'Focused: ' + (this.textContent.trim() || this.placeholder || 'element'); });
+            el.addEventListener('blur', function () { if (focusMsg) focusMsg.textContent = ''; });
+        });
+
+        // Accessible Form
+        var a11yForm = document.getElementById('a11yForm');
+        var a11yFeedback = document.getElementById('a11yFeedback');
+        if (a11yForm && a11yFeedback) {
+            a11yForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var name = document.getElementById('a11yName').value.trim();
+                var email = document.getElementById('a11yEmail').value.trim();
+                if (!name || !email) {
+                    a11yFeedback.textContent = 'Please fill in all required fields.';
+                    a11yFeedback.style.color = '#dc3545';
+                } else {
+                    a11yFeedback.textContent = 'Thanks, ' + name + '! Form submitted successfully.';
+                    a11yFeedback.style.color = '#28a745';
+                }
+            });
+        }
+
+        // Focus Dialog
+        var openDialog = document.getElementById('focusDialogBtn');
+        var dialog = document.getElementById('focusDialog');
+        var closeDialog = document.getElementById('focusDialogClose');
+        var dialogAction = document.getElementById('focusDialogAction');
+
+        function openFocusDialog() {
+            dialog.style.display = 'flex';
+            setTimeout(function () { if (dialogAction) dialogAction.focus(); }, 100);
+        }
+        function closeFocusDialog() {
+            dialog.style.display = 'none';
+            if (openDialog) openDialog.focus();
+        }
+
+        if (openDialog && dialog) {
+            openDialog.addEventListener('click', openFocusDialog);
+            if (closeDialog) closeDialog.addEventListener('click', closeFocusDialog);
+            if (dialogAction) dialogAction.addEventListener('click', function () { alert('Action confirmed!'); closeFocusDialog(); });
+            dialog.addEventListener('click', function (e) { if (e.target === dialog) closeFocusDialog(); });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && dialog.style.display === 'flex') closeFocusDialog();
+            });
+        }
+    });
+    </script>
+</body>
+</html>

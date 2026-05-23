@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive JavaScript Tutorial - Learn JS with live code examples and interactive demos">
+    <meta property="og:title" content="JS Playground - Learn JavaScript by Doing">
+    <meta property="og:description" content="Interactive JavaScript Tutorial - Learn JS with live code examples and interactive demos">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/javascript.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JS Playground - Learn JavaScript by Doing">
+    <meta name="twitter:description" content="Interactive JavaScript Tutorial - Learn JS with live code examples and interactive demos">
+    <meta name="google-adsense-account" content="ca-pub-5862355594319303">
+    <title>JS Playground - Learn JavaScript by Doing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">JS Playground</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#basics">Basics</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#operators">Operators</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#conditionals">Conditionals</a></li>
+                <li><a href="#loops">Loops</a></li>
+                <li><a href="#arrays">Arrays</a></li>
+                <li><a href="#objects">Objects</a></li>
+                <li><a href="#dom">DOM</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#es6">ES6+</a></li>
+                <li><a href="#async">Async</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#playground">Playground</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="accessibility.html">A11y</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Learn JavaScript <span class="highlight">by Doing</span></h1>
+                <p>Write real JavaScript code and see the output instantly. Every concept comes with live, editable examples.</p>
+                <p class="hero-sub">Click any "Run" button to execute the code and see what happens.</p>
+                <a href="#basics" class="btn btn-primary">Start Learning</a>
+            </div>
+            <div class="hero-visual">
+                <pre class="hero-code"><span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Hello, World!"</span>);
+<span class="nt">const</span> <span class="na">name</span> <span class="nt">=</span> <span class="s">"You"</span>;
+<span class="nt">alert</span>(<span class="s">`Hi </span>${name}<span class="s">!`</span>);</pre>
+            </div>
+        </section>
+
+        <section class="section" id="basics">
+            <div class="container">
+                <h2 class="section-title">1. What is JavaScript?</h2>
+                <p class="section-desc">JavaScript is a lightweight, interpreted programming language that makes web pages interactive. It runs in the browser and can respond to user actions, modify content, and communicate with servers.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Your First JS</div>
+                        <pre><code><span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Hello, World!"</span>);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Welcome to JavaScript!"</span>);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"This is "</span> + <span class="s">"fun!"</span>);</code></pre>
+                        <button class="copy-btn" data-code="console-log">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="console.log(&quot;Hello, World!&quot;); console.log(&quot;Welcome to JavaScript!&quot;); console.log(&quot;This is &quot; + &quot;fun!&quot;);">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Key idea:</strong> JavaScript is <strong>event-driven</strong>. It waits for something to happen (a click, a key press, a page load) and then runs code in response. You can also run it directly in the browser's console (press F12).
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="variables">
+            <div class="container">
+                <h2 class="section-title">2. Variables &amp; Data Types</h2>
+                <p class="section-desc">Variables store data in memory. Use <code>let</code> for values that change, <code>const</code> for values that stay the same, and avoid <code>var</code> in modern code.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Variables</div>
+                        <pre><code><span class="nt">let</span> <span class="na">name</span> <span class="nt">=</span> <span class="s">"Alice"</span>;
+<span class="nt">const</span> <span class="na">age</span> <span class="nt">=</span> <span class="s">25</span>;
+<span class="nt">let</span> <span class="na">isStudent</span> <span class="nt">=</span> <span class="s">true</span>;
+
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Name:"</span>, name);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Age:"</span>, age);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Student:"</span>, isStudent);
+
+<span class="c">// Reassign let (works)</span>
+name <span class="nt">=</span> <span class="s">"Bob"</span>;
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"New name:"</span>, name);
+
+<span class="c">// age = 30; // ERROR: const can't be reassigned</span></code></pre>
+                    </div>
+                    <div class="demo-output js-output" data-code="let name = &quot;Alice&quot;; const age = 25; let isStudent = true; console.log(&quot;Name:&quot;, name); console.log(&quot;Age:&quot;, age); console.log(&quot;Student:&quot;, isStudent); name = &quot;Bob&quot;; console.log(&quot;New name:&quot;, name);">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Data Types</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Data Types</div>
+                        <pre><code><span class="nt">console</span>.<span class="na">log</span>(<span class="s">"typeof checks:"</span>);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">typeof</span> <span class="s">"hello"</span>);     <span class="c">// string</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">typeof</span> <span class="s">42</span>);          <span class="c">// number</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">typeof</span> <span class="s">true</span>);        <span class="c">// boolean</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">typeof</span> [<span class="s">1,2,3</span>]);    <span class="c">// object (array)</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">typeof</span> {<span class="na">a:</span><span class="s">1</span>});     <span class="c">// object</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">typeof</span> <span class="s">null</span>);        <span class="c">// object (quirk!)</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">typeof</span> <span class="s">undefined</span>);   <span class="c">// undefined</span></code></pre>
+                    </div>
+                    <div class="demo-output js-output" data-code="console.log('typeof checks:'); console.log(typeof 'hello'); console.log(typeof 42); console.log(typeof true); console.log(typeof [1,2,3]); console.log(typeof {a:1}); console.log(typeof null); console.log(typeof undefined);">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128640; Interactive: Type Checker</h3>
+                    <p>Enter a value to see its type:</p>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <input type="text" id="typeInput" value="42" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;flex:1;min-width:200px;">
+                        <button class="btn btn-primary" id="checkTypeBtn">Check Type</button>
+                    </div>
+                    <p id="typeResult" style="margin-top:16px;font-size:1.1rem;min-height:30px;"></p>
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which keyword is used to declare a variable that cannot be reassigned?" data-options='["var","let","const","static"]' data-answer="2" data-explain="const declares a variable that cannot be reassigned. let allows reassignment, var is older and has function scoping.">
+            </div>
+        </section>
+
+        <section class="section" id="operators">
+            <div class="container">
+                <h2 class="section-title">3. Operators</h2>
+                <p class="section-desc">Operators perform actions on values. JavaScript has arithmetic, comparison, logical, and assignment operators.</p>
+
+                <h3 style="color:#333;">Arithmetic Operators</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Math</div>
+                        <pre><code><span class="nt">let</span> <span class="na">a</span> <span class="nt">=</span> <span class="s">10</span>, <span class="na">b</span> <span class="nt">=</span> <span class="s">3</span>;
+
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"a + b ="</span>, a <span class="nt">+</span> b);  <span class="c">// 13</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"a - b ="</span>, a <span class="nt">-</span> b);  <span class="c">// 7</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"a * b ="</span>, a <span class="nt">*</span> b);  <span class="c">// 30</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"a / b ="</span>, a <span class="nt">/</span> b);  <span class="c">// 3.33</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"a % b ="</span>, a <span class="nt">%</span> b);  <span class="c">// 1 (remainder)</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"a ** b ="</span>, a <span class="nt">**</span> b); <span class="c">// 1000 (power)</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="let a = 10, b = 3; console.log('a + b =', a + b); console.log('a - b =', a - b); console.log('a * b =', a * b); console.log('a / b =', a / b); console.log('a % b =', a % b); console.log('a ** b =', a ** b);">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Comparison &amp; Logical Operators</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Comparisons</div>
+                        <pre><code><span class="nt">console</span>.<span class="na">log</span>(<span class="s">"5 == '5' :"</span>, <span class="s">5 == '5'</span>);   <span class="c">// true (loose)</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"5 === '5':"</span>, <span class="s">5 === '5'</span>);  <span class="c">// false (strict)</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"10 > 5   :"</span>, <span class="s">10 > 5</span>);       <span class="c">// true</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"10 <= 5  :"</span>, <span class="s">10 <= 5</span>);      <span class="c">// false</span>
+
+<span class="c">// Logical: && (AND), || (OR), ! (NOT)</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"true && false:"</span>, <span class="s">true && false</span>);  <span class="c">// false</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"true || false:"</span>, <span class="s">true || false</span>);  <span class="c">// true</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"!true       :"</span>, <span class="s">!true</span>);              <span class="c">// false</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="console.log('5 == '\\''5'\\'':' + ':', 5 == '5'); console.log('5 === '\\''5'\\'':' + ':', 5 === '5'); console.log('10 > 5   :', 10 > 5); console.log('10 <= 5  :', 10 <= 5); console.log('true && false:', true && false); console.log('true || false:', true || false); console.log('!true       :', !true);">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128200; Interactive: Calculator</h3>
+                    <p>Enter two numbers and pick an operation:</p>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+                        <input type="number" id="calcA" value="10" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;width:100px;">
+                        <select id="calcOp" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;">
+                            <option value="+">+</option>
+                            <option value="-">-</option>
+                            <option value="*">*</option>
+                            <option value="/">/</option>
+                            <option value="%">%</option>
+                            <option value="**">**</option>
+                        </select>
+                        <input type="number" id="calcB" value="3" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;width:100px;">
+                        <button class="btn btn-primary" id="calcBtn">=</button>
+                    </div>
+                    <p id="calcResult" style="margin-top:16px;font-size:1.5rem;font-weight:600;color:#333;min-height:40px;"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="functions">
+            <div class="container">
+                <h2 class="section-title">4. Functions</h2>
+                <p class="section-desc">Functions are reusable blocks of code. You define them once and call them anytime. They can take inputs (parameters) and return outputs.</p>
+
+                <h3 style="color:#333;">Function Declaration</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Functions</div>
+                        <pre><code><span class="c">// Function declaration</span>
+<span class="nt">function</span> <span class="na">greet</span>(<span class="na">name</span>) {
+    <span class="nt">return</span> <span class="s">"Hello, "</span> <span class="nt">+</span> name <span class="nt">+</span> <span class="s">"!"</span>;
+}
+
+<span class="c">// Arrow function (modern)</span>
+<span class="nt">const</span> <span class="na">add</span> <span class="nt">=</span> (<span class="na">a</span>, <span class="na">b</span>) <span class="nt">=></span> a <span class="nt">+</span> b;
+
+<span class="nt">console</span>.<span class="na">log</span>(greet(<span class="s">"Alice"</span>));
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"2 + 3 ="</span>, add(<span class="s">2</span>, <span class="s">3</span>));
+
+<span class="c">// Function with default parameter</span>
+<span class="nt">const</span> <span class="na">multiply</span> <span class="nt">=</span> (<span class="na">a</span>, <span class="na">b</span> <span class="nt">=</span> <span class="s">1</span>) <span class="nt">=></span> a <span class="nt">*</span> b;
+<span class="nt">console</span>.<span class="na">log</span>(multiply(<span class="s">5</span>));      <span class="c">// 5 (b defaults to 1)</span>
+<span class="nt">console</span>.<span class="na">log</span>(multiply(<span class="s">5</span>, <span class="s">3</span>));   <span class="c">// 15</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="function greet(name) { return 'Hello, ' + name + '!'; } const add = (a, b) => a + b; console.log(greet('Alice')); console.log('2 + 3 =', add(2, 3)); const multiply = (a, b = 1) => a * b; console.log(multiply(5)); console.log(multiply(5, 3));">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128295; Interactive: Call a Function</h3>
+                    <p>Enter your name and click the button:</p>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <input type="text" id="funcInput" value="Friend" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;flex:1;min-width:200px;">
+                        <button class="btn btn-primary" id="funcBtn">Greet Me!</button>
+                    </div>
+                    <p id="funcResult" style="margin-top:16px;font-size:1.2rem;color:#333;min-height:30px;"></p>
+                </div>
+            </div>
+
+            <div class="challenge" data-question="How do you write a function in JavaScript that returns the sum of two numbers?" data-options='["function add(a, b) { return a + b; }","function add(a, b) { a + b; }","def add(a, b): return a + b","function(a, b) => a + b"]' data-answer="0" data-explain="function add(a, b) { return a + b; } is correct. A function must use the return keyword to return a value.">
+            </div>
+        </section>
+
+        <section class="section" id="conditionals">
+            <div class="container">
+                <h2 class="section-title">5. Conditionals</h2>
+                <p class="section-desc">Conditionals let your code make decisions. Run different code depending on whether a condition is true or false.</p>
+
+                <h3 style="color:#333;">if / else if / else</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Conditionals</div>
+                        <pre><code><span class="nt">let</span> <span class="na">score</span> <span class="nt">=</span> <span class="s">85</span>;
+
+<span class="nt">if</span> (<span class="na">score</span> <span class="nt">>=</span> <span class="s">90</span>) {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Grade: A"</span>);
+} <span class="nt">else if</span> (<span class="na">score</span> <span class="nt">>=</span> <span class="s">80</span>) {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Grade: B"</span>);
+} <span class="nt">else if</span> (<span class="na">score</span> <span class="nt">>=</span> <span class="s">70</span>) {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Grade: C"</span>);
+} <span class="nt">else</span> {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Grade: F"</span>);
+}
+
+<span class="c">// Ternary operator (shorthand if/else)</span>
+<span class="nt">let</span> <span class="na">age</span> <span class="nt">=</span> <span class="s">20</span>;
+<span class="nt">let</span> <span class="na">status</span> <span class="nt">=</span> age <span class="nt">>=</span> <span class="s">18</span> <span class="nt">?</span> <span class="s">"Adult"</span> <span class="nt">:</span> <span class="s">"Minor"</span>;
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Status:"</span>, status);</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="let score = 85; if (score >= 90) { console.log('Grade: A'); } else if (score >= 80) { console.log('Grade: B'); } else if (score >= 70) { console.log('Grade: C'); } else { console.log('Grade: F'); } let age = 20; let status = age >= 18 ? 'Adult' : 'Minor'; console.log('Status:', status);">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Switch Statement</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Switch</div>
+                        <pre><code><span class="nt">let</span> <span class="na">day</span> <span class="nt">=</span> <span class="s">"Monday"</span>;
+
+<span class="nt">switch</span> (<span class="na">day</span>) {
+    <span class="nt">case</span> <span class="s">"Saturday"</span>:
+    <span class="nt">case</span> <span class="s">"Sunday"</span>:
+        <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Weekend!"</span>);
+        <span class="nt">break</span>;
+    <span class="nt">case</span> <span class="s">"Monday"</span>:
+        <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Start of week"</span>);
+        <span class="nt">break</span>;
+    <span class="nt">default</span>:
+        <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Weekday"</span>);
+}</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="let day = 'Monday'; switch (day) { case 'Saturday': case 'Sunday': console.log('Weekend!'); break; case 'Monday': console.log('Start of week'); break; default: console.log('Weekday'); }">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#127919; Interactive: Grade Calculator</h3>
+                    <p>Enter a score (0-100):</p>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <input type="number" id="gradeInput" value="85" min="0" max="100" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;width:120px;">
+                        <button class="btn btn-primary" id="gradeBtn">Get Grade</button>
+                    </div>
+                    <p id="gradeResult" style="margin-top:16px;font-size:1.3rem;font-weight:600;min-height:35px;"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="loops">
+            <div class="container">
+                <h2 class="section-title">6. Loops</h2>
+                <p class="section-desc">Loops repeat code. Use them to run the same block multiple times, iterate over arrays, or process data.</p>
+
+                <h3 style="color:#333;">For Loop</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; For Loop</div>
+                        <pre><code><span class="c">// Count from 1 to 5</span>
+<span class="nt">for</span> (<span class="nt">let</span> <span class="na">i</span> <span class="nt">=</span> <span class="s">1</span>; <span class="na">i</span> <span class="nt"><=</span> <span class="s">5</span>; <span class="na">i</span><span class="nt">++</span>) {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Count:"</span>, i);
+}</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="for (let i = 1; i <= 5; i++) { console.log('Count:', i); }">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">While &amp; ForEach</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; While &amp; ForEach</div>
+                        <pre><code><span class="c">// While loop</span>
+<span class="nt">let</span> <span class="na">count</span> <span class="nt">=</span> <span class="s">0</span>;
+<span class="nt">while</span> (<span class="na">count</span> <span class="nt"><</span> <span class="s">3</span>) {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"While count:"</span>, count);
+    <span class="na">count</span><span class="nt">++</span>;
+}
+
+<span class="c">// ForEach on array</span>
+<span class="nt">let</span> <span class="na">fruits</span> <span class="nt">=</span> [<span class="s">"Apple"</span>, <span class="s">"Banana"</span>, <span class="s">"Cherry"</span>];
+fruits.<span class="na">forEach</span>(<span class="na">fruit</span> <span class="nt">=></span> {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Fruit:"</span>, fruit);
+});</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="let count = 0; while (count < 3) { console.log('While count:', count); count++; } let fruits = ['Apple', 'Banana', 'Cherry']; fruits.forEach(fruit => { console.log('Fruit:', fruit); });">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128257; Interactive: Loop Visualizer</h3>
+                    <p>Click to see a loop count from 1 to the number you choose:</p>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <input type="number" id="loopInput" value="5" min="1" max="20" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;width:100px;">
+                        <button class="btn btn-primary" id="loopBtn">Run Loop</button>
+                    </div>
+                    <div id="loopResult" style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="arrays">
+            <div class="container">
+                <h2 class="section-title">7. Arrays</h2>
+                <p class="section-desc">Arrays hold ordered lists of data. You can store any type — numbers, strings, objects, even other arrays.</p>
+
+                <h3 style="color:#333;">Array Methods</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Array Methods</div>
+                        <pre><code><span class="nt">let</span> <span class="na">numbers</span> <span class="nt">=</span> [<span class="s">1</span>, <span class="s">2</span>, <span class="s">3</span>, <span class="s">4</span>, <span class="s">5</span>];
+
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Original:"</span>, numbers);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Length:"</span>, numbers.length);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"First:"</span>, numbers[<span class="s">0</span>]);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Last:"</span>, numbers[numbers.length <span class="nt">-</span> <span class="s">1</span>]);
+
+<span class="c">// Add/remove</span>
+numbers.<span class="na">push</span>(<span class="s">6</span>);    <span class="c">// add to end</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"After push:"</span>, numbers);
+numbers.<span class="na">pop</span>();     <span class="c">// remove from end</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"After pop:"</span>, numbers);
+
+<span class="c">// Transform</span>
+<span class="nt">let</span> <span class="na">doubled</span> <span class="nt">=</span> numbers.<span class="na">map</span>(<span class="na">n</span> <span class="nt">=></span> n <span class="nt">*</span> <span class="s">2</span>);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Doubled:"</span>, doubled);
+
+<span class="nt">let</span> <span class="na">evens</span> <span class="nt">=</span> numbers.<span class="na">filter</span>(<span class="na">n</span> <span class="nt">=></span> n <span class="nt">%</span> <span class="s">2</span> <span class="nt">===</span> <span class="s">0</span>);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Evens:"</span>, evens);
+
+<span class="nt">let</span> <span class="na">sum</span> <span class="nt">=</span> numbers.<span class="na">reduce</span>((<span class="na">acc</span>, <span class="na">n</span>) <span class="nt">=></span> acc <span class="nt">+</span> n, <span class="s">0</span>);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Sum:"</span>, sum);</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="let numbers = [1, 2, 3, 4, 5]; console.log('Original:', numbers); console.log('Length:', numbers.length); console.log('First:', numbers[0]); console.log('Last:', numbers[numbers.length - 1]); numbers.push(6); console.log('After push:', numbers); numbers.pop(); console.log('After pop:', numbers); let doubled = numbers.map(n => n * 2); console.log('Doubled:', doubled); let evens = numbers.filter(n => n % 2 === 0); console.log('Evens:', evens); let sum = numbers.reduce((acc, n) => acc + n, 0); console.log('Sum:', sum);">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128220; Interactive: Array Builder</h3>
+                    <p>Enter items separated by commas:</p>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <input type="text" id="arrayInput" value="Apple, Banana, Cherry" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;flex:1;min-width:200px;">
+                        <button class="btn btn-primary" id="arrayBtn">Process Array</button>
+                    </div>
+                    <div id="arrayResult" style="margin-top:16px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="objects">
+            <div class="container">
+                <h2 class="section-title">8. Objects</h2>
+                <p class="section-desc">Objects store key-value pairs. They're the foundation of most data structures in JavaScript and represent real-world entities.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Objects</div>
+                        <pre><code><span class="c">// Creating an object</span>
+<span class="nt">const</span> <span class="na">person</span> <span class="nt">=</span> {
+    <span class="na">name</span>: <span class="s">"Alice"</span>,
+    <span class="na">age</span>: <span class="s">30</span>,
+    <span class="na">city</span>: <span class="s">"Lagos"</span>,
+    <span class="na">greet</span>: <span class="nt">function</span>() {
+        <span class="nt">return</span> <span class="s">"Hi, I'm "</span> <span class="nt">+</span> <span class="na">this</span>.name;
+    }
+};
+
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Name:"</span>, person.name);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Age:"</span>, person[<span class="s">"age"</span>]);
+<span class="nt">console</span>.<span class="na">log</span>(person.greet());
+
+<span class="c">// Add/edit properties</span>
+person.<span class="na">job</span> <span class="nt">=</span> <span class="s">"Developer"</span>;
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Job:"</span>, person.job);
+
+<span class="c">// List all keys</span>
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Keys:"</span>, <span class="s">Object</span>.<span class="na">keys</span>(person));</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="const person = { name: 'Alice', age: 30, city: 'Lagos', greet: function() { return 'Hi, I\\''m ' + this.name; } }; console.log('Name:', person.name); console.log('Age:', person['age']); console.log(person.greet()); person.job = 'Developer'; console.log('Job:', person.job); console.log('Keys:', Object.keys(person));">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128100; Interactive: Build a Person</h3>
+                    <p>Fill in the details:</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px;">
+                        <input type="text" id="objName" value="Alice" placeholder="Name" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;">
+                        <input type="number" id="objAge" value="30" placeholder="Age" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;">
+                        <input type="text" id="objCity" value="Lagos" placeholder="City" style="padding:10px 14px;border:2px solid #ddd;border-radius:6px;font-family:inherit;">
+                    </div>
+                    <button class="btn btn-primary" id="objBtn">Show Person</button>
+                    <div id="objResult" style="margin-top:16px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="dom">
+            <div class="container">
+                <h2 class="section-title">9. DOM Manipulation</h2>
+                <p class="section-desc">The Document Object Model (DOM) is JavaScript's way of interacting with HTML. You can select elements, change their content, modify styles, and create new elements.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; DOM Basics</div>
+                        <pre><code><span class="c">// Select an element</span>
+<span class="nt">const</span> <span class="na">title</span> <span class="nt">=</span> <span class="s">document</span>.<span class="na">getElementById</span>(<span class="s">"dom-title"</span>);
+
+<span class="c">// Change content</span>
+title.<span class="na">textContent</span> <span class="nt">=</span> <span class="s">"Updated by JS!"</span>;
+
+<span class="c">// Change style</span>
+title.<span class="na">style</span>.<span class="na">color</span> <span class="nt">=</span> <span class="s">"#667eea"</span>;
+
+<span class="c">// Create an element</span>
+<span class="nt">const</span> <span class="na">newP</span> <span class="nt">=</span> <span class="s">document</span>.<span class="na">createElement</span>(<span class="s">"p"</span>);
+newP.<span class="na">textContent</span> <span class="nt">=</span> <span class="s">"I was created by JavaScript!"</span>;
+<span class="s">document</span>.<span class="na">getElementById</span>(<span class="s">"dom-container"</span>)
+        .<span class="na">appendChild</span>(newP);</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Output</div>
+                        <div id="dom-container">
+                            <p id="dom-title">This is the original text.</p>
+                            <button class="btn btn-small btn-outline" id="domBtn" style="margin-top:8px;">Run DOM Demo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Common DOM methods:</strong> <code>getElementById()</code>, <code>querySelector()</code>, <code>querySelectorAll()</code>, <code>createElement()</code>, <code>textContent</code>, <code>innerHTML</code>, <code>setAttribute()</code>, <code>classList.add()</code>, <code>classList.remove()</code>, <code>style</code>.
+                </div>
+            </div>
+
+            <div class="challenge" data-question="Which method selects an element by its CSS selector?" data-options='["getElementById()","querySelector()","getElementsByClassName()","querySelectorAll()"]' data-answer="1" data-explain="querySelector() returns the first element matching a CSS selector. querySelectorAll() returns all matching elements as a NodeList.">
+            </div>
+        </section>
+
+        <section class="section section-alt" id="events">
+            <div class="container">
+                <h2 class="section-title">10. Events</h2>
+                <p class="section-desc">Events are actions that happen in the browser — clicks, key presses, mouse movements, form submissions. You can run code when events occur.</p>
+
+                <h3 style="color:#333;">Click &amp; Input Events</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Events</div>
+                        <pre><code><span class="c">// Click event</span>
+<span class="s">document</span>.<span class="na">getElementById</span>(<span class="s">"myBtn"</span>)
+    .<span class="na">addEventListener</span>(<span class="s">"click"</span>, () <span class="nt">=></span> {
+        <span class="nt">alert</span>(<span class="s">"Button clicked!"</span>);
+    });
+
+<span class="c">// Input event</span>
+<span class="s">document</span>.<span class="na">getElementById</span>(<span class="s">"myInput"</span>)
+    .<span class="na">addEventListener</span>(<span class="s">"input"</span>, (<span class="na">e</span>) <span class="nt">=></span> {
+        <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"You typed:"</span>, e.target.value);
+    });
+
+<span class="c">// Mouseover event</span>
+<span class="s">document</span>.<span class="na">getElementById</span>(<span class="s">"hoverBox"</span>)
+    .<span class="na">addEventListener</span>(<span class="s">"mouseover"</span>, () <span class="nt">=></span> {
+        <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Mouse entered!"</span>);
+    });</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output">
+                        <div class="demo-label">&#9654; Interactive Demo</div>
+                        <button class="btn btn-primary" id="eventBtn" style="margin-bottom:8px;display:block;">Click Me</button>
+                        <input type="text" id="eventInput" placeholder="Type something..." style="width:100%;padding:10px;border:2px solid #ddd;border-radius:6px;font-family:inherit;font-size:0.95rem;margin-bottom:8px;">
+                        <p id="eventOutput" style="margin:0;min-height:24px;color:#666;"></p>
+                        <div id="hoverBox" style="margin-top:8px;padding:12px;background:#f0f4ff;border-radius:6px;text-align:center;cursor:pointer;border:2px dashed #667eea;">Hover over this box</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>&#128161; Event types:</strong> <code>click</code>, <code>dblclick</code>, <code>mouseover</code>, <code>mouseout</code>, <code>keydown</code>, <code>keyup</code>, <code>input</code>, <code>change</code>, <code>submit</code>, <code>scroll</code>, <code>resize</code>, <code>load</code>. Use <code>addEventListener()</code> to attach them.
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="es6">
+            <div class="container">
+                <h2 class="section-title">11. ES6+ Features</h2>
+                <p class="section-desc">ES6 (ECMAScript 2015) and later versions added powerful features that make JavaScript cleaner and more expressive.</p>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Modern JS</div>
+                        <pre><code><span class="c">// Template literals</span>
+<span class="nt">let</span> <span class="na">name</span> <span class="nt">=</span> <span class="s">"Alice"</span>;
+<span class="nt">let</span> <span class="na">age</span> <span class="nt">=</span> <span class="s">30</span>;
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">`My name is ${name}</span>
+<span class="s">and I am ${age} years old.`</span>);
+
+<span class="c">// Destructuring</span>
+<span class="nt">const</span> <span class="na">person</span> <span class="nt">=</span> { <span class="na">name:</span> <span class="s">"Bob"</span>, <span class="na">age:</span> <span class="s">25</span> };
+<span class="nt">const</span> { <span class="na">name:</span> <span class="na">pName</span>, <span class="na">age:</span> <span class="na">pAge</span> } <span class="nt">=</span> person;
+<span class="nt">console</span>.<span class="na">log</span>(pName, pAge);
+
+<span class="c">// Spread operator</span>
+<span class="nt">let</span> <span class="na">arr1</span> <span class="nt">=</span> [<span class="s">1</span>, <span class="s">2</span>, <span class="s">3</span>];
+<span class="nt">let</span> <span class="na">arr2</span> <span class="nt">=</span> [...arr1, <span class="s">4</span>, <span class="s">5</span>];
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Spread:"</span>, arr2);
+
+<span class="c">// Rest parameters</span>
+<span class="nt">const</span> <span class="na">sum</span> <span class="nt">=</span> (...<span class="na">nums</span>) <span class="nt">=></span>
+    nums.<span class="na">reduce</span>((<span class="na">a</span>, <span class="na">b</span>) <span class="nt">=></span> a <span class="nt">+</span> b, <span class="s">0</span>);
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Sum(1,2,3,4):"</span>, sum(<span class="s">1</span>, <span class="s">2</span>, <span class="s">3</span>, <span class="s">4</span>));
+
+<span class="c">// Optional chaining</span>
+<span class="nt">const</span> <span class="na">user</span> <span class="nt">=</span> { <span class="na">profile:</span> { <span class="na">email:</span> <span class="s">"a@b.com"</span> } };
+<span class="nt">console</span>.<span class="na">log</span>(user?.profile?.email);
+<span class="nt">console</span>.<span class="na">log</span>(user?.address?.city); <span class="c">// undefined, no error</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="let name = 'Alice'; let age = 30; console.log('Template literals:'); console.log('My name is ' + name + ' and I am ' + age + ' years old.'); const person = { name: 'Bob', age: 25 }; const pName = person.name; const pAge = person.age; console.log('Destructuring:', pName, pAge); let arr1 = [1, 2, 3]; let arr2 = arr1.concat([4, 5]); console.log('Spread:', arr2); const sumFn = (...nums) => nums.reduce((a, b) => a + b, 0); console.log('Sum(1,2,3,4):', sumFn(1, 2, 3, 4));">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="async">
+            <div class="container">
+                <h2 class="section-title">12. Async JavaScript</h2>
+                <p class="section-desc">Asynchronous code lets your program handle tasks that take time (like fetching data from a server) without freezing the page.</p>
+
+                <h3 style="color:#333;">setTimeout &amp; setInterval</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; setTimeout</div>
+                        <pre><code><span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Start"</span>);
+
+<span class="c">// Run after 1 second</span>
+<span class="s">setTimeout</span>(() <span class="nt">=></span> {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"This runs after 1 second"</span>);
+}, <span class="s">1000</span>);
+
+<span class="nt">console</span>.<span class="na">log</span>(<span class="s">"End"</span>);
+
+<span class="c">// setInterval runs repeatedly</span>
+<span class="c">// setInterval(() => {</span>
+<span class="c">//     console.log("tick");</span>
+<span class="c">// }, 2000);</span></code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="console.log('Start'); console.log('End (setTimeout will run after 1s)');">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:40px;color:#333;">Promises &amp; Fetch API</h3>
+
+                <div class="demo-pair">
+                    <div class="demo-code">
+                        <div class="demo-label">&#9001; Promise &amp; Fetch</div>
+                        <pre><code><span class="c">// Creating a Promise</span>
+<span class="nt">const</span> <span class="na">wait</span> <span class="nt">=</span> (<span class="na">ms</span>) <span class="nt">=></span> <span class="nt">new</span> <span class="s">Promise</span>(<span class="na">resolve</span> <span class="nt">=></span> {
+    <span class="s">setTimeout</span>(resolve, ms);
+});
+
+<span class="c">// Using the Promise</span>
+<span class="na">wait</span>(<span class="s">500</span>).<span class="na">then</span>(() <span class="nt">=></span> {
+    <span class="nt">console</span>.<span class="na">log</span>(<span class="s">"Waited 500ms!"</span>);
+});
+
+<span class="c">// Fetch API (get data)</span>
+<span class="c">// fetch('https://api.example.com/data')</span>
+<span class="c">//     .then(res => res.json())</span>
+<span class="c">//     .then(data => console.log(data));</span>
+
+<span class="c">// async/await (modern syntax)</span>
+<span class="nt">async</span> <span class="nt">function</span> <span class="na">getData</span>() {
+    <span class="c">// const res = await fetch(url);</span>
+    <span class="c">// const data = await res.json();</span>
+    <span class="c">// return data;</span>
+    <span class="nt">return</span> <span class="s">"Data would load here"</span>;
+}
+
+<span class="na">getData</span>().<span class="na">then</span>(<span class="nt">console</span>.<span class="na">log</span>);</code></pre>
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <div class="demo-output js-output" data-code="console.log('Promises and async/await make async code manageable.'); console.log('setTimeout, setInterval, fetch are common async patterns.');">
+                        <div class="demo-label">&#9654; Output <button class="btn btn-small btn-outline run-js-btn" style="margin-left:auto;padding:2px 10px;font-size:0.7rem;">Run</button></div>
+                        <div class="js-console"><span class="console-log">// Click Run to execute</span></div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo">
+                    <h3>&#128339; Interactive: Async Timer</h3>
+                    <p>Click to see a 3-second countdown:</p>
+                    <button class="btn btn-primary" id="asyncBtn">Start Countdown</button>
+                    <div id="asyncResult" style="margin-top:16px;font-size:2rem;font-weight:700;color:#667eea;min-height:50px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="quiz">
+            <div class="container">
+                <div class="quiz" data-page="js"></div>
+            </div>
+        </section>
+
+        <section class="section" id="playground">
+            <div class="container">
+                <h2 class="section-title">13. Try It Yourself &#x1F3AD;</h2>
+                <p class="section-desc">Write JavaScript code below and click Run to see the output. Experiment with everything you've learned!</p>
+
+                <div class="playground-container">
+                    <div class="playground-editor">
+                        <div class="playground-header">
+                            <span class="playground-label">&#9001; JS Editor</span>
+                            <div class="playground-actions">
+                                <button class="btn btn-small btn-outline" id="jsRunBtn">&#9654; Run</button>
+                                <button class="btn btn-small btn-outline" id="jsClearBtn">&#128465; Clear</button>
+                                <button class="btn btn-small btn-outline" id="jsResetBtn">&#8634; Reset</button>
+                            </div>
+                        </div>
+                        <textarea id="jsEditor" class="playground-textarea" spellcheck="false">// Try your own JavaScript here
+let name = "You";
+let count = 5;
+
+for (let i = 1; i <= count; i++) {
+    console.log(i + ". Hello, " + name + "!");
+}
+
+console.log("---");
+console.log("Total: " + count + " greetings");</textarea>
+                        <div class="playground-editor-info">
+                            <span id="jsLineCount">Line 10</span>
+                            <span>Press Ctrl+Enter to run</span>
+                        </div>
+                    </div>
+                    <div class="playground-output">
+                        <div class="playground-header">
+                            <span class="playground-label">&#9654; Console Output</span>
+                            <button class="btn btn-small btn-outline" id="jsConsoleClear">&#128465; Clear</button>
+                        </div>
+                        <div class="playground-preview" id="jsConsoleOutput">
+                            <span class="console-log">// Output will appear here</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="starter-templates" style="margin-top:30px;">
+                    <h3>&#128218; Starter Templates</h3>
+                    <div class="template-grid">
+                        <button class="template-btn" data-jstemplate="template-hello">
+                            <span class="template-icon">&#128075;</span>
+                            <span>Hello World</span>
+                        </button>
+                        <button class="template-btn" data-jstemplate="template-fizzbuzz">
+                            <span class="template-icon">&#128290;</span>
+                            <span>FizzBuzz</span>
+                        </button>
+                        <button class="template-btn" data-jstemplate="template-array">
+                            <span class="template-icon">&#128220;</span>
+                            <span>Array Ops</span>
+                        </button>
+                        <button class="template-btn" data-jstemplate="template-object">
+                            <span class="template-icon">&#128100;</span>
+                            <span>Object</span>
+                        </button>
+                        <button class="template-btn" data-jstemplate="template-dom">
+                            <span class="template-icon">&#127912;</span>
+                            <span>DOM</span>
+                        </button>
+                        <button class="template-btn" data-jstemplate="template-func">
+                            <span class="template-icon">&#128295;</span>
+                            <span>Functions</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>JS Playground</h3>
+                    <p>Learn JavaScript with live code.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Topics</h3>
+                    <ul>
+                        <li><a href="#basics">Basics</a></li>
+                        <li><a href="#variables">Variables</a></li>
+                        <li><a href="#operators">Operators</a></li>
+                        <li><a href="#functions">Functions</a></li>
+                        <li><a href="#conditionals">Conditionals</a></li>
+                        <li><a href="#loops">Loops</a></li>
+                        <li><a href="#arrays">Arrays</a></li>
+                        <li><a href="#objects">Objects</a></li>
+                        <li><a href="#dom">DOM</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#es6">ES6+</a></li>
+                        <li><a href="#async">Async</a></li>
+                        <li><a href="#quiz">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">MDN JS Docs</a></li>
+                        <li><a href="https://javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript.info</a></li>
+                        <li><a href="index.html">HTML Tutorial</a></li>
+                        <li><a href="css.html">CSS Tutorial</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="timmy.html">About Project</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="tools.html">CSS Tools</a></li>
+                        <li><a href="accessibility.html">A11y Tutorial</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JS Playground. Learn JavaScript by doing.</p>
+                <p style="margin-top:8px;font-size:0.8rem;opacity:0.5;"><a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a> &middot; <a href="privacy.html#opt-out" style="color:inherit;text-decoration:underline;">Do Not Sell My Info</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // ===== JS Console Runner =====
+        var consoleOutputs = document.querySelectorAll('.js-output');
+
+        function captureConsole(outputDiv) {
+            var lines = [];
+            var fakeConsole = {
+                log: function () {
+                    var msg = Array.from(arguments).map(function (a) {
+                        if (a === null) return 'null';
+                        if (a === undefined) return 'undefined';
+                        if (typeof a === 'object') return JSON.stringify(a);
+                        return String(a);
+                    }).join(' ');
+                    lines.push('<span class="console-log">' + msg + '</span>');
+                    var container = outputDiv.querySelector('.js-console');
+                    if (container) container.innerHTML = lines.join('<br>');
+                }
+            };
+            return { log: fakeConsole.log, lines: lines, container: outputDiv.querySelector('.js-console') };
+        }
+
+        consoleOutputs.forEach(function (output) {
+            var runBtn = output.querySelector('.run-js-btn');
+            var code = output.getAttribute('data-code');
+            var container = output.querySelector('.js-console');
+
+            if (runBtn && code) {
+                runBtn.addEventListener('click', function () {
+                    if (container) container.innerHTML = '';
+                    var capture = captureConsole(output);
+                    try {
+                        var log = capture.log;
+                        var fn = new Function('console', code);
+                        fn({ log: log });
+                    } catch (e) {
+                        if (container) container.innerHTML = '<span class="console-error">Error: ' + e.message + '</span>';
+                    }
+                });
+            }
+        });
+
+        // ===== JS Playground =====
+        var jsEditor = document.getElementById('jsEditor');
+        var jsConsoleOutput = document.getElementById('jsConsoleOutput');
+        var jsRunBtn = document.getElementById('jsRunBtn');
+        var jsClearBtn = document.getElementById('jsClearBtn');
+        var jsResetBtn = document.getElementById('jsResetBtn');
+        var jsLineCount = document.getElementById('jsLineCount');
+        var jsConsoleClear = document.getElementById('jsConsoleClear');
+
+        var defaultJSCode = '// Try your own JavaScript here\nlet name = "You";\nlet count = 5;\n\nfor (let i = 1; i <= count; i++) {\n    console.log(i + ". Hello, " + name + "!");\n}\n\nconsole.log("---");\nconsole.log("Total: " + count + " greetings");';
+
+        function runJS() {
+            if (!jsEditor || !jsConsoleOutput) return;
+            var code = jsEditor.value;
+            jsConsoleOutput.innerHTML = '';
+            var lines = [];
+            var fakeConsole = {
+                log: function () {
+                    var msg = Array.from(arguments).map(function (a) {
+                        if (a === null) return 'null';
+                        if (a === undefined) return 'undefined';
+                        if (typeof a === 'object') return JSON.stringify(a, null, 2);
+                        return String(a);
+                    }).join(' ');
+                    lines.push('<span class="console-log">' + msg + '</span>');
+                    jsConsoleOutput.innerHTML = lines.join('<br>');
+                }
+            };
+            try {
+                var fn = new Function('console', code);
+                fn({ log: fakeConsole.log });
+            } catch (e) {
+                jsConsoleOutput.innerHTML = '<span class="console-error">Error: ' + e.message + '</span>';
+            }
+            updateJSLineCount();
+        }
+
+        function updateJSLineCount() {
+            if (!jsEditor || !jsLineCount) return;
+            jsLineCount.textContent = 'Line ' + jsEditor.value.split('\n').length;
+        }
+
+        if (jsEditor && jsRunBtn) {
+            jsRunBtn.addEventListener('click', runJS);
+            jsEditor.addEventListener('keydown', function (e) {
+                if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); runJS(); }
+                if (e.key === 'Tab') { e.preventDefault(); var s = this.selectionStart, en = this.selectionEnd; this.value = this.value.substring(0, s) + '    ' + this.value.substring(en); this.selectionStart = this.selectionEnd = s + 4; }
+            });
+            jsEditor.addEventListener('input', updateJSLineCount);
+        }
+
+        if (jsClearBtn && jsEditor && jsConsoleOutput) {
+            jsClearBtn.addEventListener('click', function () { jsEditor.value = ''; jsConsoleOutput.innerHTML = '<span class="console-log">// Output will appear here</span>'; updateJSLineCount(); });
+        }
+
+        if (jsResetBtn && jsEditor && jsConsoleOutput) {
+            jsResetBtn.addEventListener('click', function () { jsEditor.value = defaultJSCode; runJS(); });
+        }
+
+        if (jsConsoleClear && jsConsoleOutput) {
+            jsConsoleClear.addEventListener('click', function () { jsConsoleOutput.innerHTML = '<span class="console-log">// Console cleared</span>'; });
+        }
+
+        // ===== JS Starter Templates =====
+        var jsTemplates = {
+            'template-hello': '// Hello World\nlet greeting = "Hello, World!";\nconsole.log(greeting);\n\nlet name = "JavaScript Learner";\nconsole.log("Welcome, " + name + "!");',
+            'template-fizzbuzz': '// FizzBuzz\nfor (let i = 1; i <= 15; i++) {\n    if (i % 3 === 0 && i % 5 === 0) {\n        console.log("FizzBuzz");\n    } else if (i % 3 === 0) {\n        console.log("Fizz");\n    } else if (i % 5 === 0) {\n        console.log("Buzz");\n    } else {\n        console.log(i);\n    }\n}',
+            'template-array': '// Array Operations\nlet fruits = ["Apple", "Banana", "Cherry", "Date"];\nconsole.log("Original:", fruits);\nconsole.log("Length:", fruits.length);\n\nfruits.push("Elderberry");\nconsole.log("After push:", fruits);\n\nlet upper = fruits.map(f => f.toUpperCase());\nconsole.log("Uppercase:", upper);\n\nlet long = fruits.filter(f => f.length > 5);\nconsole.log("Long names:", long);',
+            'template-object': '// Working with Objects\nlet car = {\n    make: "Toyota",\n    model: "Camry",\n    year: 2022,\n    start: function() {\n        return "Engine started!";\n    }\n};\n\nconsole.log("Car:", car.make, car.model);\nconsole.log("Year:", car.year);\nconsole.log(car.start());\nconsole.log("All keys:", Object.keys(car));',
+            'template-dom': '// DOM Manipulation\n// Uncomment to try:\n// document.body.innerHTML = "<h1>Hello from JS!</h1>";\nconsole.log("DOM lets you change the page.");\nconsole.log("Try: document.title = \\"New Title\\";");',
+            'template-func': '// Functions\nfunction factorial(n) {\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\n\nconst square = x => x * x;\n\nconsole.log("Factorial of 5:", factorial(5));\nconsole.log("Square of 7:", square(7));\n\n// Higher-order function\nfunction repeat(fn, times) {\n    for (let i = 0; i < times; i++) {\n        fn(i);\n    }\n}\nrepeat(i => console.log("Count:", i + 1), 3);'
+        };
+
+        document.querySelectorAll('[data-jstemplate]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var key = this.getAttribute('data-jstemplate');
+                if (jsTemplates[key] && jsEditor && jsConsoleOutput) {
+                    jsEditor.value = jsTemplates[key];
+                    runJS();
+                    jsEditor.focus();
+                    document.querySelectorAll('[data-jstemplate]').forEach(function (b) {
+                        b.style.borderColor = '#e8e8e8'; b.style.color = '#555';
+                    });
+                    this.style.borderColor = '#667eea'; this.style.color = '#667eea';
+                }
+            });
+        });
+
+        // ===== Interactive Demos =====
+
+        // Type Checker
+        var typeInput = document.getElementById('typeInput');
+        var checkTypeBtn = document.getElementById('checkTypeBtn');
+        var typeResult = document.getElementById('typeResult');
+        if (typeInput && checkTypeBtn && typeResult) {
+            function checkType() {
+                var val = typeInput.value;
+                var type = typeof val;
+                var display = '"' + val + '"';
+                try {
+                    var parsed = JSON.parse(val);
+                    type = typeof parsed;
+                    display = val;
+                    if (Array.isArray(parsed)) type = 'array';
+                } catch (e) {}
+                typeResult.innerHTML = 'Type of <code>' + display + '</code> is <strong>' + type + '</strong>';
+            }
+            checkTypeBtn.addEventListener('click', checkType);
+            typeInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') checkType(); });
+            checkType();
+        }
+
+        // Calculator
+        var calcA = document.getElementById('calcA');
+        var calcB = document.getElementById('calcB');
+        var calcOp = document.getElementById('calcOp');
+        var calcBtn = document.getElementById('calcBtn');
+        var calcResult = document.getElementById('calcResult');
+        if (calcA && calcB && calcOp && calcBtn && calcResult) {
+            calcBtn.addEventListener('click', function () {
+                var a = parseFloat(calcA.value);
+                var b = parseFloat(calcB.value);
+                var op = calcOp.value;
+                var result;
+                switch (op) {
+                    case '+': result = a + b; break;
+                    case '-': result = a - b; break;
+                    case '*': result = a * b; break;
+                    case '/': result = b !== 0 ? a / b : 'Error (div by 0)'; break;
+                    case '%': result = a % b; break;
+                    case '**': result = Math.pow(a, b); break;
+                }
+                calcResult.textContent = a + ' ' + op + ' ' + b + ' = ' + result;
+            });
+        }
+
+        // Function Greeter
+        var funcInput = document.getElementById('funcInput');
+        var funcBtn = document.getElementById('funcBtn');
+        var funcResult = document.getElementById('funcResult');
+        if (funcInput && funcBtn && funcResult) {
+            funcBtn.addEventListener('click', function () {
+                var name = funcInput.value.trim() || 'Friend';
+                funcResult.innerHTML = '&#128075; Hello, <strong>' + name + '</strong>! Welcome to JavaScript!';
+            });
+        }
+
+        // Grade Calculator
+        var gradeInput = document.getElementById('gradeInput');
+        var gradeBtn = document.getElementById('gradeBtn');
+        var gradeResult = document.getElementById('gradeResult');
+        if (gradeInput && gradeBtn && gradeResult) {
+            gradeBtn.addEventListener('click', function () {
+                var score = parseInt(gradeInput.value);
+                if (isNaN(score) || score < 0 || score > 100) {
+                    gradeResult.textContent = 'Please enter a number between 0 and 100.';
+                    gradeResult.style.color = '#ff6b6b';
+                    return;
+                }
+                var grade, color;
+                if (score >= 90) { grade = 'A'; color = '#28a745'; }
+                else if (score >= 80) { grade = 'B'; color = '#667eea'; }
+                else if (score >= 70) { grade = 'C'; color = '#ffc107'; }
+                else if (score >= 60) { grade = 'D'; color = '#ff9800'; }
+                else { grade = 'F'; color = '#ff6b6b'; }
+                gradeResult.innerHTML = 'Score: ' + score + ' | Grade: <span style="color:' + color + ';">' + grade + '</span>';
+                gradeResult.style.color = '#333';
+            });
+        }
+
+        // Loop Visualizer
+        var loopInput = document.getElementById('loopInput');
+        var loopBtn = document.getElementById('loopBtn');
+        var loopResult = document.getElementById('loopResult');
+        if (loopInput && loopBtn && loopResult) {
+            loopBtn.addEventListener('click', function () {
+                var n = parseInt(loopInput.value);
+                if (isNaN(n) || n < 1 || n > 20) { loopResult.innerHTML = '<span style="color:#ff6b6b;">Enter a number between 1 and 20.</span>'; return; }
+                var html = '';
+                var colors = ['#667eea','#764ba2','#ff6b6b','#ffc107','#28a745','#17a2b8','#e83e8c','#fd7e14','#20c997','#6f42c1'];
+                for (var i = 1; i <= n; i++) {
+                    html += '<div style="width:40px;height:40px;background:' + colors[(i-1) % colors.length] + ';color:#fff;display:flex;align-items:center;justify-content:center;border-radius:6px;font-weight:600;font-size:0.9rem;">' + i + '</div>';
+                }
+                loopResult.innerHTML = html;
+            });
+        }
+
+        // Array Builder
+        var arrayInput = document.getElementById('arrayInput');
+        var arrayBtn = document.getElementById('arrayBtn');
+        var arrayResult = document.getElementById('arrayResult');
+        if (arrayInput && arrayBtn && arrayResult) {
+            arrayBtn.addEventListener('click', function () {
+                var items = arrayInput.value.split(',').map(function (s) { return s.trim(); }).filter(function (s) { return s; });
+                if (items.length === 0) { arrayResult.innerHTML = '<span style="color:#ff6b6b;">Please enter some items.</span>'; return; }
+                var html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;overflow-wrap:break-word;word-break:break-word;">';
+                html += '<div style="padding:16px;background:#f0f4ff;border-radius:8px;overflow-wrap:break-word;word-break:break-word;"><strong>Array:</strong> [' + items.map(function (i) { return '"' + i + '"'; }).join(', ') + ']</div>';
+                html += '<div style="padding:16px;background:#f0f4ff;border-radius:8px;overflow-wrap:break-word;word-break:break-word;"><strong>Length:</strong> ' + items.length + '<br><strong>First:</strong> ' + items[0] + '<br><strong>Last:</strong> ' + items[items.length - 1] + '</div>';
+                html += '</div>';
+                html += '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">';
+                items.forEach(function (item, idx) {
+                    html += '<span style="padding:6px 12px;background:#667eea;color:#fff;border-radius:20px;font-size:0.85rem;">' + item + '</span>';
+                });
+                html += '</div>';
+                arrayResult.innerHTML = html;
+            });
+        }
+
+        // Object Builder
+        var objName = document.getElementById('objName');
+        var objAge = document.getElementById('objAge');
+        var objCity = document.getElementById('objCity');
+        var objBtn = document.getElementById('objBtn');
+        var objResult = document.getElementById('objResult');
+        if (objName && objAge && objCity && objBtn && objResult) {
+            objBtn.addEventListener('click', function () {
+                var p = { name: objName.value || 'Unknown', age: parseInt(objAge.value) || 0, city: objCity.value || 'Unknown' };
+                objResult.innerHTML = '<div style="padding:20px;background:#f0f4ff;border-radius:8px;">' +
+                    '<strong>Person Object:</strong><br>' +
+                    '{<br>' +
+                    '&nbsp;&nbsp;name: "' + p.name + '",<br>' +
+                    '&nbsp;&nbsp;age: ' + p.age + ',<br>' +
+                    '&nbsp;&nbsp;city: "' + p.city + '"<br>' +
+                    '}<br><br>' +
+                    '<strong>Greeting:</strong> Hi, I\'m ' + p.name + ' from ' + p.city + '!' +
+                    '</div>';
+            });
+        }
+
+        // DOM Demo
+        var domBtn = document.getElementById('domBtn');
+        var domTitle = document.getElementById('dom-title');
+        if (domBtn && domTitle) {
+            domBtn.addEventListener('click', function () {
+                domTitle.textContent = 'Updated by JavaScript!';
+                domTitle.style.color = '#667eea';
+                domTitle.style.fontWeight = '600';
+                domBtn.textContent = 'Already Updated!';
+                domBtn.disabled = true;
+                domBtn.style.opacity = '0.5';
+            });
+        }
+
+        // Events Demo
+        var eventBtn = document.getElementById('eventBtn');
+        var eventInput = document.getElementById('eventInput');
+        var eventOutput = document.getElementById('eventOutput');
+        var hoverBox = document.getElementById('hoverBox');
+        if (eventBtn && eventInput && eventOutput) {
+            eventBtn.addEventListener('click', function () { eventOutput.innerHTML = '<span style="color:#667eea;">&#128079; Button was clicked!</span>'; });
+            eventInput.addEventListener('input', function () { eventOutput.innerHTML = 'You typed: <strong>' + this.value + '</strong>'; });
+        }
+        if (hoverBox && eventOutput) {
+            hoverBox.addEventListener('mouseover', function () { this.style.background = '#667eea'; this.style.color = '#fff'; eventOutput.innerHTML = '<span style="color:#667eea;">&#128064; Mouse entered the box!</span>'; });
+            hoverBox.addEventListener('mouseout', function () { this.style.background = '#f0f4ff'; this.style.color = '#333'; eventOutput.innerHTML = '<span style="color:#666;">&#128064; Mouse left the box</span>'; });
+        }
+
+        // Async Timer
+        var asyncBtn = document.getElementById('asyncBtn');
+        var asyncResult = document.getElementById('asyncResult');
+        if (asyncBtn && asyncResult) {
+            asyncBtn.addEventListener('click', function () {
+                asyncResult.textContent = '3';
+                asyncBtn.disabled = true;
+                var count = 3;
+                var interval = setInterval(function () {
+                    count--;
+                    if (count > 0) {
+                        asyncResult.textContent = count;
+                    } else {
+                        clearInterval(interval);
+                        asyncResult.innerHTML = '&#128640; Blast off!';
+                        asyncBtn.disabled = false;
+                        setTimeout(function () { asyncResult.textContent = ''; }, 2000);
+                    }
+                }, 1000);
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                var h = this.getAttribute('href');
+                if (h === '#') return;
+                var t = document.querySelector(h);
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+        // Run default playground code
+        if (jsEditor && jsConsoleOutput && jsRunBtn) {
+            setTimeout(runJS, 100);
+        }
+    });
+    </script>
+</body>
+</html>
